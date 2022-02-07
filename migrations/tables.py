@@ -24,7 +24,7 @@ try:
     cursorObject.execute(sqlQuery)
 
     # SQL query string
-    sqlQuery = "CREATE TABLE Items(id int primary key not null AUTO_INCREMENT," "name varchar(255)," "link varchar(255)," "id_store int," "id_category int," "specification text," "details text," "created_at date," "updated_at date," "foreign key (id_store) references stores(id)," "foreign key (id_category) references categories(id))"
+    sqlQuery = "CREATE TABLE Items(id int primary key not null AUTO_INCREMENT," "name varchar(255)," "slug varchar(255)," "link varchar(255)," "id_store int," "id_category int," "specification text," "details text," "created_at date," "updated_at date," "foreign key (id_store) references stores(id)," "foreign key (id_category) references categories(id))"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 

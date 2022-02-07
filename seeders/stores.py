@@ -16,13 +16,13 @@ try:
     # SQL query string
     sqlQuery = "insert into stores(name, link) values (%s , %s)"
     # Execute the sqlQuery
-    cursorObject.execute(sqlQuery , ("uno","https://www.jumia.ma\/"))
+    cursorObject.execute(sqlQuery , ("uno","https://uno.ma"))
 
 
     # SQL query string
     sqlQuery = "insert into stores(name, link) values (%s ,%s)"
     # Execute the sqlQuery
-    cursorObject.execute(sqlQuery , ("jumia","https://www.jumia.ma\/"))
+    cursorObject.execute(sqlQuery , ("jumia","https://www.jumia.ma"))
 
     connectionObject.commit()
 except Exception as e:
