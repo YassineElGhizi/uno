@@ -1,0 +1,53 @@
+import pymysql
+
+# Create a connection object
+dbServerName = "127.0.0.1"
+dbUser = "root"
+dbPassword = ""
+dbName = "datalake"
+
+cusrorType = pymysql.cursors.DictCursor
+connectionObject = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,db=dbName, cursorclass=cusrorType)
+
+try:
+    # Create a cursor object
+    cursorObject = connectionObject.cursor()
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE Categories(id int primary key not null AUTO_INCREMENT, name varchar(255))"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE Stores(id int primary key not null AUTO_INCREMENT, name varchar(255), link text ,updated_at date)"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE Items(id int primary key not null AUTO_INCREMENT," "name varchar(255)," "link varchar(255)," "id_store int," "id_category int," "specification text," "details text," "created_at date," "updated_at date," "foreign key (id_store) references stores(id)," "foreign key (id_category) references categories(id))"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE Prices(id_item int , price double, created_at date, foreign key (id_item) references items(id))"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "show tables"
+
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # Fetch all the rows
+    rows = cursorObject.fetchall()
+
+    for row in rows:
+        print(row)
+
+except Exception as e:
+    print("Exeception occured:{}".format(e))
+
+finally:
+    connectionObject.close()
