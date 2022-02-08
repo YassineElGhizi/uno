@@ -1,9 +1,12 @@
+import json
+
 import pymysql
 import requests
 from bs4 import BeautifulSoup as BS
 import datetime
 
 
+# # res = requests.get("https://uno.ma/iphone-maroc/iphone-se-maroc/")
 res = requests.get("https://uno.ma/iphone-maroc/iphone-se-maroc/?limit=100")
 html = res.text
 
@@ -21,7 +24,7 @@ mycursor = mydb.cursor()
 #GLOBAL Vars
 items_present_in_page = dict()
 cards_links = list()
-stockage_list = ['128 Gb','256 Gb','512 Gb','1 Tb' ]
+stockage_list = ['32 Go', '32 Gb'  '128 Gb','256 Gb','512 Gb','1 Tb' ,'128 Go','256 Go','512 Go','1 To' , '64 Go' , '64 Gb' ]
 now = datetime.datetime.now()
 scraped_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
 
@@ -29,16 +32,15 @@ scraped_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, 
 def find_device_stockage(title):
     for st in stockage_list:
         if st in title:
-            item_stockage = st
-            return item_stockage
+            return st
 
     return "UNKNOWN"
 
 def find_device_color(title , stockage):
     try:
-        tmp = title.split("{} ".format(stockage))[-1]
-        tmp = tmp.split("(")[0]
-        return tmp
+        tmp = title.split("2020")[-1]
+        tmp = tmp.split("{} ".format(stockage))[0]
+        return tmp.split()[0]
     except:
         return "UNKNOW"
 
@@ -70,6 +72,7 @@ if __name__ == "__main__":
         item_link = item_title_tag.get('href')
         item_stockage = find_device_stockage(item_title)
         item_color = find_device_color(item_title ,item_stockage)
+        image_item = ic.find('img' , {'class' , 'regular_img'}).get('data-srcx2')
         print("================= #{} ============".format(num+1))
         print("item_title = {}".format(item_title))
         print("item_link = {}".format(item_link))
@@ -77,20 +80,46 @@ if __name__ == "__main__":
         print("stockage = {}".format(item_stockage))
         print("item_color = {}".format(item_color))
         print("scraped_at = {}".format(scraped_at))
-
+        print("image_item = {}".format(image_item))
 
         try:
-            sql = "INSERT INTO items (name ,slug,link, id_store ,id_category ,specification ,details ,created_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s ,%s)"
-            val = ("iPhone SE 2",item_title, item_link, 1, 1, "stocakge: {} color: {}".format(item_stockage, item_color), "some dummy data",  scraped_at)
+            shoudl_I_insert_to_db = True
+            myjson = dict()
+            myjson["stockage"] = item_stockage
+            myjson["color"] = item_color
+            jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
+
+            sql = "select current_price from items where slug = %s"
+            val = (item_title)
             mycursor.execute(sql, val)
-            print("id = {}".format(
-                mycursor.lastrowid
-            ))
-            sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-            val = (mycursor.lastrowid, item_price, scraped_at)
-            mycursor.execute(sql, val)
-            print("\n")
-            mydb.commit()
+            myresult = mycursor.fetchall()
+            if(len(myresult) == 0):
+                sql = "INSERT INTO items (name ,slug,link, id_store ,id_category ,specification ,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+                val = ("iPhone se",item_title, item_link, 1, 1, jsonStringify, "", image_item, item_price,scraped_at)
+                mycursor.execute(sql, val)
+                print("id = {}".format(
+                    mycursor.lastrowid
+                ))
+                sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
+                val = (mycursor.lastrowid, item_price, scraped_at)
+                mycursor.execute(sql, val)
+                print("\n")
+                mydb.commit()
+            else:
+                if(myresult[0][0] != item_price ):
+                    sql = "update items set current_price = %s , last_updated_at = %s where slug = %s"
+                    val = (item_price , scraped_at , item_title)
+                    mycursor.execute(sql, val)
+                    sql = "select id from items where slug = %s"
+                    val = (item_title,)
+                    myresult = mycursor.fetchall()
+                    sql = "insert into prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
+                    val = (myresult[0][0], item_price, scraped_at)
+                    mydb.commit()
+                else:
+                    print("PRICES ARE STILL THE SAME")
+                    print(" -> {} == {}".format(myresult[0][0] , item_price))
+
         except Exception as e:
             print(e)
             print("Database conn error !")

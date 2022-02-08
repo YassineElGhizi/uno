@@ -18,19 +18,24 @@ try:
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 
+    # # SQL query string
+    # sqlQuery = "CREATE TABLE Subcategories(id int primary key not null AUTO_INCREMENT, name varchar(255), id_cat int, foreign key (id_cat) references categories(id))"
+    # # Execute the sqlQuery
+    # cursorObject.execute(sqlQuery)
+
     # SQL query string
-    sqlQuery = "CREATE TABLE Stores(id int primary key not null AUTO_INCREMENT, name varchar(255), link text ,updated_at date)"
+    sqlQuery = "CREATE TABLE Stores(id int primary key not null AUTO_INCREMENT, name varchar(255), link text ,updated_at timestamp )"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 
     # SQL query string
-    sqlQuery = "CREATE TABLE Items(id int primary key not null AUTO_INCREMENT," "name varchar(255)," "slug varchar(255)," "link varchar(255)," "id_store int," "id_category int," "specification text," "details text," "created_at date," "updated_at date," "foreign key (id_store) references stores(id)," "foreign key (id_category) references categories(id))"
+    sqlQuery = "CREATE TABLE Items(last_updated_at timestamp, id int primary key not null AUTO_INCREMENT, name varchar(255), slug varchar(255), link varchar(255), id_store int, id_category int, specification text, details text ,image_url text,current_price double, foreign key (id_store) references stores(id),foreign key (id_category) references categories(id))"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 
 
     # SQL query string
-    sqlQuery = "CREATE TABLE Prices(id_item int , price double, created_at date, foreign key (id_item) references items(id))"
+    sqlQuery = "CREATE TABLE Prices(id_item int , price double, created_at timestamp, foreign key (id_item) references items(id))"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 

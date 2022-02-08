@@ -1,8 +1,9 @@
+import json
+
 import pymysql
 import requests
 from bs4 import BeautifulSoup as BS
 import datetime
-
 
 # res = requests.get("https://uno.ma/iphone-maroc/apple-iphone-13-pro-max-maroc/")
 res = requests.get("https://uno.ma/iphone-maroc/apple-iphone-13-pro-max-maroc/?limit=100")
@@ -30,8 +31,7 @@ scraped_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, 
 def find_device_stockage(title):
     for st in stockage_list:
         if st in title:
-            item_stockage = st
-            return item_stockage
+            return st
 
     return "UNKNOWN"
 
@@ -71,6 +71,7 @@ if __name__ == "__main__":
         item_link = item_title_tag.get('href')
         item_stockage = find_device_stockage(item_title)
         item_color = find_device_color(item_title ,item_stockage)
+        image_item = ic.find('img' , {'class' , 'regular_img'}).get('data-srcx2')
         print("================= #{} ============".format(num+1))
         print("item_title = {}".format(item_title))
         print("item_link = {}".format(item_link))
@@ -78,20 +79,47 @@ if __name__ == "__main__":
         print("stockage = {}".format(item_stockage))
         print("item_color = {}".format(item_color))
         print("scraped_at = {}".format(scraped_at))
-
+        print("image_item = {}".format(image_item))
 
         try:
-            sql = "INSERT INTO items (name ,slug,link, id_store ,id_category ,specification ,details ,created_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s ,%s)"
-            val = ("iPhone 13 Pro Max",item_title, item_link, 1, 1, "stocakge: {} color: {}".format(item_stockage, item_color), "some dummy data",  scraped_at)
+            shoudl_I_insert_to_db = True
+            myjson = dict()
+            myjson["stockage"] = item_stockage
+            myjson["color"] = item_color
+            jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
+
+            sql = "select current_price from items where slug = %s"
+            val = (item_title)
             mycursor.execute(sql, val)
-            print("id = {}".format(
-                mycursor.lastrowid
-            ))
-            sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-            val = (mycursor.lastrowid, item_price, scraped_at)
-            mycursor.execute(sql, val)
-            print("\n")
-            mydb.commit()
+            myresult = mycursor.fetchall()
+            if(len(myresult) == 0):
+                sql = "INSERT INTO items (name ,slug,link, id_store ,id_category ,specification ,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+                val = ("iPhone 13 Pro Max",item_title, item_link, 1, 1, jsonStringify, "", image_item, item_price,scraped_at)
+                mycursor.execute(sql, val)
+                print("id = {}".format(
+                    mycursor.lastrowid
+                ))
+                sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
+                val = (mycursor.lastrowid, item_price, scraped_at)
+                mycursor.execute(sql, val)
+                print("\n")
+                mydb.commit()
+            else:
+                if(myresult[0][0] != item_price ):
+                    sql = "update items set current_price = %s , last_updated_at = %s where slug = %s"
+                    val = (item_price , scraped_at , item_title)
+                    mycursor.execute(sql, val)
+                    sql = "select id from items where slug = %s"
+                    val = (item_title,)
+                    myresult = mycursor.fetchall()
+                    sql = "insert into prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
+                    val = (myresult[0][0], item_price, scraped_at)
+                    mydb.commit()
+                else:
+                    print("PRICES ARE STILL THE SAME")
+                    print(" -> {} == {}".format(myresult[0][0] , item_price))
+
+
         except Exception as e:
             print(e)
             print("Database conn error !")
