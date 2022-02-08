@@ -29,7 +29,7 @@ try:
     cursorObject.execute(sqlQuery)
 
     # SQL query string
-    sqlQuery = "CREATE TABLE Items(last_updated_at timestamp, id int primary key not null AUTO_INCREMENT, name varchar(255), slug varchar(255), link varchar(255), id_store int, id_category int, specification text, details text ,image_url text,current_price double, foreign key (id_store) references stores(id),foreign key (id_category) references categories(id))"
+    sqlQuery = "CREATE TABLE Items(last_updated_at timestamp, id int primary key not null AUTO_INCREMENT, name varchar(255), slug varchar(255), link varchar(255), id_store int, id_category int, color varchar(255),stockage varchar(255) , details text ,image_url text,current_price double, foreign key (id_store) references stores(id),foreign key (id_category) references categories(id))"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 

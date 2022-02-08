@@ -3,30 +3,25 @@ import requests
 from bs4 import BeautifulSoup as BS
 from global_parametrs import *
 
+def scrape(link , iphone_name):
+    res = requests.get("https://uno.ma/iphone-maroc/{}-maroc/?limit=100".format(link))
+    html = res.text
 
-# res = requests.get("https://uno.ma/iphone-maroc/iphone-11-pro-max-maroc/")
-res = requests.get("https://uno.ma/iphone-maroc/iphone-11-pro-max-maroc/?limit=100")
-html = res.text
+    #DB Connexion
+    mydb = pymysql.connect(
+        host="127.0.0.1",
+        port=3306,
+        user="root",
+        password="",
+        database="datalake",
+    )
+    mycursor = mydb.cursor()
 
-#DB Connexion
-mydb = pymysql.connect(
-    host="127.0.0.1",
-    port=3306,
-    user="root",
-    password="",
-    database="datalake",
-)
-mycursor = mydb.cursor()
+    items = BS(
+        html ,
+        features="html.parser"
+    )
 
-items = BS(
-    html ,
-    features="html.parser"
-)
-
-# print(items.prettify())
-# quit()
-
-if __name__ == "__main__":
     items_cards = items.findAll('li' , {'class' ,'item sale-product' }  )
 
     for num, ic in enumerate(items_cards):
@@ -48,15 +43,13 @@ if __name__ == "__main__":
         print("image_item = {}".format(image_item))
 
         try:
-            shoudl_I_insert_to_db = True
-
             sql = "select current_price from items where slug = %s"
             val = (item_title)
             mycursor.execute(sql, val)
             myresult = mycursor.fetchall()
             if(len(myresult) == 0):
                 sql = "INSERT INTO items (name ,slug,link, id_store ,id_category ,color,stockage ,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s,%s ,%s,%s ,%s, %s)"
-                val = ("iPhone 11 PRO MAX", item_title, item_link, 1, 1, item_color, item_stockage, "", image_item, item_price,scraped_at)
+                val = (iphone_name, item_title, item_link, 1, 1, item_color, item_stockage, "", image_item, item_price,scraped_at)
                 mycursor.execute(sql, val)
                 print("id = {}".format(
                     mycursor.lastrowid
@@ -95,3 +88,27 @@ if __name__ == "__main__":
 
 
     mydb.close()
+
+
+
+if __name__ == "__main__":
+    # scrape( "iphone-11-pro-max", "iPhone 11 PRO MAX")
+    # scrape( "iphone-11-pro", "iPhone 11 PRO")
+    # scrape( "iphone-11", "iPhone 11")
+
+
+    # scrape( "iphone-12-pro-max", "iPhone 12 PRO MAX")
+    # scrape( "iphone-12-pro", "iPhone 12 PRO")
+    # scrape( "iphone-12", "iPhone 12")
+    # scrape( "iphone-12-mini", "iPhone 12 Mini")
+
+    # scrape( "iphone-8-plus", "iPhone 8 PLUS")
+    # scrape( "iphone-7", "iPhone 7")
+    # scrape( "iphone-se", "iPhone Se")
+
+    # scrape( "apple-iphone-13-pro", "iPhone 13 PRO")
+    # scrape( "apple-iphone-13", "iPhone 13")
+    # scrape( "apple-iphone-13-mini", "iPhone 13 Mini")
+
+    scrape( "iphone-xr", "iPhone Xr")
+

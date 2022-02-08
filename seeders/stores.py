@@ -24,6 +24,11 @@ try:
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery , ("jumia","https://www.jumia.ma"))
 
+    # SQL query string
+    sqlQuery = "insert into stores(name, link) values (%s ,%s)"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery , ("electroplanet","https://www.electroplanet.ma/"))
+
     connectionObject.commit()
 except Exception as e:
     print("Exeception occured:{}".format(e))
