@@ -43,6 +43,15 @@ def scrape(link , prod_name , id_store , id_subcat):
         item_stockage_type = find_device_type_stockage(item_title)
         item_lenght = find_device_lenght(item_title)
         item_power = find_device_power(item_title)
+        res = requests.get(item_link)
+        sleep(5)
+        html = res.text
+        items = BS(
+            html,
+            features="html.parser"
+        )
+        items_details = items.find('div', {'class', 'product-tabs-content tabs-content std'})
+
         print("================= #{} ============".format(num+1))
         print("item_title = {}".format(item_title))
         print("item_link = {}".format(item_link))
@@ -59,6 +68,8 @@ def scrape(link , prod_name , id_store , id_subcat):
         print("item_stockage_type= {}".format(item_stockage_type))
         print("item_lenght= {}".format(item_lenght))
         print("item_power= {}".format(item_power))
+        # print("items_details= {}".format(items_details))
+
 
         try:
             myjson = dict()
@@ -84,13 +95,13 @@ def scrape(link , prod_name , id_store , id_subcat):
 
             jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
 
-            sql = "select current_price from items where slug = %s"
+            sql = "select current_price from items where name_in_store = %s"
             val = (item_title)
             mycursor.execute(sql, val)
             myresult = mycursor.fetchall()
             if(len(myresult) == 0):
-                sql = "INSERT INTO items (name ,slug,link, id_store ,id_subcategory ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
-                val = (prod_name, item_title, item_link, id_store, id_subcat, jsonStringify, "", image_item, item_price,scraped_at)
+                sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+                val = (prod_name, item_title, item_link, id_store, id_subcat, jsonStringify, items_details, image_item, item_price,scraped_at)
                 mycursor.execute(sql, val)
                 print("id = {}".format(
                     mycursor.lastrowid
@@ -103,13 +114,13 @@ def scrape(link , prod_name , id_store , id_subcat):
             else:
                 if(myresult[0][0] != item_price ):
 
-                    sql = "select id from items where slug = %s"
+                    sql = "select id from items where name_in_store = %s"
                     val = (item_title,)
                     mycursor.execute(sql, val)
                     myresult = mycursor.fetchall()
                     id = myresult[0][0]
 
-                    sql = "update items set current_price = %s , last_updated_at = %s where slug = %s"
+                    sql = "update items set current_price = %s , last_updated_at = %s where name_in_store = %s"
                     val = (item_price , scraped_at , item_title)
                     mycursor.execute(sql, val)
                     mydb.commit()
@@ -133,26 +144,26 @@ def scrape(link , prod_name , id_store , id_subcat):
 
 if __name__ == "__main__":
     #Uno Iphone
-    # for l in uno_iphones_links:
-    #     scrape( "{}".format(l['link']), "{}".format(l['product_name']) ,l["id_store"] , l["subcategory"])
-    #     sleep(20)
+    for l in uno_iphones_links:
+        scrape( "{}".format(l['link']), "{}".format(l['product_name']) ,l["id_store"] , l["subcategory"])
+        sleep(15)
 
-    # for l in uno_ipads_links:
-    #     scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-    #     sleep(20)
+    for l in uno_ipads_links:
+        scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
+        sleep(15)
 
-    # for l in uno_mac_links:
-    #     scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-    #     sleep(20)
+    for l in uno_mac_links:
+        scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
+        sleep(15)
 
-    # for l in uno_watches_links:
-    #     scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-    #     sleep(20)
+    for l in uno_watches_links:
+        scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
+        sleep(15)
 
-    # for l in uno_tvs_links:
-    #     scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-    #     sleep(20)
+    for l in uno_tvs_links:
+        scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
+        sleep(15)
 
     for l in uno_accessoires_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(20)
+        sleep(15)

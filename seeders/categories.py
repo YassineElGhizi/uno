@@ -14,7 +14,7 @@ try:
     cursorObject = connectionObject.cursor()
 
     # SQL query string
-    sqlQuery = "insert into Categories(name) values (\"iphone\")"
+    sqlQuery = "insert into Categories(name) values (\"smaprtphone & tablette\")"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
