@@ -4,7 +4,7 @@ import pymysql
 dbServerName = "127.0.0.1"
 dbUser = "root"
 dbPassword = ""
-dbName = "datalake"
+dbName = "supero_datalake"
 
 cusrorType = pymysql.cursors.DictCursor
 connectionObject = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,db=dbName, cursorclass=cusrorType)

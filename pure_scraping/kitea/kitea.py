@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup as BS
 from global_parametrs import *
 from time import sleep
+import random
 
 list_of_subcats_and_thier_links = list()
 res = requests.get("https://www.kitea.com/")
@@ -22,7 +23,6 @@ for i in all_categories_toscrape:
             d["link"] = x.get('href')
             list_of_subcats_and_thier_links.append(d)
 
-print("list_of_subcats_and_thier_links = {}".format(list_of_subcats_and_thier_links))
 
 def scrape():
     try:
@@ -47,15 +47,17 @@ def scrape():
             items_cards = items.findAll("div", {"class": "product-item-info"})
 
             for num, ic in enumerate(items_cards):
+                image_item = ic.find('img' , {'class' : 'product-image-photo'}).get('src')
                 item_link = ic.find('a' , {'class' : 'product photo product-item-photo'}).get('href')
                 res2 = requests.get(item_link)
-                sleep(5)
+                sleep(
+                    random.randint(4,7)
+                )
                 html2 = res2.text
                 new_page = BS(
                     html2,
                     features="html.parser"
                 )
-
 
                 item_name_instore = new_page.find('span' , {"class" : "base"}).get_text()
                 tmp = new_page.find('div' , {'class' : 'product-info-price'})
@@ -71,18 +73,8 @@ def scrape():
                 item_specification = tmp[1]
                 print("item_description = {}".format(item_description))
                 print("item_specification = {}".format(item_specification))
-                quit()
-
-
-
-                print("================{}============".format(num+1))
-                # print("item_brand = {}".format(item_brand))
-                print("item_ref = {}".format(item_ref))
-                print("item_price = {}".format(item_price))
-                # print("item_name = {}".format(item_name))
                 print("item_link = {}".format(item_link))
-                # print("image_item = {}".format(image_item))
-                print("\n")
+                print("image_item = {}".format(image_item))
 
                 try:
                     myjson = dict()
@@ -98,7 +90,7 @@ def scrape():
                     if(len(myresult) == 0):
                         # sql = "INSERT INTO items (name ,name_in_store,link, id_store ,id_subcategory ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
                         sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
-                        # val = (item_name, item_ref, item_link, id_store, id_subcat, jsonStringify, "", image_item, item_price,scraped_at)
+                        val = (item_name_instore, item_ref, item_link, 4, l["subcategory_in_site"], jsonStringify, item_description, image_item, item_price,scraped_at)
                         mycursor.execute(sql, val)
                         print("id = {}".format(
                             mycursor.lastrowid
@@ -118,7 +110,7 @@ def scrape():
                             id = myresult[0][0]
 
                             sql = "update items set current_price = %s , last_updated_at = %s where name_in_store = %s"
-                            # val = (item_price , scraped_at , item_name)
+                            val = (item_price , scraped_at , item_ref)
                             mycursor.execute(sql, val)
                             mydb.commit()
 
@@ -141,5 +133,4 @@ def scrape():
         pass
 
 if __name__ == "__main__":
-    #Uno Iphone
     scrape()

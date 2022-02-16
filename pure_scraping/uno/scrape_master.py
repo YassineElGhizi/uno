@@ -4,10 +4,22 @@ import requests
 from bs4 import BeautifulSoup as BS
 from global_parametrs import *
 from time import sleep
+import logging
+import random
 
-
+logging.basicConfig(filename='iris.log', level=logging.DEBUG,format='%(asctime)s:%(levelname)s:%(message)s')
 def scrape(link , prod_name , id_store , id_subcat):
-    res = requests.get("{}".format(link))
+
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36',
+        'accept': '*/*',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        'accept-language': 'en-US,en;q=0.9',
+    }
+
+    res = requests.get("{}".format(link) , headers=headers)
     html = res.text
 
     #DB Connexion
@@ -16,14 +28,13 @@ def scrape(link , prod_name , id_store , id_subcat):
         port=3306,
         user="root",
         password="",
-        database="datalake",
+        # database="datalake",
+        database="supero_datalake",
     )
-    mycursor = mydb.cursor()
 
-    items = BS(
-        html ,
-        features="html.parser"
-    )
+
+    mycursor = mydb.cursor()
+    items = BS(html ,features="html.parser")
 
     items_cards = items.findAll('li' , {'class' ,'item sale-product' }  )
 
@@ -43,13 +54,9 @@ def scrape(link , prod_name , id_store , id_subcat):
         item_stockage_type = find_device_type_stockage(item_title)
         item_lenght = find_device_lenght(item_title)
         item_power = find_device_power(item_title)
-        res = requests.get(item_link)
-        sleep(5)
-        html = res.text
-        items = BS(
-            html,
-            features="html.parser"
-        )
+        res = requests.get(item_link , headers=headers)
+        sleep(random.randint(4,7))
+        items = BS(res.text,features="html.parser")
         items_details = items.find('div', {'class', 'product-tabs-content tabs-content std'})
 
         print("================= #{} ============".format(num+1))
@@ -103,9 +110,7 @@ def scrape(link , prod_name , id_store , id_subcat):
                 sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
                 val = (prod_name, item_title, item_link, id_store, id_subcat, jsonStringify, items_details, image_item, item_price,scraped_at)
                 mycursor.execute(sql, val)
-                print("id = {}".format(
-                    mycursor.lastrowid
-                ))
+                print("id = {}".format(mycursor.lastrowid))
                 sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
                 val = (mycursor.lastrowid, item_price, scraped_at)
                 mycursor.execute(sql, val)
@@ -146,24 +151,24 @@ if __name__ == "__main__":
     #Uno Iphone
     for l in uno_iphones_links:
         scrape( "{}".format(l['link']), "{}".format(l['product_name']) ,l["id_store"] , l["subcategory"])
-        sleep(15)
+        sleep(random.randint(4,7))
 
     for l in uno_ipads_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(15)
+        sleep(random.randint(4,7))
 
     for l in uno_mac_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(15)
+        sleep(random.randint(4,7))
 
     for l in uno_watches_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(15)
+        sleep(random.randint(4,7))
 
     for l in uno_tvs_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(15)
+        sleep(random.randint(4,7))
 
     for l in uno_accessoires_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(15)
+        sleep(random.randint(4,7))
