@@ -57,12 +57,12 @@ uno_tvs_links = [
 
 uno_accessoires_links = [
     {"link": "https://uno.ma/accessoires-maroc/cables-chargeurs-maroc/", "product_name": "Cable Chargeur", "id_store": 1, "subcategory" : "chargeur"},
-    {"link": "https://uno.ma/accessoires-maroc/accessoires-iphone-maroc/", "product_name": "accessoires Iphone", "id_store": 1, "subcategory" : "chargeur"},
-    {"link": "https://uno.ma/accessoires-maroc/accessoires-mac-maroc/", "product_name": "accessoires Mac", "id_store": 1, "subcategory" : "chargeur"},
-    {"link": "https://uno.ma/accessoires-maroc/powerbank-maroc/", "product_name": "powerbank", "id_store": 1, "subcategory" : "chargeur"},
-    {"link": "https://uno.ma/accessoires-maroc/coques-etuis-iphone-maroc/", "product_name": "coques Iphone", "id_store": 1, "subcategory" : "chargeur"},
-    {"link": "https://uno.ma/accessoires-maroc/stockage-maroc/", "product_name": "Disque dur externe", "id_store": 1, "subcategory" : "chargeur"},
-    {"link": "https://uno.ma/accessoires-maroc/wacom-maroc/", "product_name": "Tablette Graphique", "id_store": 1, "subcategory" : "chargeur"},
+    {"link": "https://uno.ma/accessoires-maroc/accessoires-iphone-maroc/", "product_name": "accessoires Iphone", "id_store": 1, "subcategory" : "accessoires iphone"},
+    {"link": "https://uno.ma/accessoires-maroc/accessoires-mac-maroc/", "product_name": "accessoires Mac", "id_store": 1, "subcategory" : "accessoires mac"},
+    {"link": "https://uno.ma/accessoires-maroc/powerbank-maroc/", "product_name": "powerbank", "id_store": 1, "subcategory" : "powerbank"},
+    {"link": "https://uno.ma/accessoires-maroc/coques-etuis-iphone-maroc/", "product_name": "coques Iphone", "id_store": 1, "subcategory" : "coques iphone"},
+    {"link": "https://uno.ma/accessoires-maroc/stockage-maroc/", "product_name": "Disque dur externe", "id_store": 1, "subcategory" : "disque dur externe"},
+    {"link": "https://uno.ma/accessoires-maroc/wacom-maroc/", "product_name": "Tablette Graphique", "id_store": 1, "subcategory" : "tablette graphique"},
 ]
 
 items_present_in_page = dict()

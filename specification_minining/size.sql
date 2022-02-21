@@ -1,0 +1,10 @@
+insert into options (name, value, unit , id_parent) values ('1m' , '1' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('2m' , '2' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('3m' , '3' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('4m' , '4' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('5m' , '5' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('10m' , '10' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('15m' , '15' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('20m' , '20' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('50m' , '50' , 'm' , 4);
+insert into options (name, value, unit , id_parent) values ('100m' , '100' , 'm' , 4);

@@ -7,7 +7,7 @@ from time import sleep
 import logging
 import random
 
-logging.basicConfig(filename='iris.log', level=logging.DEBUG,format='%(asctime)s:%(levelname)s:%(message)s')
+logging.basicConfig(filename='uno_scraper.log', level=logging.DEBUG,format='%(asctime)s:%(levelname)s:%(message)s')
 def scrape(link , prod_name , id_store , id_subcat):
 
     headers = {
@@ -20,7 +20,6 @@ def scrape(link , prod_name , id_store , id_subcat):
     }
 
     res = requests.get("{}".format(link) , headers=headers)
-    html = res.text
 
     #DB Connexion
     mydb = pymysql.connect(
@@ -28,13 +27,11 @@ def scrape(link , prod_name , id_store , id_subcat):
         port=3306,
         user="root",
         password="",
-        # database="datalake",
-        database="supero_datalake",
+        database="supero_datalake2",
     )
 
-
     mycursor = mydb.cursor()
-    items = BS(html ,features="html.parser")
+    items = BS(res.text ,features="html.parser")
 
     items_cards = items.findAll('li' , {'class' ,'item sale-product' }  )
 
@@ -75,8 +72,6 @@ def scrape(link , prod_name , id_store , id_subcat):
         print("item_stockage_type= {}".format(item_stockage_type))
         print("item_lenght= {}".format(item_lenght))
         print("item_power= {}".format(item_power))
-        # print("items_details= {}".format(items_details))
-
 
         try:
             myjson = dict()
@@ -148,7 +143,6 @@ def scrape(link , prod_name , id_store , id_subcat):
 
 
 if __name__ == "__main__":
-    #Uno Iphone
     for l in uno_iphones_links:
         scrape( "{}".format(l['link']), "{}".format(l['product_name']) ,l["id_store"] , l["subcategory"])
         sleep(random.randint(4,7))
@@ -170,5 +164,9 @@ if __name__ == "__main__":
         sleep(random.randint(4,7))
 
     for l in uno_accessoires_links:
+        scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
+        sleep(random.randint(4,7))
+
+    for l in uno_headphones_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
         sleep(random.randint(4,7))
