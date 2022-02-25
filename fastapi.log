@@ -1,0 +1,730 @@
+2022-02-23 13:56:07,121:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:56:07,122:DEBUG:Using selector: SelectSelector
+2022-02-23 13:56:07,169:INFO:Started server process [10996]
+2022-02-23 13:56:07,169:INFO:Waiting for application startup.
+2022-02-23 13:56:07,169:INFO:Application startup complete.
+2022-02-23 13:56:13,873:INFO:Shutting down
+2022-02-23 13:56:13,981:INFO:Waiting for application shutdown.
+2022-02-23 13:56:13,982:INFO:Application shutdown complete.
+2022-02-23 13:56:13,982:INFO:Finished server process [10996]
+2022-02-23 13:56:14,831:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-23 13:56:14,832:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-23 13:56:14,832:INFO:Started reloader process [8748] using statreload
+2022-02-23 13:56:15,505:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:56:15,505:DEBUG:Using selector: SelectSelector
+2022-02-23 13:56:15,535:INFO:Started server process [8976]
+2022-02-23 13:56:15,535:INFO:Waiting for application startup.
+2022-02-23 13:56:15,535:INFO:Application startup complete.
+2022-02-23 13:57:21,788:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 13:57:22,418:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:57:22,418:DEBUG:Using selector: SelectSelector
+2022-02-23 13:57:22,450:INFO:Started server process [14200]
+2022-02-23 13:57:22,450:INFO:Waiting for application startup.
+2022-02-23 13:57:22,450:INFO:Application startup complete.
+2022-02-23 13:57:47,389:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 13:57:48,041:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:57:48,042:DEBUG:Using selector: SelectSelector
+2022-02-23 13:57:48,072:INFO:Started server process [10660]
+2022-02-23 13:57:48,072:INFO:Waiting for application startup.
+2022-02-23 13:57:48,072:INFO:Application startup complete.
+2022-02-23 13:58:17,395:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 13:58:18,030:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:58:18,030:DEBUG:Using selector: SelectSelector
+2022-02-23 13:58:18,076:INFO:Started server process [11504]
+2022-02-23 13:58:18,076:INFO:Waiting for application startup.
+2022-02-23 13:58:18,076:INFO:Application startup complete.
+2022-02-23 13:58:34,395:WARNING:StatReload detected file change in 'controllers\product__storeController.py'. Reloading...
+2022-02-23 13:58:35,246:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:58:35,247:DEBUG:Using selector: SelectSelector
+2022-02-23 13:58:35,285:INFO:Started server process [3792]
+2022-02-23 13:58:35,285:INFO:Waiting for application startup.
+2022-02-23 13:58:35,285:INFO:Application startup complete.
+2022-02-23 13:58:41,052:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 13:58:41,663:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 13:58:41,663:DEBUG:Using selector: SelectSelector
+2022-02-23 13:58:41,696:INFO:Started server process [11948]
+2022-02-23 13:58:41,696:INFO:Waiting for application startup.
+2022-02-23 13:58:41,696:INFO:Application startup complete.
+2022-02-23 14:12:16,731:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:12:17,305:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:12:17,306:DEBUG:Using selector: SelectSelector
+2022-02-23 14:12:17,336:INFO:Started server process [11380]
+2022-02-23 14:12:17,336:INFO:Waiting for application startup.
+2022-02-23 14:12:17,336:INFO:Application startup complete.
+2022-02-23 14:13:10,158:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:13:10,782:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:13:10,783:DEBUG:Using selector: SelectSelector
+2022-02-23 14:13:10,828:INFO:Started server process [14840]
+2022-02-23 14:13:10,828:INFO:Waiting for application startup.
+2022-02-23 14:13:10,828:INFO:Application startup complete.
+2022-02-23 14:13:10,968:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:13:11,508:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:13:12,327:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:13:12,328:DEBUG:Using selector: SelectSelector
+2022-02-23 14:13:12,357:INFO:Started server process [11744]
+2022-02-23 14:13:12,357:INFO:Waiting for application startup.
+2022-02-23 14:13:12,357:INFO:Application startup complete.
+2022-02-23 14:22:46,879:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-23 14:22:54,526:INFO:Stopping reloader process [8748]
+2022-02-23 14:34:45,472:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-23 14:34:45,473:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-23 14:34:45,473:INFO:Started reloader process [13732] using statreload
+2022-02-23 14:34:46,071:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:34:46,071:DEBUG:Using selector: SelectSelector
+2022-02-23 14:34:46,108:INFO:Started server process [6824]
+2022-02-23 14:34:46,108:INFO:Waiting for application startup.
+2022-02-23 14:34:46,108:INFO:Application startup complete.
+2022-02-23 14:38:08,842:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-23 14:38:09,448:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:38:09,449:DEBUG:Using selector: SelectSelector
+2022-02-23 14:38:09,481:INFO:Started server process [13340]
+2022-02-23 14:38:09,482:INFO:Waiting for application startup.
+2022-02-23 14:38:09,482:INFO:Application startup complete.
+2022-02-23 14:38:30,300:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-23 14:38:31,053:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:38:31,054:DEBUG:Using selector: SelectSelector
+2022-02-23 14:38:31,088:INFO:Started server process [11844]
+2022-02-23 14:38:31,088:INFO:Waiting for application startup.
+2022-02-23 14:38:31,088:INFO:Application startup complete.
+2022-02-23 14:41:40,306:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:41:41,527:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:41:41,527:DEBUG:Using selector: SelectSelector
+2022-02-23 14:41:41,649:INFO:Started server process [1824]
+2022-02-23 14:41:41,649:INFO:Waiting for application startup.
+2022-02-23 14:41:41,650:INFO:Application startup complete.
+2022-02-23 14:41:42,817:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:41:43,679:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:41:43,679:DEBUG:Using selector: SelectSelector
+2022-02-23 14:41:43,709:INFO:Started server process [12052]
+2022-02-23 14:41:43,709:INFO:Waiting for application startup.
+2022-02-23 14:41:43,710:INFO:Application startup complete.
+2022-02-23 14:43:13,557:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:43:14,408:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:43:14,409:DEBUG:Using selector: SelectSelector
+2022-02-23 14:43:14,547:INFO:Started server process [1388]
+2022-02-23 14:43:14,547:INFO:Waiting for application startup.
+2022-02-23 14:43:14,548:INFO:Application startup complete.
+2022-02-23 14:45:28,323:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:45:28,921:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:45:28,921:DEBUG:Using selector: SelectSelector
+2022-02-23 14:45:28,951:INFO:Started server process [10468]
+2022-02-23 14:45:28,951:INFO:Waiting for application startup.
+2022-02-23 14:45:28,951:INFO:Application startup complete.
+2022-02-23 14:45:37,593:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:45:38,330:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:45:38,330:DEBUG:Using selector: SelectSelector
+2022-02-23 14:45:38,361:INFO:Started server process [9960]
+2022-02-23 14:45:38,361:INFO:Waiting for application startup.
+2022-02-23 14:45:38,362:INFO:Application startup complete.
+2022-02-23 14:45:38,458:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:45:39,006:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:45:39,006:DEBUG:Using selector: SelectSelector
+2022-02-23 14:45:39,046:INFO:Started server process [9624]
+2022-02-23 14:45:39,046:INFO:Waiting for application startup.
+2022-02-23 14:45:39,046:INFO:Application startup complete.
+2022-02-23 14:48:34,579:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:48:35,436:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:48:35,436:DEBUG:Using selector: SelectSelector
+2022-02-23 14:48:35,466:INFO:Started server process [2800]
+2022-02-23 14:48:35,466:INFO:Waiting for application startup.
+2022-02-23 14:48:35,466:INFO:Application startup complete.
+2022-02-23 14:49:31,406:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 14:49:31,954:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:49:31,955:DEBUG:Using selector: SelectSelector
+2022-02-23 14:49:31,986:INFO:Started server process [6816]
+2022-02-23 14:49:31,986:INFO:Waiting for application startup.
+2022-02-23 14:49:31,986:INFO:Application startup complete.
+2022-02-23 14:49:44,337:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 14:49:44,989:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:49:44,990:DEBUG:Using selector: SelectSelector
+2022-02-23 14:49:45,020:INFO:Started server process [11328]
+2022-02-23 14:49:45,020:INFO:Waiting for application startup.
+2022-02-23 14:49:45,021:INFO:Application startup complete.
+2022-02-23 14:50:12,961:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:50:13,623:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:50:13,623:DEBUG:Using selector: SelectSelector
+2022-02-23 14:50:13,654:INFO:Started server process [1600]
+2022-02-23 14:50:13,654:INFO:Waiting for application startup.
+2022-02-23 14:50:13,655:INFO:Application startup complete.
+2022-02-23 14:50:23,010:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:50:23,820:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:50:23,821:DEBUG:Using selector: SelectSelector
+2022-02-23 14:50:23,850:INFO:Started server process [14396]
+2022-02-23 14:50:23,850:INFO:Waiting for application startup.
+2022-02-23 14:50:23,850:INFO:Application startup complete.
+2022-02-23 14:52:48,852:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 14:52:49,647:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 14:52:49,647:DEBUG:Using selector: SelectSelector
+2022-02-23 14:52:49,715:INFO:Started server process [13364]
+2022-02-23 14:52:49,715:INFO:Waiting for application startup.
+2022-02-23 14:52:49,715:INFO:Application startup complete.
+2022-02-23 14:53:46,759:INFO:Stopping reloader process [13732]
+2022-02-23 16:05:29,279:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-23 16:05:29,280:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-23 16:05:29,280:INFO:Started reloader process [14880] using statreload
+2022-02-23 16:05:29,933:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:05:29,934:DEBUG:Using selector: SelectSelector
+2022-02-23 16:05:29,978:INFO:Started server process [13512]
+2022-02-23 16:05:29,978:INFO:Waiting for application startup.
+2022-02-23 16:05:29,978:INFO:Application startup complete.
+2022-02-23 16:07:08,775:WARNING:StatReload detected file change in 'models\product__store.py'. Reloading...
+2022-02-23 16:08:55,048:WARNING:StatReload detected file change in 'models\product__store.py'. Reloading...
+2022-02-23 16:08:55,669:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:08:55,670:DEBUG:Using selector: SelectSelector
+2022-02-23 16:08:55,700:INFO:Started server process [8956]
+2022-02-23 16:08:55,700:INFO:Waiting for application startup.
+2022-02-23 16:08:55,701:INFO:Application startup complete.
+2022-02-23 16:09:09,566:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:09:18,012:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:10:08,108:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:10:13,712:INFO:Stopping reloader process [14880]
+2022-02-23 16:13:24,179:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-23 16:13:24,179:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-23 16:13:24,180:INFO:Started reloader process [5452] using statreload
+2022-02-23 16:13:24,677:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:13:24,677:DEBUG:Using selector: SelectSelector
+2022-02-23 16:13:24,706:INFO:Started server process [9384]
+2022-02-23 16:13:24,707:INFO:Waiting for application startup.
+2022-02-23 16:13:24,707:INFO:Application startup complete.
+2022-02-23 16:14:04,287:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:14:05,043:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:14:05,044:DEBUG:Using selector: SelectSelector
+2022-02-23 16:14:05,078:INFO:Started server process [10076]
+2022-02-23 16:14:05,078:INFO:Waiting for application startup.
+2022-02-23 16:14:05,078:INFO:Application startup complete.
+2022-02-23 16:17:50,801:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:17:51,713:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:17:51,713:DEBUG:Using selector: SelectSelector
+2022-02-23 16:17:51,742:INFO:Started server process [15912]
+2022-02-23 16:17:51,742:INFO:Waiting for application startup.
+2022-02-23 16:17:51,742:INFO:Application startup complete.
+2022-02-23 16:19:40,809:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:19:41,495:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:19:41,495:DEBUG:Using selector: SelectSelector
+2022-02-23 16:19:41,526:INFO:Started server process [10476]
+2022-02-23 16:19:41,526:INFO:Waiting for application startup.
+2022-02-23 16:19:41,526:INFO:Application startup complete.
+2022-02-23 16:21:41,160:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:21:41,968:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:21:41,972:DEBUG:Using selector: SelectSelector
+2022-02-23 16:21:42,077:INFO:Started server process [2780]
+2022-02-23 16:21:42,077:INFO:Waiting for application startup.
+2022-02-23 16:21:42,077:INFO:Application startup complete.
+2022-02-23 16:22:02,670:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:22:03,653:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:22:03,653:DEBUG:Using selector: SelectSelector
+2022-02-23 16:22:03,716:INFO:Started server process [14136]
+2022-02-23 16:22:03,717:INFO:Waiting for application startup.
+2022-02-23 16:22:03,717:INFO:Application startup complete.
+2022-02-23 16:22:14,942:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:22:15,528:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:22:15,528:DEBUG:Using selector: SelectSelector
+2022-02-23 16:22:15,559:INFO:Started server process [10328]
+2022-02-23 16:22:15,559:INFO:Waiting for application startup.
+2022-02-23 16:22:15,559:INFO:Application startup complete.
+2022-02-23 16:22:52,506:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:22:53,032:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:22:53,032:DEBUG:Using selector: SelectSelector
+2022-02-23 16:22:53,064:INFO:Started server process [8876]
+2022-02-23 16:22:53,064:INFO:Waiting for application startup.
+2022-02-23 16:22:53,064:INFO:Application startup complete.
+2022-02-23 16:22:53,822:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:22:54,352:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:22:54,352:DEBUG:Using selector: SelectSelector
+2022-02-23 16:22:54,382:INFO:Started server process [1088]
+2022-02-23 16:22:54,382:INFO:Waiting for application startup.
+2022-02-23 16:22:54,382:INFO:Application startup complete.
+2022-02-23 16:23:02,294:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:23:03,234:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:23:03,234:DEBUG:Using selector: SelectSelector
+2022-02-23 16:23:03,297:INFO:Started server process [11392]
+2022-02-23 16:23:03,297:INFO:Waiting for application startup.
+2022-02-23 16:23:03,297:INFO:Application startup complete.
+2022-02-23 16:24:12,603:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:24:13,415:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:24:13,415:DEBUG:Using selector: SelectSelector
+2022-02-23 16:24:13,447:INFO:Started server process [15896]
+2022-02-23 16:24:13,447:INFO:Waiting for application startup.
+2022-02-23 16:24:13,447:INFO:Application startup complete.
+2022-02-23 16:25:05,880:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:25:06,403:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:25:07,551:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:25:07,552:DEBUG:Using selector: SelectSelector
+2022-02-23 16:25:07,726:INFO:Started server process [12808]
+2022-02-23 16:25:07,727:INFO:Waiting for application startup.
+2022-02-23 16:25:07,727:INFO:Application startup complete.
+2022-02-23 16:25:08,831:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:25:09,371:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:25:09,371:DEBUG:Using selector: SelectSelector
+2022-02-23 16:25:09,378:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:25:10,477:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:25:10,478:DEBUG:Using selector: SelectSelector
+2022-02-23 16:25:10,580:INFO:Started server process [8300]
+2022-02-23 16:25:10,580:INFO:Waiting for application startup.
+2022-02-23 16:25:10,580:INFO:Application startup complete.
+2022-02-23 16:26:13,861:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:26:14,561:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:26:14,562:DEBUG:Using selector: SelectSelector
+2022-02-23 16:26:14,593:INFO:Started server process [7292]
+2022-02-23 16:26:14,593:INFO:Waiting for application startup.
+2022-02-23 16:26:14,593:INFO:Application startup complete.
+2022-02-23 16:26:17,574:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:26:18,193:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:26:18,194:DEBUG:Using selector: SelectSelector
+2022-02-23 16:26:18,292:INFO:Started server process [4380]
+2022-02-23 16:26:18,293:INFO:Waiting for application startup.
+2022-02-23 16:26:18,293:INFO:Application startup complete.
+2022-02-23 16:27:38,246:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:27:38,908:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:27:38,912:DEBUG:Using selector: SelectSelector
+2022-02-23 16:27:39,061:INFO:Started server process [15684]
+2022-02-23 16:27:39,062:INFO:Waiting for application startup.
+2022-02-23 16:27:39,062:INFO:Application startup complete.
+2022-02-23 16:28:33,466:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:28:34,302:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:28:34,302:DEBUG:Using selector: SelectSelector
+2022-02-23 16:28:34,393:INFO:Started server process [9940]
+2022-02-23 16:28:34,393:INFO:Waiting for application startup.
+2022-02-23 16:28:34,393:INFO:Application startup complete.
+2022-02-23 16:29:29,022:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:29:29,925:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:29:29,926:DEBUG:Using selector: SelectSelector
+2022-02-23 16:29:29,973:INFO:Started server process [2056]
+2022-02-23 16:29:29,974:INFO:Waiting for application startup.
+2022-02-23 16:29:29,974:INFO:Application startup complete.
+2022-02-23 16:30:05,153:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:30:05,822:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:30:05,822:DEBUG:Using selector: SelectSelector
+2022-02-23 16:30:05,893:INFO:Started server process [7344]
+2022-02-23 16:30:05,894:INFO:Waiting for application startup.
+2022-02-23 16:30:05,894:INFO:Application startup complete.
+2022-02-23 16:31:24,670:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:31:25,294:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:31:25,294:DEBUG:Using selector: SelectSelector
+2022-02-23 16:31:25,371:INFO:Started server process [6560]
+2022-02-23 16:31:25,373:INFO:Waiting for application startup.
+2022-02-23 16:31:25,375:INFO:Application startup complete.
+2022-02-23 16:31:44,323:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:31:44,893:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:31:44,893:DEBUG:Using selector: SelectSelector
+2022-02-23 16:31:44,926:INFO:Started server process [1312]
+2022-02-23 16:31:44,926:INFO:Waiting for application startup.
+2022-02-23 16:31:44,926:INFO:Application startup complete.
+2022-02-23 16:32:04,963:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:32:05,614:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:32:05,614:DEBUG:Using selector: SelectSelector
+2022-02-23 16:32:05,647:INFO:Started server process [11148]
+2022-02-23 16:32:05,647:INFO:Waiting for application startup.
+2022-02-23 16:32:05,647:INFO:Application startup complete.
+2022-02-23 16:32:06,852:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:32:07,447:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:32:07,447:DEBUG:Using selector: SelectSelector
+2022-02-23 16:32:07,510:INFO:Started server process [10448]
+2022-02-23 16:32:07,510:INFO:Waiting for application startup.
+2022-02-23 16:32:07,510:INFO:Application startup complete.
+2022-02-23 16:32:10,824:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:32:11,424:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:32:11,425:DEBUG:Using selector: SelectSelector
+2022-02-23 16:32:11,459:INFO:Started server process [13832]
+2022-02-23 16:32:11,459:INFO:Waiting for application startup.
+2022-02-23 16:32:11,459:INFO:Application startup complete.
+2022-02-23 16:32:24,550:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:32:25,283:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:32:25,284:DEBUG:Using selector: SelectSelector
+2022-02-23 16:32:25,324:INFO:Started server process [12928]
+2022-02-23 16:32:25,324:INFO:Waiting for application startup.
+2022-02-23 16:32:25,324:INFO:Application startup complete.
+2022-02-23 16:33:00,548:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 24, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 68, in storeProduct
+    await storeProduct__store(uno_store_id ,bulk_insert, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product__storeController.py", line 36, in storeProduct__store
+    await store_price_hostory(prod_list, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product_historyController.py", line 55, in store_price_hostory
+    s.commit()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3363, in flush
+    self._flush(objects)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3463, in _flush
+    flush_context.execute()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 244, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1096, in _emit_insert_statements
+    c = connection._execute_20(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1054, "Unknown column 'id' in 'field list'")
+[SQL: INSERT INTO price_histories (id, `Best_price`) VALUES (%s, %s)]
+[parameters: (418199, Decimal('10990.00'))]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-02-23 16:34:02,021:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:34:02,993:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:34:02,994:DEBUG:Using selector: SelectSelector
+2022-02-23 16:34:03,024:INFO:Started server process [6320]
+2022-02-23 16:34:03,025:INFO:Waiting for application startup.
+2022-02-23 16:34:03,025:INFO:Application startup complete.
+2022-02-23 16:34:26,564:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:34:27,170:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:34:27,171:DEBUG:Using selector: SelectSelector
+2022-02-23 16:34:27,209:INFO:Started server process [10328]
+2022-02-23 16:34:27,210:INFO:Waiting for application startup.
+2022-02-23 16:34:27,210:INFO:Application startup complete.
+2022-02-23 16:34:38,911:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:34:39,585:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:34:39,585:DEBUG:Using selector: SelectSelector
+2022-02-23 16:34:39,683:INFO:Started server process [16312]
+2022-02-23 16:34:39,683:INFO:Waiting for application startup.
+2022-02-23 16:34:39,683:INFO:Application startup complete.
+2022-02-23 16:35:00,608:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:35:01,174:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:35:01,175:DEBUG:Using selector: SelectSelector
+2022-02-23 16:35:01,210:INFO:Started server process [1784]
+2022-02-23 16:35:01,210:INFO:Waiting for application startup.
+2022-02-23 16:35:01,211:INFO:Application startup complete.
+2022-02-23 16:38:20,551:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:38:21,354:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:38:21,355:DEBUG:Using selector: SelectSelector
+2022-02-23 16:38:21,387:INFO:Started server process [12712]
+2022-02-23 16:38:21,387:INFO:Waiting for application startup.
+2022-02-23 16:38:21,387:INFO:Application startup complete.
+2022-02-23 16:38:25,349:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:38:40,444:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:38:49,985:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:38:51,599:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:39:13,063:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:39:26,327:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:39:56,443:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:40:38,304:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:41:10,389:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:41:39,888:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:41:40,944:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:41:42,258:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:41:50,978:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:41:54,410:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:42:25,157:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:42:36,254:INFO:Stopping reloader process [5452]
+2022-02-23 16:43:25,819:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-23 16:43:25,819:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-23 16:43:25,819:INFO:Started reloader process [15544] using statreload
+2022-02-23 16:43:26,350:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:43:26,350:DEBUG:Using selector: SelectSelector
+2022-02-23 16:43:26,382:INFO:Started server process [9192]
+2022-02-23 16:43:26,382:INFO:Waiting for application startup.
+2022-02-23 16:43:26,382:INFO:Application startup complete.
+2022-02-23 16:43:41,064:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 24, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 68, in storeProduct
+    await storeProduct__store(uno_store_id ,bulk_insert, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product__storeController.py", line 36, in storeProduct__store
+    await store_price_hostory(prod_list, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product_historyController.py", line 53, in store_price_hostory
+    ph.__store_to_db__()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\models\price_history.py", line 37, in __store_to_db__
+    mycursor.execute(sql, val)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'supero_datalake2.price_histories' doesn't exist")
+2022-02-23 16:45:11,285:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:45:12,345:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:45:12,345:DEBUG:Using selector: SelectSelector
+2022-02-23 16:45:12,374:INFO:Started server process [16180]
+2022-02-23 16:45:12,374:INFO:Waiting for application startup.
+2022-02-23 16:45:12,374:INFO:Application startup complete.
+2022-02-23 16:47:26,647:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:47:27,423:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:47:27,424:DEBUG:Using selector: SelectSelector
+2022-02-23 16:47:27,458:INFO:Started server process [16080]
+2022-02-23 16:47:27,458:INFO:Waiting for application startup.
+2022-02-23 16:47:27,459:INFO:Application startup complete.
+2022-02-23 16:49:24,247:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:49:24,813:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:49:24,813:DEBUG:Using selector: SelectSelector
+2022-02-23 16:49:24,843:INFO:Started server process [16276]
+2022-02-23 16:49:24,843:INFO:Waiting for application startup.
+2022-02-23 16:49:24,843:INFO:Application startup complete.
+2022-02-23 16:49:31,158:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:49:31,951:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:49:31,952:DEBUG:Using selector: SelectSelector
+2022-02-23 16:49:31,985:INFO:Started server process [15856]
+2022-02-23 16:49:31,985:INFO:Waiting for application startup.
+2022-02-23 16:49:31,985:INFO:Application startup complete.
+2022-02-23 16:49:34,100:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:49:35,039:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:49:35,039:DEBUG:Using selector: SelectSelector
+2022-02-23 16:49:35,081:INFO:Started server process [9192]
+2022-02-23 16:49:35,081:INFO:Waiting for application startup.
+2022-02-23 16:49:35,082:INFO:Application startup complete.
+2022-02-23 16:49:58,918:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:49:59,460:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:49:59,461:DEBUG:Using selector: SelectSelector
+2022-02-23 16:49:59,507:INFO:Started server process [16176]
+2022-02-23 16:49:59,507:INFO:Waiting for application startup.
+2022-02-23 16:49:59,507:INFO:Application startup complete.
+2022-02-23 16:50:52,235:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:50:52,819:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:50:52,819:DEBUG:Using selector: SelectSelector
+2022-02-23 16:50:52,904:INFO:Started server process [11476]
+2022-02-23 16:50:52,904:INFO:Waiting for application startup.
+2022-02-23 16:50:52,904:INFO:Application startup complete.
+2022-02-23 16:51:02,273:WARNING:StatReload detected file change in 'models\price_history.py'. Reloading...
+2022-02-23 16:51:02,895:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:51:02,896:DEBUG:Using selector: SelectSelector
+2022-02-23 16:51:02,926:INFO:Started server process [12292]
+2022-02-23 16:51:02,926:INFO:Waiting for application startup.
+2022-02-23 16:51:02,926:INFO:Application startup complete.
+2022-02-23 16:55:43,040:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:55:43,976:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:55:43,977:DEBUG:Using selector: SelectSelector
+2022-02-23 16:55:44,009:INFO:Started server process [15296]
+2022-02-23 16:55:44,010:INFO:Waiting for application startup.
+2022-02-23 16:55:44,010:INFO:Application startup complete.
+2022-02-23 16:56:16,965:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:56:17,728:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:56:17,728:DEBUG:Using selector: SelectSelector
+2022-02-23 16:56:17,757:INFO:Started server process [3500]
+2022-02-23 16:56:17,757:INFO:Waiting for application startup.
+2022-02-23 16:56:17,758:INFO:Application startup complete.
+2022-02-23 16:56:30,061:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:56:30,658:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 16:56:30,658:DEBUG:Using selector: SelectSelector
+2022-02-23 16:56:30,689:INFO:Started server process [9784]
+2022-02-23 16:56:30,690:INFO:Waiting for application startup.
+2022-02-23 16:56:30,690:INFO:Application startup complete.
+2022-02-23 16:57:48,360:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:57:53,596:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:57:58,095:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:58:06,618:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 16:59:30,929:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:00:25,739:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:01:01,684:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:01:06,503:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:01:10,470:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:01:19,492:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:01:59,173:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:02:36,769:INFO:Stopping reloader process [15544]
+2022-02-23 17:02:50,710:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-23 17:02:50,711:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-23 17:02:50,711:INFO:Started reloader process [9300] using statreload
+2022-02-23 17:02:51,251:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 17:02:51,251:DEBUG:Using selector: SelectSelector
+2022-02-23 17:02:51,281:INFO:Started server process [1720]
+2022-02-23 17:02:51,282:INFO:Waiting for application startup.
+2022-02-23 17:02:51,282:INFO:Application startup complete.
+2022-02-23 17:02:55,462:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:02:56,374:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 17:02:56,375:DEBUG:Using selector: SelectSelector
+2022-02-23 17:02:56,405:INFO:Started server process [14176]
+2022-02-23 17:02:56,405:INFO:Waiting for application startup.
+2022-02-23 17:02:56,406:INFO:Application startup complete.
+2022-02-23 17:04:30,222:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 24, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 68, in storeProduct
+    await storeProduct__store(uno_store_id ,bulk_insert, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product__storeController.py", line 36, in storeProduct__store
+    await store_price_hostory(prod_list, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product_historyController.py", line 57, in store_price_hostory
+    pd_prices_from_tuple_to_list = list(pd_prices[0])
+IndexError: list index out of range
+2022-02-23 17:06:06,600:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 24, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 68, in storeProduct
+    await storeProduct__store(uno_store_id ,bulk_insert, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product__storeController.py", line 36, in storeProduct__store
+    await store_price_hostory(prod_list, prices)
+  File "C:\Users\el_ghizi_yassine\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\product_historyController.py", line 57, in store_price_hostory
+    pd_prices_from_tuple_to_list = list(pd_prices[0])
+IndexError: list index out of range
+2022-02-23 17:07:39,963:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 17:07:40,661:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-23 17:07:40,662:DEBUG:Using selector: SelectSelector
+2022-02-23 17:07:40,699:INFO:Started server process [9432]
+2022-02-23 17:07:40,700:INFO:Waiting for application startup.
+2022-02-23 17:07:40,700:INFO:Application startup complete.
+2022-02-23 17:07:47,412:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 17:07:52,433:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 17:10:38,818:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 17:10:52,124:WARNING:StatReload detected file change in 'controllers\product__storeController.py'. Reloading...
+2022-02-23 17:11:58,063:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:14:33,733:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-23 17:16:55,131:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:16:56,274:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:17:21,694:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:17:25,902:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-23 17:17:28,930:INFO:Stopping reloader process [9300]

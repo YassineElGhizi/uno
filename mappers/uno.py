@@ -1,5 +1,6 @@
-import pymysql
 import time
+
+import pymysql
 import requests
 import json
 from Helpers.uno import *
@@ -15,14 +16,41 @@ logging.basicConfig(
     datefmt='%m/%d/%Y %I:%M:%S %p'
 )
 
+
+
+#GETTING THE JWT TOKEN
+print("[+] preparing to get token")
+mapper_credetials = {
+  "username": "uno_mapper",
+  "password": "unoMapperSupero2022"
+}
+login_url = "http://localhost:9999/login"
+token : str
+payload = json.dumps(mapper_credetials)
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", login_url, headers=headers, data=payload)
+if response.status_code == 401:
+    print("[-] err 401 : Invalid username and/or password")
+    quit()
+print("[+] token recieved with success")
+token = json.loads(response.text)['token']
+
+
 #Global Conf
 url = "http://127.0.0.1:9999/options?website=uno"
 url_post = "http://127.0.0.1:9999/products?website=uno"
 
-headers = {'Content-Type': 'application/json'}
-response = requests.request("GET", url)
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {token}'
+}
+response = requests.request("GET", url , headers=headers)
 tmp = json.loads(response.text)
 obe_by_req = 100
+apple_id = 33
 
 mydb = pymysql.connect(
     host="127.0.0.1",
@@ -91,12 +119,18 @@ for t in tmp:
 
 for r in results:
     tmp_d = {}
+    item_options = []
+
     tmp_d["current_price"] = r["current_price"]
     tmp_d["category_in_store"] = r["category_in_store"]
+    if tmp_d["category_in_store"] == 'iphone':
+        tmp_d["brand_id"] = apple_id
     tmp_d["link"] = r["link"]
     tmp_d["prod_name"] = r["prod_name"]
     tmp_d["image_url"] = r["image_url"]
     tmp_d["current_price"] = r["current_price"]
+    tmp_d["name_in_store"] = r["name_in_store"]
+    tmp_d["details"] = r["details"]
     id_gatantie = None
     id_color = None
     id_ram = None
@@ -132,21 +166,30 @@ for r in results:
 
     if id_gatantie != None:
         tmp_d['id_gatantie'] = id_gatantie
+        item_options.append(id_gatantie)
     if id_color != None:
         tmp_d['id_color'] = id_color
+        item_options.append(id_color)
     if id_ram != None:
         tmp_d['id_ram'] = id_ram
+        item_options.append(id_ram)
     if id_stockage != None:
         tmp_d['id_stockage'] = id_stockage
+        item_options.append(id_stockage)
     if id_connexion_adapter != None:
         tmp_d['id_connexion_adapter'] = id_connexion_adapter
+        item_options.append(id_connexion_adapter)
     if id_screen_size != None:
         tmp_d['id_screen_size'] = id_screen_size
+        item_options.append(id_screen_size)
     if id_stockage_type != None:
         tmp_d['id_stockage_type'] = id_stockage_type
+        item_options.append(id_stockage_type)
     if id_power != None:
         tmp_d['id_power'] = id_power
+        item_options.append(id_power)
 
+    tmp_d['options'] = item_options
     res_to_post_fastapi.append(tmp_d)
 
 logging.info(f"MAPPED {len(res_to_post_fastapi)} ITEMS")
@@ -168,12 +211,11 @@ for num , k in enumerate(res_to_post_fastapi):
         continue
 
 
-
-
 for r in reqs:
     payload = json.dumps(r)
     response = requests.request("POST", url_post, headers=headers, data=payload)
-    print(f"response.text = {response.text}")
+    print(response.text)
+    print(f"response.elapsed.total_seconds() = {response.elapsed.total_seconds()}")
     quit()
     # time.sleep(100)
     pass

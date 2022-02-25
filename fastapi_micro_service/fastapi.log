@@ -1,0 +1,215 @@
+2022-02-24 12:23:59,056:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-02-24 12:23:59,690:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-24 12:23:59,691:DEBUG:Using selector: SelectSelector
+2022-02-24 12:23:59,729:INFO:Started server process [10756]
+2022-02-24 12:23:59,729:INFO:Waiting for application startup.
+2022-02-24 12:23:59,729:INFO:Application startup complete.
+2022-02-24 12:27:24,991:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-24 12:27:24,991:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-24 16:06:33,636:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-24 16:06:33,636:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-24 16:06:33,636:INFO:Started reloader process [7728] using statreload
+2022-02-24 16:06:34,216:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-24 16:06:34,216:DEBUG:Using selector: SelectSelector
+2022-02-24 16:06:34,265:INFO:Started server process [5732]
+2022-02-24 16:06:34,265:INFO:Waiting for application startup.
+2022-02-24 16:06:34,265:INFO:Application startup complete.
+2022-02-24 16:06:44,343:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-24 16:06:44,351:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 12:36:43,355:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-25 12:36:43,355:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-25 12:36:43,355:INFO:Started reloader process [2672] using statreload
+2022-02-25 12:36:44,142:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 12:36:44,142:DEBUG:Using selector: SelectSelector
+2022-02-25 12:36:44,197:INFO:Started server process [8740]
+2022-02-25 12:36:44,197:INFO:Waiting for application startup.
+2022-02-25 12:36:44,197:INFO:Application startup complete.
+2022-02-25 12:39:52,116:INFO:Shutting down
+2022-02-25 12:39:52,224:INFO:Waiting for application shutdown.
+2022-02-25 12:39:52,224:INFO:Application shutdown complete.
+2022-02-25 12:39:52,225:INFO:Finished server process [8740]
+2022-02-25 12:39:52,306:INFO:Stopping reloader process [2672]
+2022-02-25 12:39:53,351:INFO:Will watch for changes in these directories: ['C:\\Users\\el_ghizi_yassine\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-02-25 12:39:53,352:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-02-25 12:39:53,352:INFO:Started reloader process [13648] using statreload
+2022-02-25 12:39:54,232:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 12:39:54,233:DEBUG:Using selector: SelectSelector
+2022-02-25 12:39:54,284:INFO:Started server process [9316]
+2022-02-25 12:39:54,284:INFO:Waiting for application startup.
+2022-02-25 12:39:54,284:INFO:Application startup complete.
+2022-02-25 12:40:09,561:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 12:40:09,562:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 13:30:50,409:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:30:51,494:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:30:51,494:DEBUG:Using selector: SelectSelector
+2022-02-25 13:30:51,533:INFO:Started server process [5620]
+2022-02-25 13:30:51,533:INFO:Waiting for application startup.
+2022-02-25 13:30:51,533:INFO:Application startup complete.
+2022-02-25 13:32:12,000:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:32:13,024:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:32:13,025:DEBUG:Using selector: SelectSelector
+2022-02-25 13:32:13,071:INFO:Started server process [9176]
+2022-02-25 13:32:13,072:INFO:Waiting for application startup.
+2022-02-25 13:32:13,072:INFO:Application startup complete.
+2022-02-25 13:32:18,900:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:32:26,417:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:32:27,279:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:32:27,279:DEBUG:Using selector: SelectSelector
+2022-02-25 13:32:27,320:INFO:Started server process [15748]
+2022-02-25 13:32:27,321:INFO:Waiting for application startup.
+2022-02-25 13:32:27,321:INFO:Application startup complete.
+2022-02-25 13:32:41,030:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:32:42,058:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:32:42,059:DEBUG:Using selector: SelectSelector
+2022-02-25 13:32:42,100:INFO:Started server process [10544]
+2022-02-25 13:32:42,100:INFO:Waiting for application startup.
+2022-02-25 13:32:42,101:INFO:Application startup complete.
+2022-02-25 13:34:13,162:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:34:14,125:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:34:14,125:DEBUG:Using selector: SelectSelector
+2022-02-25 13:34:14,169:INFO:Started server process [3220]
+2022-02-25 13:34:14,169:INFO:Waiting for application startup.
+2022-02-25 13:34:14,169:INFO:Application startup complete.
+2022-02-25 13:34:17,781:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:34:18,760:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:34:18,761:DEBUG:Using selector: SelectSelector
+2022-02-25 13:34:18,837:INFO:Started server process [3808]
+2022-02-25 13:34:18,837:INFO:Waiting for application startup.
+2022-02-25 13:34:18,837:INFO:Application startup complete.
+2022-02-25 13:35:21,140:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-25 13:35:21,976:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-25 13:35:34,969:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-25 13:35:36,017:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:35:36,017:DEBUG:Using selector: SelectSelector
+2022-02-25 13:35:36,061:INFO:Started server process [9880]
+2022-02-25 13:35:36,061:INFO:Waiting for application startup.
+2022-02-25 13:35:36,061:INFO:Application startup complete.
+2022-02-25 13:35:38,728:WARNING:StatReload detected file change in 'models\produit.py'. Reloading...
+2022-02-25 13:35:39,748:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:35:39,748:DEBUG:Using selector: SelectSelector
+2022-02-25 13:35:39,789:INFO:Started server process [11536]
+2022-02-25 13:35:39,789:INFO:Waiting for application startup.
+2022-02-25 13:35:39,790:INFO:Application startup complete.
+2022-02-25 13:36:05,452:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:36:06,647:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:36:06,647:DEBUG:Using selector: SelectSelector
+2022-02-25 13:36:06,688:INFO:Started server process [12452]
+2022-02-25 13:36:06,689:INFO:Waiting for application startup.
+2022-02-25 13:36:06,689:INFO:Application startup complete.
+2022-02-25 13:36:19,272:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:36:20,265:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:36:20,265:DEBUG:Using selector: SelectSelector
+2022-02-25 13:36:20,312:INFO:Started server process [10284]
+2022-02-25 13:36:20,313:INFO:Waiting for application startup.
+2022-02-25 13:36:20,313:INFO:Application startup complete.
+2022-02-25 13:37:09,423:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 13:37:10,448:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 13:37:10,448:DEBUG:Using selector: SelectSelector
+2022-02-25 13:37:10,496:INFO:Started server process [15640]
+2022-02-25 13:37:10,497:INFO:Waiting for application startup.
+2022-02-25 13:37:10,497:INFO:Application startup complete.
+2022-02-25 13:37:32,439:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 13:37:32,439:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 14:54:21,498:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 14:54:22,900:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 14:54:22,900:DEBUG:Using selector: SelectSelector
+2022-02-25 14:54:22,945:INFO:Started server process [12708]
+2022-02-25 14:54:22,946:INFO:Waiting for application startup.
+2022-02-25 14:54:22,946:INFO:Application startup complete.
+2022-02-25 14:54:35,315:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 14:54:36,350:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 14:54:36,350:DEBUG:Using selector: SelectSelector
+2022-02-25 14:54:36,394:INFO:Started server process [12872]
+2022-02-25 14:54:36,394:INFO:Waiting for application startup.
+2022-02-25 14:54:36,394:INFO:Application startup complete.
+2022-02-25 14:54:41,125:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 14:54:42,645:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 14:54:42,646:DEBUG:Using selector: SelectSelector
+2022-02-25 14:54:42,741:INFO:Started server process [4540]
+2022-02-25 14:54:42,741:INFO:Waiting for application startup.
+2022-02-25 14:54:42,742:INFO:Application startup complete.
+2022-02-25 14:55:34,595:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 14:55:34,596:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 14:56:42,538:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 14:56:43,864:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 14:56:43,865:DEBUG:Using selector: SelectSelector
+2022-02-25 14:56:43,904:INFO:Started server process [532]
+2022-02-25 14:56:43,905:INFO:Waiting for application startup.
+2022-02-25 14:56:43,905:INFO:Application startup complete.
+2022-02-25 14:57:07,544:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 14:57:08,556:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 14:57:08,556:DEBUG:Using selector: SelectSelector
+2022-02-25 14:57:08,600:INFO:Started server process [13600]
+2022-02-25 14:57:08,601:INFO:Waiting for application startup.
+2022-02-25 14:57:08,601:INFO:Application startup complete.
+2022-02-25 14:57:11,040:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-02-25 14:57:12,700:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 14:57:12,701:DEBUG:Using selector: SelectSelector
+2022-02-25 14:57:12,775:INFO:Started server process [12300]
+2022-02-25 14:57:12,777:INFO:Waiting for application startup.
+2022-02-25 14:57:12,788:INFO:Application startup complete.
+2022-02-25 14:57:20,582:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 14:57:20,583:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 15:03:16,349:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:03:22,592:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:03:23,741:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:03:24,762:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:03:24,763:DEBUG:Using selector: SelectSelector
+2022-02-25 15:03:24,805:INFO:Started server process [6916]
+2022-02-25 15:03:24,805:INFO:Waiting for application startup.
+2022-02-25 15:03:24,805:INFO:Application startup complete.
+2022-02-25 15:03:44,641:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:03:45,560:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:03:45,560:DEBUG:Using selector: SelectSelector
+2022-02-25 15:03:45,604:INFO:Started server process [644]
+2022-02-25 15:03:45,604:INFO:Waiting for application startup.
+2022-02-25 15:03:45,604:INFO:Application startup complete.
+2022-02-25 15:03:57,536:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 15:03:57,537:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 15:14:07,343:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:14:08,463:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:14:08,464:DEBUG:Using selector: SelectSelector
+2022-02-25 15:14:08,548:INFO:Started server process [12748]
+2022-02-25 15:14:08,548:INFO:Waiting for application startup.
+2022-02-25 15:14:08,549:INFO:Application startup complete.
+2022-02-25 15:14:25,477:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:14:26,686:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:14:26,686:DEBUG:Using selector: SelectSelector
+2022-02-25 15:14:26,729:INFO:Started server process [580]
+2022-02-25 15:14:26,729:INFO:Waiting for application startup.
+2022-02-25 15:14:26,729:INFO:Application startup complete.
+2022-02-25 15:14:58,673:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:14:59,657:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:14:59,657:DEBUG:Using selector: SelectSelector
+2022-02-25 15:14:59,699:INFO:Started server process [12392]
+2022-02-25 15:14:59,699:INFO:Waiting for application startup.
+2022-02-25 15:14:59,699:INFO:Application startup complete.
+2022-02-25 15:15:24,869:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 15:15:24,869:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 15:16:20,650:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:16:22,463:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:16:22,463:DEBUG:Using selector: SelectSelector
+2022-02-25 15:16:22,522:INFO:Started server process [1672]
+2022-02-25 15:16:22,522:INFO:Waiting for application startup.
+2022-02-25 15:16:22,522:INFO:Application startup complete.
+2022-02-25 15:16:38,329:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 15:16:38,329:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 15:17:15,676:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:17:26,603:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 15:17:27,536:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 15:17:27,536:DEBUG:Using selector: SelectSelector
+2022-02-25 15:17:27,593:INFO:Started server process [15660]
+2022-02-25 15:17:27,593:INFO:Waiting for application startup.
+2022-02-25 15:17:27,593:INFO:Application startup complete.
+2022-02-25 15:17:50,333:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-02-25 15:17:50,334:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-02-25 17:59:49,795:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 17:59:50,899:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 18:01:12,737:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 18:01:15,739:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 18:01:16,706:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 18:01:16,707:DEBUG:Using selector: SelectSelector
+2022-02-25 18:01:16,766:INFO:Started server process [18296]
+2022-02-25 18:01:16,767:INFO:Waiting for application startup.
+2022-02-25 18:01:16,767:INFO:Application startup complete.
+2022-02-25 18:01:23,759:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
