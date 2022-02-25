@@ -213,3 +213,8 @@
 2022-02-25 18:01:16,767:INFO:Waiting for application startup.
 2022-02-25 18:01:16,767:INFO:Application startup complete.
 2022-02-25 18:01:23,759:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-02-25 18:01:24,593:WARNING:The --reload flag should not be used in production on Windows.
+2022-02-25 18:01:24,593:DEBUG:Using selector: SelectSelector
+2022-02-25 18:01:24,627:INFO:Started server process [12700]
+2022-02-25 18:01:24,627:INFO:Waiting for application startup.
+2022-02-25 18:01:24,627:INFO:Application startup complete.
