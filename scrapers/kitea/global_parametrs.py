@@ -1,19 +1,7 @@
 import datetime
 
-#GLOBAL Vars
-electroplanet_préparation_culinaire = [
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/batteur" , "id_store" : 3,"subcategory" : "Batteur"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/blender" , "id_store" : 3,"subcategory" : "Blender"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/hache-viande" , "id_store" : 3,"subcategory" : "Hache viande"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/hachoir" , "id_store" : 3,"subcategory" : "Hachoir"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/kitchen-machine" , "id_store" : 3,"subcategory" : "Kitchen machine"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/mixeur-plongeant" , "id_store" : 3,"subcategory" : "Mixeur plongeant"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/moulinette" , "id_store" : 3,"subcategory" : "Moulinette"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/robot-de-cuisine" , "id_store" : 3,"subcategory" : "Robot de cuisine"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/sorbetiere" , "id_store" : 3,"subcategory" : "Sorbetière"},
-    { "link" : "https://www.electroplanet.ma/petit-electromenager/preparation-culinaire/yaourtiere" , "id_store" : 3,"subcategory" : "Yaourtière"},
-]
 
+#Global varibales
 items_present_in_page = dict()
 cards_links = list()
 

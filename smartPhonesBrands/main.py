@@ -12,7 +12,7 @@ for a in brand_cards:
     try:
         if 'Mobile Phones' in a.get_text():
             print(
-                f"insert into brands(names, Specialite, description, logo) values ('{a.get_text().replace('Mobile Phones' , '').strip()}' , '[\"5\"]' , '' , '');"
+                f"insert into brands(name, Specialite, description, logo) values ('{a.get_text().replace('Mobile Phones' , '').strip()}' , '[\"5\"]' , '' , '');"
             )
     except:
         pass

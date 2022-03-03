@@ -37,11 +37,6 @@ try:
     # SQL query string
     sqlQuery = "insert into stores(name, link) values (%s ,%s)"
     # Execute the sqlQuery
-    cursorObject.execute(sqlQuery , ("kitea","https://www.electroplanet.ma/"))
-
-    # SQL query string
-    sqlQuery = "insert into stores(name, link) values (%s ,%s)"
-    # Execute the sqlQuery
     cursorObject.execute(sqlQuery , ("bricoma","https://www.electroplanet.ma/"))
 
     # SQL query string

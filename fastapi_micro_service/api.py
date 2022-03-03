@@ -2,6 +2,8 @@ from fastapi import FastAPI, Body, HTTPException, Depends
 import uvicorn
 import logging
 from typing import List
+from typing import Optional
+
 
 from fastapi_micro_service.controllers.optionController import optionGetAll
 from fastapi_micro_service.controllers.productController import storeProduct
@@ -25,12 +27,16 @@ authorizer_mappers = [
     {
         'username' : 'yassine',
         'password' : '$2b$12$TNUBGgPruzd0yZ61VC8auOoxVN/uc0D65bGy5OQGHsUsQtikF2kWi' #dataengeneeradmin
+    },
+    {
+        'username': 'electroplanet_mapper',
+        'password': '$2b$12$geHVMsN5dpbKAjJsGw90EeDVJJK.6ywQ7SvZq85lWJsSPwRgNHZ66'  # electroplanetMapperSupero2022
     }
 ]
 
 @app.get("/options")
 # async def get_option(website : str):
-async def get_option(website : str , user_name=Depends(auth_handler.auth_wrapper)):
+async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper) ):
     return await optionGetAll(website)
 
 @app.post("/products")

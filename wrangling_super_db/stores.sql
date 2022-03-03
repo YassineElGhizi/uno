@@ -1,0 +1,4 @@
+alter table product__stores drop constraint product__stores_store_foreign;
+INSERT INTO `stores` (`id`, `name`, `description`, `Specialite`, `phone`, `email`, `address`, `site_officiel`, `logo`, `click_counts`, `view_counts`, `search_counts`, `created_at`, `updated_at`) VALUES (1, 'uno', 'UNO.ma, le plus large réseau de magasins 100% Apple au Maroc avec 10 Points de vente dans toutes les villes du royaume.', '[\'5\',\'175\',\'139\']', 522296984 , 'service@uno.ma', '', 'https://uno.ma/', '', 0, 0, 0, '2021-04-27 09:03:44', '2021-08-25 09:20:48');
+update product__stores set store = 1 where 1 =1;
+alter table product__stores add constraint product__stores_store_foreign foreign key (store) references stores (id);

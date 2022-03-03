@@ -17,9 +17,12 @@ def scrape(link , prod_name , id_store , id_subcat):
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
         'accept-language': 'en-US,en;q=0.9',
+        'DNT' : '1',
+        'Referer' : 'https://google.com'
     }
-
-    res = requests.get("{}".format(link) , headers=headers)
+    s = requests.session()
+    # res = requests.get("{}".format(link) , headers=headers)
+    res = s.get("{}".format(link) , headers=headers)
 
     #DB Connexion
     mydb = pymysql.connect(
@@ -51,8 +54,9 @@ def scrape(link , prod_name , id_store , id_subcat):
         item_stockage_type = find_device_type_stockage(item_title)
         item_lenght = find_device_lenght(item_title)
         item_power = find_device_power(item_title)
-        res = requests.get(item_link , headers=headers)
-        sleep(random.randint(4,7))
+        # res = requests.get(item_link , headers=headers)
+        res = s.get(item_link , headers=headers)
+        sleep(random.randint(2,5))
         items = BS(res.text,features="html.parser")
         items_details = items.find('div', {'class', 'product-tabs-content tabs-content std'})
 
@@ -97,7 +101,7 @@ def scrape(link , prod_name , id_store , id_subcat):
 
             jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
 
-            sql = "select current_price from items where name_in_store = %s"
+            sql = "select current_price from items where name_in_store = %s and id_store = 1"
             val = (item_title)
             mycursor.execute(sql, val)
             myresult = mycursor.fetchall()
@@ -145,28 +149,28 @@ def scrape(link , prod_name , id_store , id_subcat):
 if __name__ == "__main__":
     for l in uno_iphones_links:
         scrape( "{}".format(l['link']), "{}".format(l['product_name']) ,l["id_store"] , l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))
 
     for l in uno_ipads_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))
 
     for l in uno_mac_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))
 
     for l in uno_watches_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))
 
     for l in uno_tvs_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))
 
     for l in uno_accessoires_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))
 
     for l in uno_headphones_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(4,7))
+        sleep(random.randint(2,5))

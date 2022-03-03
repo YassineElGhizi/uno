@@ -11,8 +11,13 @@ from ..controllers.product__storeController import storeProduct__store
 
 from ..models.produit import Product
 
-# def network_heart_beats():
 
+def network_heart_beats(website : str ,nb_prods : int ):
+    now = datetime.datetime.now()
+    created_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
+    with open('../network_heart_beats.txt' , 'a' , encoding="utf8") as f:
+        f.write(f'{website} : {nb_prods} : {created_at}\n')
+        f.close()
 
 def generate_slug(title:str) -> str:
     return f"{slugify(title)}-{random.randrange(10000000, 99999999)}"
@@ -28,6 +33,10 @@ async def storeProduct(website: str ,listProducts : List):
     bulk_insert = []
     prices = []
     if website == 'uno':
+        try:
+            network_heart_beats(website, len(listProducts))
+        except:
+            pass
         for item in listProducts:
             try:
                 name = item['prod_name']
@@ -41,7 +50,6 @@ async def storeProduct(website: str ,listProducts : List):
                 product_details = storeProductDetails(item['details'] , title)
                 imgs = urllib.parse.quote_plus(item['image_url'])
                 images = f"[\"{imgs}\"]"
-                # images = f"[\"{item['image_url']}\",]"
                 id_parent = None
                 try:
                     options = str([str(i) for i in item['options']])
