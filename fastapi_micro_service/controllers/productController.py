@@ -5,11 +5,13 @@ from sqlalchemy.orm import sessionmaker
 import random
 import datetime
 import urllib.parse
+from itertools import groupby
+
 
 from ..controllers.storeProductDetailsController import storeProductDetails
 from ..controllers.product__storeController import storeProduct__store
-
 from ..models.produit import Product
+
 
 
 def network_heart_beats(website : str ,nb_prods : int ):
@@ -22,10 +24,26 @@ def network_heart_beats(website : str ,nb_prods : int ):
 def generate_slug(title:str) -> str:
     return f"{slugify(title)}-{random.randrange(10000000, 99999999)}"
 
+
+# define a fuction for key
+def key_func(k):
+    return k['name']
+
+def update_id_parent(prod_list:List[Product] , session):
+    id_first_item = prod_list[0]
+    print(f'id_first_item = {id_first_item}')
+    print(f'TYPE id_first_item = {type(id_first_item)}')
+    rest =prod_list[1:]
+    for i in rest:
+        i.id_parent = id_first_item.id
+        session.commit()
+        print(f"DONE FOR {i}")
+        quit()
+
 engine = db.create_engine('mysql://root@localhost/exemple_supero2')
 ss = sessionmaker(bind=engine)
 s = ss()
-default_brand_id = 1
+
 default_apple_category = 5
 uno_store_id = 1
 
@@ -42,11 +60,11 @@ async def storeProduct(website: str ,listProducts : List):
                 name = item['prod_name']
                 title = item['name_in_store']
                 slug = generate_slug(title)
-                if 'brand_id' in item.keys():
-                    brand = item['brand_id']
-                else:
-                    brand = default_brand_id
-                category = default_apple_category
+                brand = item['brand_id']
+                try:
+                    category = item['category_in_store_to_id']
+                except:
+                    category = default_apple_category
                 product_details = storeProductDetails(item['details'] , title)
                 imgs = urllib.parse.quote_plus(item['image_url'])
                 images = f"[\"{imgs}\"]"
@@ -70,10 +88,19 @@ async def storeProduct(website: str ,listProducts : List):
 
         s.add_all(bulk_insert)
         s.commit()
-        print("SUCCESS BULK INSERT #1 (product_details -> products)")
+
+        INFO = [x.__to_dict__() for x in bulk_insert]
+        # sort INFO data by 'name' key.
+        INFO = sorted(INFO, key=key_func)
+        for key, value in groupby(INFO, key_func):
+            # print(key)
+            # print(list(value))
+            # update_id_parent(list(value) , s)
+            update_id_parent(bulk_insert , s)
+        quit()
+        print("SUCCESS BULK INSERT #1 (product_details & products)")
         #loping over the new created products recoreds in order to create product__store
         await storeProduct__store(uno_store_id ,bulk_insert, prices)
-
 
 
 

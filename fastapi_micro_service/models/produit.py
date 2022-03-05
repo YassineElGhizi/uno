@@ -1,10 +1,10 @@
-from sqlalchemy import Column, String, TIMESTAMP, Text, text,DECIMAL
+from sqlalchemy import Column, String, TIMESTAMP, Text, text, DECIMAL
 from sqlalchemy.dialects.mysql import BIGINT
 from sqlalchemy.ext.declarative import declarative_base
 
-
 Base = declarative_base()
 metadata = Base.metadata
+
 
 class Product(Base):
     __tablename__ = 'products'
@@ -22,7 +22,7 @@ class Product(Base):
     options = Column(String(255, 'utf8mb4_unicode_ci'), nullable=False, server_default=text("'[]'"))
     created_at = Column(TIMESTAMP)
 
-    def __init__(self, name,title,slug,brand,category,product_details,images,id_parent,options,created_at) :
+    def __init__(self, name, title, slug, brand, category, product_details, images, id_parent, options, created_at):
         self.name = name
         self.title = title
         self.slug = slug
@@ -37,5 +37,9 @@ class Product(Base):
     def __toString__(self):
         print(f"-->id = {self.id} ,slug = {self.slug} <--")
 
-
-
+    def __to_dict__(self):
+        d = {}
+        d['id'] = self.id
+        d['name'] = self.name
+        d['id_parent'] = self.id_parent
+        return d

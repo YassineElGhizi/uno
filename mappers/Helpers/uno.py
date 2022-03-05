@@ -3,6 +3,8 @@ import re
 
 
 ##Vars that get populated from FASTAPI
+from typing import List
+
 uno_colors =[]
 uno_storage =[]
 uno_ram =[]
@@ -117,3 +119,14 @@ def dictfetchall(cursor):
     desc = cursor.description
     return [dict(zip([col[0] for col in desc], row))
             for row in cursor.fetchall()]
+
+def get_item_brand_id(brands:List, item_brand : str) -> str:
+    try:
+        for i in brands:
+            if i['name'] == item_brand.title():
+                return str(i['id'])
+        for i in brands:
+            if i['name'] == 'UNKNOW':
+                return str(i['id'])
+    except:
+        return '311'

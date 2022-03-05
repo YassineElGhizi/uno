@@ -2,75 +2,44 @@ import time
 import pymysql
 import requests
 import json
-# from Helpers.uno import *
 from mappers.Helpers.uno import *
 import logging
 import math
+from fetch_api import fetch_brands
 
-logging.basicConfig(
-    filename='../uno_mapper.log',
-    encoding='utf-8',
-    level=logging.DEBUG,
-    format='%(asctime)s %(message)s',
-    datefmt='%m/%d/%Y %I:%M:%S %p'
-)
-
-
+#VARS
+logging.basicConfig(filename='../uno_mapper.log',encoding='utf-8',level=logging.DEBUG,format='%(asctime)s %(message)s',datefmt='%m/%d/%Y %I:%M:%S %p')
+url = "http://127.0.0.1:9999/options?website=uno"
+url_post = "http://127.0.0.1:9999/products?website=uno"
+login_url = "http://localhost:9999/login"
+mapper_credetials = {"username": "uno_mapper","password": "unoMapperSupero2022"}
+payload = json.dumps(mapper_credetials)
+obe_by_req = 100
 
 #GETTING THE JWT TOKEN
 print("[+] preparing to get token")
-mapper_credetials = {
-  "username": "uno_mapper",
-  "password": "unoMapperSupero2022"
-}
-login_url = "http://localhost:9999/login"
-token : str
-payload = json.dumps(mapper_credetials)
-headers = {
-  'Content-Type': 'application/json'
-}
-
-response = requests.request("POST", login_url, headers=headers, data=payload)
+headers = {'Content-Type': 'application/json'}
+s = requests.session()
+response = s.post(login_url, headers=headers, data=payload)
 if response.status_code == 401:
     print("[-] err 401 : Invalid username and/or password")
     quit()
 print("[+] token recieved with success")
 token = json.loads(response.text)['token']
-
-#Global Conf
-url = "http://127.0.0.1:9999/options?website=uno"
-url_post = "http://127.0.0.1:9999/products?website=uno"
-
-headers = {
-    'Content-Type': 'application/json',
-    'Authorization': f'Bearer {token}'
-}
-
+#GETTING OPTIONS
+headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
 response = requests.request("GET", url , headers=headers)
-
-
-
 tmp = json.loads(response.text)
-obe_by_req = 100
-apple_id = 33
 
-mydb = pymysql.connect(
-    host="127.0.0.1",
-    port=3306,
-    user="root",
-    password="",
-    database="supero_datalake2",
-)
+#Fetching brands
+supero_brand = fetch_brands(token,s)
 
+#Fetching from LOCAL DB
+mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
 mycursor = mydb.cursor()
 sql = "SELECT * FROM ITEMS WHERE id_store = 1"
 mycursor.execute(sql,)
 results = dictfetchall(mycursor)
-
-for r in results:
-    x = json.loads(r["specification"])
-    keys = x.keys()
-    [ all_keys.append(k) for k in keys if k not in all_keys ]
 
 for r in results:
     x = json.loads(r["specification"])
@@ -87,46 +56,41 @@ for r in results:
     except Exception as e:
         pass
 
-for t in tmp:
-    if t['id_parent'] == 1:
-        uno_colors.append(t)
-        continue
-    if t['id_parent'] == 2:
-        uno_storage.append(t)
-        continue
-    if t['id_parent'] == 3:
-        uno_ram.append(t)
-        continue
-    if t['id_parent'] == 5:
-        uno_taille_ecrant.append(t)
-        continue
-    if t['id_parent'] == 6:
-        uno_type_hd.append(t)
-        continue
-    if t['id_parent'] == 143:
-        uno_garanties.append(t)
-        continue
-    if t['id_parent'] == 152:
-        uno_connector_adapter.append(t)
-        continue
-    if t['id_parent'] == 187:
-        uno_type_stockage.append(t)
-        continue
-    if t['id_parent'] == 4:
-        uno_lenght.append(t)
-        continue
-    if t['id_parent'] == 156:
-        uno_power.append(t)
-        continue
 
 for r in results:
     tmp_d = {}
     item_options = []
 
     tmp_d["current_price"] = r["current_price"]
+    tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
+    if r["category_in_store"] == 'iphone':
+        tmp_d["category_in_store_to_id"] = 137
+    if r["category_in_store"] == 'ipad':
+        tmp_d["category_in_store_to_id"] = 152
+    if r["category_in_store"] == 'mac':
+        tmp_d["category_in_store_to_id"] = 307
+    if r["category_in_store"] == 'apple watch':
+        tmp_d["category_in_store_to_id"] = 139
+    if r["category_in_store"] == 'apple tv':
+        continue
+    if r["category_in_store"] == 'chargeur':
+        tmp_d["category_in_store_to_id"] = 144
+    if r["category_in_store"] == 'accessoires iphone':
+        tmp_d["category_in_store_to_id"] = 308
+    if r["category_in_store"] == 'accessoires mac':
+        tmp_d["category_in_store_to_id"] = 309
+    if r["category_in_store"] == 'powerbank':
+        tmp_d["category_in_store_to_id"] = 310
+    if r["category_in_store"] == 'coques iphone':
+        tmp_d["category_in_store_to_id"] = 141
+    if r["category_in_store"] == 'disque dur externe':
+        tmp_d["category_in_store_to_id"] = 191
+    if r["category_in_store"] == 'tablette graphique':
+        continue
+    if r["category_in_store"] == 'airpods':
+        tmp_d["category_in_store_to_id"] = 143
+
     tmp_d["category_in_store"] = r["category_in_store"]
-    if tmp_d["category_in_store"] == 'iphone':
-        tmp_d["brand_id"] = apple_id
     tmp_d["link"] = r["link"]
     tmp_d["prod_name"] = r["prod_name"]
     tmp_d["image_url"] = r["image_url"]
@@ -199,24 +163,7 @@ logging.info(f"MAPPED {len(res_to_post_fastapi)} ITEMS")
 # [print(x) for x in res_to_post_fastapi]
 print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
 
-
-nb_req = math.ceil(len(res_to_post_fastapi) / obe_by_req)
-reqs = []
-tmp = []
-for num , k in enumerate(res_to_post_fastapi):
-    tmp.append(k)
-    if (num+1) == len(res_to_post_fastapi):
-        reqs.append(tmp)
-    if (num+1) % obe_by_req == 0:
-        reqs.append(tmp)
-        tmp = []
-        continue
-
-
-for n ,r in enumerate(reqs):
-    print(f'preparing req NO {n}')
-    payload = json.dumps(r)
-    response = requests.request("POST", url_post, headers=headers, data=payload)
-    print(response.text)
-    print(f"response.elapsed.total_seconds() = {response.elapsed.total_seconds()}")
-    time.sleep(5)
+payload = json.dumps(res_to_post_fastapi)
+response = requests.request("POST", url_post, headers=headers, data=payload)
+print(response.text)
+print(f"response.elapsed.total_seconds() = {response.elapsed.total_seconds()}")

@@ -135,253 +135,193 @@ def scrape(link , id_store , id_subcat):
 if __name__ == "__main__":
     # for l in electroplanet_console:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_préparation_culinaire:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_petit_dejeuner:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_accessoires_electromenager:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_balance_de_cuisine:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_cafetière_et_expresso:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_cuiseurs:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_cuisson_conviviale:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_cuisson_festive:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_four_et_micro_ondes:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_friteuses:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_Machine_a_gateaux:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_Pack_preparation_culinaire:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_Barbecue_et_plancha:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_refrigerateur:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_accessoires_electromenager2:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_congelateur:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_cuisiniere:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
     #
     # for l in electroplanet_encastrable:
     #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-    #     # sleep(random.randint(1,4))
+    #
+    # for l in electroplanet_hotte_aspirante:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_lave_vaisselle:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_machine_a_laver:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_plaque_de_cuisson:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_sèche_linge:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_electromenager3:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_Entretien_du_sol:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_soin_du_ligne:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_bebe:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_coiffure:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_epilation_pour_elle:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_pack_beaute:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_rasage_pour_lui:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_Sante_et_bien_etre:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_soin_beaute:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_chaufage:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_chaufage_eau:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_climatisation:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_traitement_de_air:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_tv:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_tv_video:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_appareil_photo:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_recepteur_et_abonnement:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_ecoteurs:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_Barres_de_son:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_casques_audio:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_ordinateur_bureau:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
 
-    for l in electroplanet_hotte_aspirante:
+    for l in electroplanet_ordinateur_portable:
         scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
 
-    for l in electroplanet_lave_vaisselle:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_machine_a_laver:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_plaque_de_cuisson:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_sèche_linge:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_electromenager3:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_Entretien_du_sol:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_soin_du_ligne:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_bebe:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_coiffure:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_epilation_pour_elle:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_pack_beaute:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_rasage_pour_lui:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_Sante_et_bien_etre:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_soin_beaute:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_chaufage:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_chaufage_eau:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_climatisation:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_traitement_de_air:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_tv:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_tv_video:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_appareil_photo:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_recepteur_et_abonnement:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_ecoteurs:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_Barres_de_son:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_casques_audio:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_ordinateur_bureau:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_imprimantes_et_scanner:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_informatique:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_bagagerie:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_smartphones:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_tablete_android:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_telephones:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_smarphones:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_tablettes:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_alimenttion_et_charge:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_objet_connectes:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_de_cuisine:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_article_de_boisson:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_conservation_alimentaire:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_cuisson_sur_feux:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_filtration_d_eau:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_moules_et_plats:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
-
-    for l in electroplanet_accessoires_gaming:
-        scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
-        # sleep(random.randint(1,4))
+    # for l in electroplanet_imprimantes_et_scanner:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_informatique:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_bagagerie:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_smartphones:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_tablete_android:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_telephones:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_smarphones:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_tablettes:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_alimenttion_et_charge:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_objet_connectes:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_de_cuisine:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_article_de_boisson:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_conservation_alimentaire:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_cuisson_sur_feux:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_filtration_d_eau:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_moules_et_plats:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
+    #
+    # for l in electroplanet_accessoires_gaming:
+    #     scrape("{}".format(l['link']), l["id_store"], l["subcategory"])
 

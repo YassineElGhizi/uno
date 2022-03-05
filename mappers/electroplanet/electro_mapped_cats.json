@@ -1,0 +1,53 @@
+[
+    {
+        "electro_cat" : "iphone","supero_cat" : "137"
+    },
+    {
+        "electro_cat" : "telephone-android","supero_cat" : "135"
+    },
+    {
+        "electro_cat" : "ipad","supero_cat" : "152"
+    },
+    {
+        "electro_cat" : "tablettes-android","supero_cat" : "152"
+    },
+    {
+        "electro_cat" : "Domestique","supero_cat" : "138"
+    },
+    {
+        "electro_cat" : "Mobile","supero_cat" : "138"
+    },
+    {
+        "electro_cat" : "Cover de protection","supero_cat" : "141"
+    },
+    {
+        "electro_cat" : "Oreillettes bluetooth","supero_cat" : "143"
+    },
+    {
+        "electro_cat" : "Perche selfie filaire","supero_cat" : "150"
+    },
+    {
+        "electro_cat" : "Selfie sans fil","supero_cat" : "150"
+    },
+    {
+        "electro_cat" : "Macbook","supero_cat" : "307"
+    },
+    {
+        "electro_cat" : "Chargeur","supero_cat" : "144"
+    },
+    {
+        "electro_cat" : "Tablettes cover de protection","supero_cat" : "153"
+    },
+    {
+        "electro_cat" : "Tablettes support voiture","supero_cat" : "153"
+    },
+    {
+        "electro_cat" : "Adaptateurs telephone tablette","supero_cat" : "145"
+    },
+    {
+        "electro_cat" : "Cablage","supero_cat" : "145"
+    },
+    {
+        "electro_cat" : "UNKNOWN","supero_cat" : "311"
+    }
+]

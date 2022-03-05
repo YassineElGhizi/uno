@@ -35,20 +35,16 @@ authorizer_mappers = [
 ]
 
 @app.get("/options")
-# async def get_option(website : str):
 async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper) ):
     return await optionGetAll(website)
 
 @app.post("/products")
-# async def insert_product(website : str, importance : List = Body(...)):
 async def insert_product(website : str, importance : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
     return await storeProduct(website , importance)
 
 @app.get("/brands")
-async def get_brands(website : str):
-# async def get_brands(website : str , user_name=Depends(auth_handler.auth_wrapper)):
-    return await brandGetAll(website)
-
+async def get_brands(user_name=Depends(auth_handler.auth_wrapper)):
+    return await brandGetAll()
 
 @app.post('/login')
 def login(reqBody : dict = Body(...)):

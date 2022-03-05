@@ -41,17 +41,17 @@ electroplanet_cafetière_et_expresso = [
 ]
 
 electroplanet_cuiseurs = [
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuiseur/cuiseur-a-riz-et-a-vapeu?product_list_limit=60r","id_store": 3, "subcategory": "Cuiseur a riz et a vapeur"},
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuiseur/cuiseur-a-vapeu?product_list_limit=60r","id_store": 3, "subcategory": "Cuiseur a vapeur"},
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuiseur/cuiseur-classiqu?product_list_limit=60e","id_store": 3, "subcategory": "Cuiseur classique"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuiseur/cuiseur-a-riz-et-a-vapeur?product_list_limit=60","id_store": 3, "subcategory": "Cuiseur a riz et a vapeur"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuiseur/cuiseur-a-vapeur?product_list_limit=60","id_store": 3, "subcategory": "Cuiseur a vapeur"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuiseur/cuiseur-classique?product_list_limit=60","id_store": 3, "subcategory": "Cuiseur classique"},
 ]
 
 electroplanet_cuisson_conviviale = [
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/appareil-a-croque-monsieu?product_list_limit=60r","id_store": 3, "subcategory": "Appareil à croque monsieur"},
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/crepier?product_list_limit=60e","id_store": 3, "subcategory": "Crepiere"},
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/gaufrie?product_list_limit=60r","id_store": 3, "subcategory": "Gaufrier"},
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/grill-a-panin?product_list_limit=60i","id_store": 3, "subcategory": "Grill à panini"},
-    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/grill-a-viand?product_list_limit=60e","id_store": 3, "subcategory": "Grill à viande"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/appareil-a-croque-monsieur?product_list_limit=60","id_store": 3, "subcategory": "Appareil à croque monsieur"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/crepiere?product_list_limit=60","id_store": 3, "subcategory": "Crepiere"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/gaufrier?product_list_limit=60","id_store": 3, "subcategory": "Gaufrier"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/grill-a-panini?product_list_limit=60","id_store": 3, "subcategory": "Grill à panini"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/cuisson-conviviale/grill-a-viande?product_list_limit=60","id_store": 3, "subcategory": "Grill à viande"},
 ]
 
 electroplanet_cuisson_festive = [
@@ -90,24 +90,24 @@ electroplanet_Pack_preparation_culinaire = [
 
 
 electroplanet_Barbecue_et_plancha = [
-    {"link": "https://www.electroplanet.ma/petit-electromenager/barbecue-et-plancha/barbecue-et-plancha-electriqu?product_list_limit=60e","id_store": 3, "subcategory": "Barbecue et plancha electrique"},
+    {"link": "https://www.electroplanet.ma/petit-electromenager/barbecue-et-plancha/barbecue-et-plancha-electrique?product_list_limit=60","id_store": 3, "subcategory": "Barbecue et plancha electrique"},
 ]
 
 electroplanet_refrigerateur = [
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/mini-ba?product_list_limit=60r","id_store": 3, "subcategory": "Mini bar"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/petit-refrigerateu?product_list_limit=60r","id_store": 3, "subcategory": "Petit Refrigerateur"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-4-porte?product_list_limit=60s","id_store": 3, "subcategory": "Refrigerateur 4 portes"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-americain-duo-jumelabl?product_list_limit=60e","id_store": 3, "subcategory": "Refrigerateur americain duo jumelable"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-americain-side-by-sid?product_list_limit=60e","id_store": 3, "subcategory": "Refrigerateur americain side by side"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-avec-congelateur-en-ba?product_list_limit=60s","id_store": 3, "subcategory": "Refrigerateur avec congelateur en bas"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-avec-congelateur-en-hau?product_list_limit=60t","id_store": 3, "subcategory": "Refrigerateur avec congelateur en haut"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/mini-bar?product_list_limit=60","id_store": 3, "subcategory": "Mini bar"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/petit-refrigerateur?product_list_limit=60","id_store": 3, "subcategory": "Petit Refrigerateur"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-4-portes?product_list_limit=60","id_store": 3, "subcategory": "Refrigerateur 4 portes"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-americain-duo-jumelable?product_list_limit=60","id_store": 3, "subcategory": "Refrigerateur americain duo jumelable"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-americain-side-by-side?product_list_limit=60","id_store": 3, "subcategory": "Refrigerateur americain side by side"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-avec-congelateur-en-bas?product_list_limit=60","id_store": 3, "subcategory": "Refrigerateur avec congelateur en bas"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/refrigerateur/refrigerateur-avec-congelateur-en-haut?product_list_limit=60","id_store": 3, "subcategory": "Refrigerateur avec congelateur en haut"},
 ]
 
 electroplanet_accessoires_electromenager2 = [
-    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-commun?product_list_limit=60s","id_store": 3, "subcategory": "Accessoires communs"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-cuisso?product_list_limit=60n","id_store": 3, "subcategory": "Accessoires cuisson"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-froi?product_list_limit=60d","id_store": 3, "subcategory": "Accessoires froid"},
-    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-lavag?product_list_limit=60e","id_store": 3, "subcategory": "Accessoires lavage"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-communs?product_list_limit=60","id_store": 3, "subcategory": "Accessoires communs"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-cuisson?product_list_limit=60","id_store": 3, "subcategory": "Accessoires cuisson"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-froid?product_list_limit=60","id_store": 3, "subcategory": "Accessoires froid"},
+    {"link": "https://www.electroplanet.ma/gros-electromenager/accessoires/accessoires-lavage?product_list_limit=60","id_store": 3, "subcategory": "Accessoires lavage"},
 ]
 
 
@@ -171,10 +171,10 @@ electroplanet_accessoires_electromenager3 = [
 
 
 electroplanet_Entretien_du_sol = [
-    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/aspirateu?product_list_limit=60r","id_store": 3, "subcategory": "Aspirateur"},
-    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/aspirett?product_list_limit=60e","id_store": 3, "subcategory": "Aspirette"},
-    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/nettoyeur-a-vapeu?product_list_limit=60r","id_store": 3, "subcategory": "Nettoyeur a vapeur"},
-    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/pack-aspirateu?product_list_limit=60r","id_store": 3, "subcategory": "Pack aspirateur"},
+    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/aspirateur?product_list_limit=60","id_store": 3, "subcategory": "Aspirateur"},
+    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/aspirette?product_list_limit=60","id_store": 3, "subcategory": "Aspirette"},
+    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/nettoyeur-a-vapeur?product_list_limit=60","id_store": 3, "subcategory": "Nettoyeur a vapeur"},
+    {"link": "https://www.electroplanet.ma/entretien-de-la-maison/entretien-du-sol/pack-aspirateur?product_list_limit=60","id_store": 3, "subcategory": "Pack aspirateur"},
 ]
 
 electroplanet_soin_du_ligne = [
@@ -279,14 +279,14 @@ electroplanet_appareil_photo = [
 ]
 
 electroplanet_recepteur_et_abonnement = [
-    {"link": "https://www.electroplanet.ma/tv-photo-video/recepteur-et-abonnement/demodulateurs-et-recepteurs-tn?product_list_limit=60t","id_store": 3, "subcategory": "Demodulateurs et recepteurs tnt"},
+    {"link": "https://www.electroplanet.ma/tv-photo-video/recepteur-et-abonnement/demodulateurs-et-recepteurs-tnt?product_list_limit=60","id_store": 3, "subcategory": "Demodulateurs et recepteurs tnt"},
 ]
 
 electroplanet_ecoteurs = [
-    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-avec-micr?product_list_limit=60o","id_store": 3, "subcategory": "Ecouteurs avec micro"},
-    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-avec-micro-sans-fi?product_list_limit=60l","id_store": 3, "subcategory": "Ecouteurs avec micro sans fil"},
-    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-sportifs-avec-micr?product_list_limit=60o","id_store": 3, "subcategory": "Ecouteurs sportifs avec micro"},
-    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-sportifs-avec-micro-sans-fi?product_list_limit=60l","id_store": 3, "subcategory": "Ecouteurs sportifs avec micro sans fil"},
+    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-avec-micro?product_list_limit=60","id_store": 3, "subcategory": "Ecouteurs avec micro"},
+    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-avec-micro-sans-fil?product_list_limit=60","id_store": 3, "subcategory": "Ecouteurs avec micro sans fil"},
+    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-sportifs-avec-micro?product_list_limit=60","id_store": 3, "subcategory": "Ecouteurs sportifs avec micro"},
+    {"link": "https://www.electroplanet.ma/audio-hi-fi/ecouteurs/ecouteurs-sportifs-avec-micro-sans-fil?product_list_limit=60","id_store": 3, "subcategory": "Ecouteurs sportifs avec micro sans fil"},
 ]
 
 electroplanet_Barres_de_son = [
@@ -298,7 +298,7 @@ electroplanet_casques_audio = [
     {"link": "https://www.electroplanet.ma/audio-hi-fi/casque-audio/casque-audio-avec-micro-sans-fil?product_list_limit=60", "id_store": 3,"subcategory": "casque audio avec micro sans fil"},
 ]
 
-electroplanet_ordinateur_portable =[
+electroplanet_ordinateur_portable = [
     {"link": "https://www.electroplanet.ma/informatique/ordinateur-portable/hybride-2-en-1?product_list_limit=60", "id_store": 3,"subcategory": "hybride 2 en 1"},
     {"link": "https://www.electroplanet.ma/informatique/ordinateur-portable/macbook?product_list_limit=60", "id_store": 3,"subcategory": "Macbook"},
     {"link": "https://www.electroplanet.ma/informatique/ordinateur-portable/netbook?product_list_limit=60", "id_store": 3,"subcategory": "Netbook"},
@@ -323,74 +323,71 @@ electroplanet_imprimantes_et_scanner = [
 ]
 
 electroplanet_accessoires_informatique = [
-    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/casques-gamer?product_list_limit=60s","id_store": 3, "subcategory": "Casques gamers"},
-    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/clavier?product_list_limit=60s","id_store": 3, "subcategory": "Claviers"},
-    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/manette?product_list_limit=60s","id_store": 3, "subcategory": "Manettes"},
-    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/souris-gamer?product_list_limit=60s","id_store": 3, "subcategory":"Souris gamers"},
-    {"link": "https://www.electroplanet.ma/informatique/accessoires/adaptateurs-i?product_list_limit=60t","id_store": 3, "subcategory":"Adaptateurs it"},
-    {"link": "https://www.electroplanet.ma/informatique/accessoires/cable-d-imprimante?product_list_limit=60s","id_store": 3, "subcategory": "Cable d imprimantes"},
-    {"link": "https://www.electroplanet.ma/informatique/accessoires/chargeurs-p?product_list_limit=60c","id_store": 3, "subcategory":"Chargeurs pc"},
-    {"link": "https://www.electroplanet.ma/informatique/accessoires/connectique-resea?product_list_limit=60u","id_store": 3, "subcategory":"Connectique reseau"},
-    {"link": "https://www.electroplanet.ma/informatique/accessoires/pack-petits-peripherique?product_list_limit=60s","id_store": 3, "subcategory": "Pack petits peripheriques"},
-    {"link": "https://www.electroplanet.ma/informatique/accessoires/multiprises-et-parasurtenseur?product_list_limit=60s","id_store": 3, "subcategory": "Multiprises et parasurtenseurs"},
+    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/casques-gamers?product_list_limit=60","id_store": 3, "subcategory": "Casques gamers"},
+    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/claviers?product_list_limit=60","id_store": 3, "subcategory": "Claviers"},
+    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/manettes?product_list_limit=60","id_store": 3, "subcategory": "Manettes"},
+    {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/souris-gamers?product_list_limit=60","id_store": 3, "subcategory":"Souris gamers"},
+    {"link": "https://www.electroplanet.ma/informatique/accessoires/adaptateurs-it?product_list_limit=60","id_store": 3, "subcategory":"Adaptateurs it"},
+    {"link": "https://www.electroplanet.ma/informatique/accessoires/cable-d-imprimantes?product_list_limit=60","id_store": 3, "subcategory": "Cable d imprimantes"},
+    {"link": "https://www.electroplanet.ma/informatique/accessoires/chargeurs-pc?product_list_limit=60","id_store": 3, "subcategory":"Chargeurs pc"},
+    {"link": "https://www.electroplanet.ma/informatique/accessoires/connectique-reseau?product_list_limit=60","id_store": 3, "subcategory":"Connectique reseau"},
+    {"link": "https://www.electroplanet.ma/informatique/accessoires/pack-petits-peripheriques?product_list_limit=60","id_store": 3, "subcategory": "Pack petits peripheriques"},
+    {"link": "https://www.electroplanet.ma/informatique/accessoires/multiprises-et-parasurtenseurs?product_list_limit=60","id_store": 3, "subcategory": "Multiprises et parasurtenseurs"},
 
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/clavier?product_list_limit=60s","id_store": 3, "subcategory": "Claviers"},
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/haut-parleurs-et-enceinte?product_list_limit=60s","id_store": 3, "subcategory": "Haut parleurs et enceintes"},
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/logiciel?product_list_limit=60s","id_store": 3, "subcategory": "Logiciels"},
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/pointeurs-lase?product_list_limit=60r","id_store": 3, "subcategory": "Pointeurs laser"},
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/souri?product_list_limit=60s","id_store": 3, "subcategory": "Souris"},
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/support-ventilateur-p?product_list_limit=60c","id_store": 3, "subcategory": "Support ventilateur pc"},
-    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/webca?product_list_limit=60m","id_store": 3, "subcategory": "Webcam"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/claviers?product_list_limit=60","id_store": 3, "subcategory": "Claviers"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/haut-parleurs-et-enceintes?product_list_limit=60","id_store": 3, "subcategory": "Haut parleurs et enceintes"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/logiciels?product_list_limit=60","id_store": 3, "subcategory": "Logiciels"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/pointeurs-laser?product_list_limit=60","id_store": 3, "subcategory": "Pointeurs laser"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/souris?product_list_limit=60","id_store": 3, "subcategory": "Souris"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/support-ventilateur-pc?product_list_limit=60","id_store": 3, "subcategory": "Support ventilateur pc"},
+    {"link": "https://www.electroplanet.ma/informatique/peripheriques-informatique/webcam?product_list_limit=60","id_store": 3, "subcategory": "Webcam"},
 ]
 
 electroplanet_bagagerie = [
     {"link": "https://www.electroplanet.ma/informatique/bagagerie/sac-a-dos?product_list_limit=60", "id_store": 3,"subcategory": "Sac a dos"},
     {"link": "https://www.electroplanet.ma/informatique/bagagerie/sacoche?product_list_limit=60", "id_store": 3,"subcategory": "Sacoche"},
     {"link": "https://www.electroplanet.ma/informatique/bagagerie/sleeve?product_list_limit=60", "id_store": 3,"subcategory": "Sleeve"},
-
 ]
 
-
+#smartphone_tabllette
 electroplanet_smartphones = [
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/smartphone/iphone?product_list_limit=60", "id_store": 3,"subcategory":"iphone"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/smartphone/telephone-android?product_list_limit=60", "id_store": 3,"subcategory":"telephone-android"},
 ]
-
+#smartphone_tabllette
 electroplanet_tablete_android = [
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/tablettes/ipad?product_list_limit=60", "id_store": 3,"subcategory": "ipad"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/tablettes/tablettes-android?product_list_limit=60", "id_store": 3,"subcategory": "tablettes-android"},
 ]
-
+#smartphone_tabllette
 electroplanet_telephones = [
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/telephone/domestique?product_list_limit=60", "id_store": 3,"subcategory": "Domestique"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/telephone/mobile?product_list_limit=60", "id_store": 3, "subcategory": "Mobile"},
 ]
-
-
+#smartphone_tabllette
 electroplanet_accessoires_smarphones = [
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-smartphone/cover-de-protection?product_list_limit=60", "id_store": 3, "subcategory": "Cover de protection"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-smartphone/oreillettes-bluetooth?product_list_limit=60", "id_store": 3, "subcategory": "Oreillettes bluetooth"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-smartphone/perche-selfie-filaire?product_list_limit=60", "id_store": 3, "subcategory": "Perche selfie filaire"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-smartphone/perche-selfie-sans-fil?product_list_limit=60", "id_store": 3, "subcategory": "Selfie sans fil"},
     {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-smartphone/support-voiture?product_list_limit=60", "id_store": 3, "subcategory": "Support voiture"},
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-smartphone/support-voiture?product_list_limit=60", "id_store": 3, "subcategory": "Support voiture"},
 ]
-
+#smartphone_tabllette
 electroplanet_accessoires_tablettes = [
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-tablettes/cover-de-protectio?product_list_limit=60n","id_store": 3, "subcategory": "Tablettes cover de protection"},
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-tablettes/support-voitur?product_list_limit=60e","id_store": 3, "subcategory": "Tablettes support voiture"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-tablettes/cover-de-protection?product_list_limit=60","id_store": 3, "subcategory": "Tablettes cover de protection"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/accessoires-tablettes/support-voiture?product_list_limit=60","id_store": 3, "subcategory": "Tablettes support voiture"},
 ]
-
+#smartphone_tabllette
 electroplanet_alimenttion_et_charge = [
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/adaptateurs-telephone-tablett?product_list_limit=60e","id_store": 3, "subcategory": "Adaptateurs telephone tablette"},
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/batterie-power-ban?product_list_limit=60k","id_store": 3, "subcategory": "Batterie power bank"},
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/cablag?product_list_limit=60e","id_store": 3, "subcategory": "Cablage"},
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/chargeu?product_list_limit=60r","id_store": 3, "subcategory": "Chargeur"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/adaptateurs-telephone-tablette?product_list_limit=60","id_store": 3, "subcategory": "Adaptateurs telephone tablette"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/batterie-power-bank?product_list_limit=60","id_store": 3, "subcategory": "Batterie power bank"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/cablage?product_list_limit=60","id_store": 3, "subcategory": "Cablage"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/alimentation-et-charge/chargeur?product_list_limit=60","id_store": 3, "subcategory": "Chargeur"},
 ]
-
+#smartphone_tabllette
 electroplanet_objet_connectes = [
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/objets-connectes/montre-connecte?product_list_limit=60s","id_store": 3, "subcategory": "Montre connectes"},
-    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/objets-connectes/montres-et-bracelets-connecte?product_list_limit=60s","id_store": 3, "subcategory": "Montres et bracelets connectes"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/objets-connectes/montre-connectes?product_list_limit=60","id_store": 3, "subcategory": "Montre connectes"},
+    {"link": "https://www.electroplanet.ma/smartphone-tablette-gps/objets-connectes/montres-et-bracelets-connectes?product_list_limit=60","id_store": 3, "subcategory": "Montres et bracelets connectes"},
 ]
 
 electroplanet_accessoires_de_cuisine = [
@@ -398,9 +395,9 @@ electroplanet_accessoires_de_cuisine = [
 ]
 
 electroplanet_article_de_boisson = [
-    {"link": "https://www.electroplanet.ma/articles-cuisines/article-de-boisson/cafetiere?product_list_limit=60s","id_store": 3, "subcategory": "Cafetieres"},
-    {"link": "https://www.electroplanet.ma/articles-cuisines/article-de-boisson/mug?product_list_limit=60s","id_store": 3, "subcategory": "Mugs"},
-    {"link": "https://www.electroplanet.ma/articles-cuisines/article-de-boisson/thermo?product_list_limit=60s","id_store": 3, "subcategory": "Thermos"},
+    {"link": "https://www.electroplanet.ma/articles-cuisines/article-de-boisson/cafetieres?product_list_limit=60","id_store": 3, "subcategory": "Cafetieres"},
+    {"link": "https://www.electroplanet.ma/articles-cuisines/article-de-boisson/mugs?product_list_limit=60","id_store": 3, "subcategory": "Mugs"},
+    {"link": "https://www.electroplanet.ma/articles-cuisines/article-de-boisson/thermos?product_list_limit=60","id_store": 3, "subcategory": "Thermos"},
 ]
 
 electroplanet_conservation_alimentaire = [
