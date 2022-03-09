@@ -31,14 +31,12 @@ def key_func(k):
 
 def update_id_parent(prod_list:List[Product] , session):
     id_first_item = prod_list[0]
-    print(f'id_first_item = {id_first_item}')
-    print(f'TYPE id_first_item = {type(id_first_item)}')
+    print(f'id_first_item = {id_first_item.id}')
+    print(f'TYPE id_first_item = {type(id_first_item.id)}')
     rest =prod_list[1:]
     for i in rest:
         i.id_parent = id_first_item.id
-        session.commit()
-        print(f"DONE FOR {i}")
-        quit()
+    session.commit()
 
 engine = db.create_engine('mysql://root@localhost/exemple_supero2')
 ss = sessionmaker(bind=engine)
@@ -93,10 +91,10 @@ async def storeProduct(website: str ,listProducts : List):
         # sort INFO data by 'name' key.
         INFO = sorted(INFO, key=key_func)
         for key, value in groupby(INFO, key_func):
-            # print(key)
-            # print(list(value))
-            # update_id_parent(list(value) , s)
-            update_id_parent(bulk_insert , s)
+            print(key)
+            print(list(value))
+
+        update_id_parent(bulk_insert , s)
         quit()
         print("SUCCESS BULK INSERT #1 (product_details & products)")
         #loping over the new created products recoreds in order to create product__store

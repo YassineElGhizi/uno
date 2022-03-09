@@ -2547,3 +2547,460 @@ SystemExit: None
 2022-03-04 09:20:58,707:INFO:Application shutdown complete.
 2022-03-04 09:20:58,707:INFO:Finished server process [12244]
 2022-03-04 09:20:58,715:INFO:Stopping reloader process [584]
+2022-03-07 14:05:21,353:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-03-07 14:05:21,355:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-03-07 14:05:21,355:INFO:Started reloader process [4400] using statreload
+2022-03-07 14:05:22,901:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-07 14:05:22,903:DEBUG:Using selector: SelectSelector
+2022-03-07 14:05:22,979:INFO:Started server process [10904]
+2022-03-07 14:05:22,979:INFO:Waiting for application startup.
+2022-03-07 14:05:22,979:INFO:Application startup complete.
+2022-03-07 14:10:43,787:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-03-07 14:10:44,754:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-07 14:10:44,754:DEBUG:Using selector: SelectSelector
+2022-03-07 14:10:44,800:INFO:Started server process [2516]
+2022-03-07 14:10:44,801:INFO:Waiting for application startup.
+2022-03-07 14:10:44,801:INFO:Application startup complete.
+2022-03-07 14:10:44,869:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-03-07 14:10:45,748:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-03-07 14:10:47,107:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-07 14:10:47,107:DEBUG:Using selector: SelectSelector
+2022-03-07 14:10:47,146:INFO:Started server process [3588]
+2022-03-07 14:10:47,146:INFO:Waiting for application startup.
+2022-03-07 14:10:47,146:INFO:Application startup complete.
+2022-03-07 14:47:01,362:INFO:Shutting down
+2022-03-07 14:47:01,386:INFO:Stopping reloader process [4400]
+2022-03-07 16:33:11,013:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-03-07 16:33:11,014:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-03-07 16:33:11,014:INFO:Started reloader process [10100] using statreload
+2022-03-07 16:33:15,500:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-07 16:33:15,500:DEBUG:Using selector: SelectSelector
+2022-03-07 16:33:15,657:INFO:Started server process [12872]
+2022-03-07 16:33:15,659:INFO:Waiting for application startup.
+2022-03-07 16:33:15,661:INFO:Application startup complete.
+2022-03-07 19:16:20,116:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-03-07 19:16:20,116:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-03-07 19:16:20,116:INFO:Started reloader process [7956] using statreload
+2022-03-07 19:16:21,236:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-07 19:16:21,236:DEBUG:Using selector: SelectSelector
+2022-03-07 19:16:21,314:INFO:Started server process [9136]
+2022-03-07 19:16:21,314:INFO:Waiting for application startup.
+2022-03-07 19:16:21,314:INFO:Application startup complete.
+2022-03-08 17:45:05,511:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-03-08 17:45:05,511:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-03-08 17:45:05,511:INFO:Started reloader process [11344] using statreload
+2022-03-08 17:45:06,628:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:45:06,628:DEBUG:Using selector: SelectSelector
+2022-03-08 17:45:06,700:INFO:Started server process [3044]
+2022-03-08 17:45:06,700:INFO:Waiting for application startup.
+2022-03-08 17:45:06,700:INFO:Application startup complete.
+2022-03-08 17:46:02,109:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:46:02,978:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:46:02,978:DEBUG:Using selector: SelectSelector
+2022-03-08 17:46:03,026:INFO:Started server process [12560]
+2022-03-08 17:46:03,026:INFO:Waiting for application startup.
+2022-03-08 17:46:03,026:INFO:Application startup complete.
+2022-03-08 17:47:05,135:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-03-08 17:47:05,135:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-08 17:47:15,413:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 112, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 43, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 97, in storeProduct
+    quit()
+  File "C:\Users\yassine_el_ghizi\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: None
+2022-03-08 17:48:13,396:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:48:14,245:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:48:14,245:DEBUG:Using selector: SelectSelector
+2022-03-08 17:48:14,293:INFO:Started server process [7896]
+2022-03-08 17:48:14,293:INFO:Waiting for application startup.
+2022-03-08 17:48:14,293:INFO:Application startup complete.
+2022-03-08 17:48:19,232:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:48:20,650:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:48:20,650:DEBUG:Using selector: SelectSelector
+2022-03-08 17:48:20,738:INFO:Started server process [10856]
+2022-03-08 17:48:20,738:INFO:Waiting for application startup.
+2022-03-08 17:48:20,738:INFO:Application startup complete.
+2022-03-08 17:48:33,247:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-03-08 17:48:33,247:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-08 17:48:44,016:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 112, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 43, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 97, in storeProduct
+    quit()
+  File "C:\Users\yassine_el_ghizi\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: None
+2022-03-08 17:50:11,767:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:50:13,015:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:50:13,015:DEBUG:Using selector: SelectSelector
+2022-03-08 17:50:13,063:INFO:Started server process [12308]
+2022-03-08 17:50:13,063:INFO:Waiting for application startup.
+2022-03-08 17:50:13,063:INFO:Application startup complete.
+2022-03-08 17:50:31,193:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-03-08 17:50:31,200:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-08 17:50:41,554:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 112, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 43, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 97, in storeProduct
+    quit()
+  File "C:\Users\yassine_el_ghizi\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: None
+2022-03-08 17:53:02,407:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:53:03,394:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:53:03,394:DEBUG:Using selector: SelectSelector
+2022-03-08 17:53:03,442:INFO:Started server process [13168]
+2022-03-08 17:53:03,442:INFO:Waiting for application startup.
+2022-03-08 17:53:03,442:INFO:Application startup complete.
+2022-03-08 17:53:05,920:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:53:06,721:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:53:06,721:DEBUG:Using selector: SelectSelector
+2022-03-08 17:53:06,761:INFO:Started server process [10588]
+2022-03-08 17:53:06,761:INFO:Waiting for application startup.
+2022-03-08 17:53:06,761:INFO:Application startup complete.
+2022-03-08 17:53:17,321:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:53:18,402:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:53:18,402:DEBUG:Using selector: SelectSelector
+2022-03-08 17:53:18,442:INFO:Started server process [3864]
+2022-03-08 17:53:18,442:INFO:Waiting for application startup.
+2022-03-08 17:53:18,442:INFO:Application startup complete.
+2022-03-08 17:53:33,320:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-03-08 17:53:33,320:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-08 17:53:35,219:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 112, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 43, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 98, in storeProduct
+    quit()
+  File "C:\Users\yassine_el_ghizi\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: None
+2022-03-08 17:54:00,525:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:54:01,620:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:54:01,620:DEBUG:Using selector: SelectSelector
+2022-03-08 17:54:01,721:INFO:Started server process [2340]
+2022-03-08 17:54:01,721:INFO:Waiting for application startup.
+2022-03-08 17:54:01,721:INFO:Application startup complete.
+2022-03-08 17:54:05,304:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:54:06,269:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:54:06,269:DEBUG:Using selector: SelectSelector
+2022-03-08 17:54:06,309:INFO:Started server process [13896]
+2022-03-08 17:54:06,309:INFO:Waiting for application startup.
+2022-03-08 17:54:06,309:INFO:Application startup complete.
+2022-03-08 17:54:10,008:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:54:10,971:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:54:10,971:DEBUG:Using selector: SelectSelector
+2022-03-08 17:54:11,003:INFO:Started server process [7144]
+2022-03-08 17:54:11,003:INFO:Waiting for application startup.
+2022-03-08 17:54:11,003:INFO:Application startup complete.
+2022-03-08 17:54:15,349:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:54:16,370:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:54:16,370:DEBUG:Using selector: SelectSelector
+2022-03-08 17:54:16,418:INFO:Started server process [1396]
+2022-03-08 17:54:16,418:INFO:Waiting for application startup.
+2022-03-08 17:54:16,418:INFO:Application startup complete.
+2022-03-08 17:54:16,681:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:54:17,696:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:54:17,696:DEBUG:Using selector: SelectSelector
+2022-03-08 17:54:17,731:INFO:Started server process [14188]
+2022-03-08 17:54:17,731:INFO:Waiting for application startup.
+2022-03-08 17:54:17,731:INFO:Application startup complete.
+2022-03-08 17:54:20,699:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:54:21,668:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:54:21,676:DEBUG:Using selector: SelectSelector
+2022-03-08 17:54:21,716:INFO:Started server process [13376]
+2022-03-08 17:54:21,716:INFO:Waiting for application startup.
+2022-03-08 17:54:21,716:INFO:Application startup complete.
+2022-03-08 17:55:17,333:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:55:18,032:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:55:18,032:DEBUG:Using selector: SelectSelector
+2022-03-08 17:55:18,072:INFO:Started server process [9924]
+2022-03-08 17:55:18,072:INFO:Waiting for application startup.
+2022-03-08 17:55:18,072:INFO:Application startup complete.
+2022-03-08 17:55:24,697:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:55:25,774:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:55:25,774:DEBUG:Using selector: SelectSelector
+2022-03-08 17:55:25,814:INFO:Started server process [6720]
+2022-03-08 17:55:25,814:INFO:Waiting for application startup.
+2022-03-08 17:55:25,814:INFO:Application startup complete.
+2022-03-08 17:55:52,204:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:55:52,970:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:55:52,970:DEBUG:Using selector: SelectSelector
+2022-03-08 17:55:53,018:INFO:Started server process [9836]
+2022-03-08 17:55:53,018:INFO:Waiting for application startup.
+2022-03-08 17:55:53,018:INFO:Application startup complete.
+2022-03-08 17:55:58,515:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:55:59,426:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:55:59,426:DEBUG:Using selector: SelectSelector
+2022-03-08 17:55:59,482:INFO:Started server process [13140]
+2022-03-08 17:55:59,482:INFO:Waiting for application startup.
+2022-03-08 17:55:59,482:INFO:Application startup complete.
+2022-03-08 17:56:05,115:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:56:06,058:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:56:06,058:DEBUG:Using selector: SelectSelector
+2022-03-08 17:56:06,090:INFO:Started server process [5336]
+2022-03-08 17:56:06,090:INFO:Waiting for application startup.
+2022-03-08 17:56:06,090:INFO:Application startup complete.
+2022-03-08 17:56:10,130:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:56:11,149:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:56:11,149:DEBUG:Using selector: SelectSelector
+2022-03-08 17:56:11,189:INFO:Started server process [11120]
+2022-03-08 17:56:11,189:INFO:Waiting for application startup.
+2022-03-08 17:56:11,197:INFO:Application startup complete.
+2022-03-08 17:56:19,105:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-03-08 17:56:19,105:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-08 17:56:20,827:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 43, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 93, in storeProduct
+    INFO = sorted(bulk_insert, key=key_func)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 30, in key_func
+    return k['name']
+TypeError: 'Product' object is not subscriptable
+2022-03-08 17:56:55,542:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:56:56,447:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:56:56,447:DEBUG:Using selector: SelectSelector
+2022-03-08 17:56:56,487:INFO:Started server process [12844]
+2022-03-08 17:56:56,487:INFO:Waiting for application startup.
+2022-03-08 17:56:56,487:INFO:Application startup complete.
+2022-03-08 17:57:02,847:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:57:03,632:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:57:03,632:DEBUG:Using selector: SelectSelector
+2022-03-08 17:57:03,664:INFO:Started server process [12320]
+2022-03-08 17:57:03,664:INFO:Waiting for application startup.
+2022-03-08 17:57:03,664:INFO:Application startup complete.
+2022-03-08 17:57:03,897:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:57:04,678:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:57:05,786:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:57:05,786:DEBUG:Using selector: SelectSelector
+2022-03-08 17:57:05,842:INFO:Started server process [8096]
+2022-03-08 17:57:05,842:INFO:Waiting for application startup.
+2022-03-08 17:57:05,842:INFO:Application startup complete.
+2022-03-08 17:57:20,771:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:57:21,539:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:57:21,539:DEBUG:Using selector: SelectSelector
+2022-03-08 17:57:21,579:INFO:Started server process [8596]
+2022-03-08 17:57:21,579:INFO:Waiting for application startup.
+2022-03-08 17:57:21,579:INFO:Application startup complete.
+2022-03-08 17:57:23,117:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:57:24,071:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:57:24,071:DEBUG:Using selector: SelectSelector
+2022-03-08 17:57:24,119:INFO:Started server process [5084]
+2022-03-08 17:57:24,119:INFO:Waiting for application startup.
+2022-03-08 17:57:24,119:INFO:Application startup complete.
+2022-03-08 17:57:40,997:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-03-08 17:57:40,997:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-08 17:57:42,885:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 112, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 43, in insert_product
+    return await storeProduct(website , importance)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\productController.py", line 90, in storeProduct
+    quit()
+  File "C:\Users\yassine_el_ghizi\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: None
+2022-03-08 17:59:11,592:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:59:12,563:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:59:12,563:DEBUG:Using selector: SelectSelector
+2022-03-08 17:59:12,619:INFO:Started server process [1744]
+2022-03-08 17:59:12,619:INFO:Waiting for application startup.
+2022-03-08 17:59:12,619:INFO:Application startup complete.
+2022-03-08 17:59:26,016:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-08 17:59:26,844:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 17:59:26,844:DEBUG:Using selector: SelectSelector
+2022-03-08 17:59:26,884:INFO:Started server process [4528]
+2022-03-08 17:59:26,884:INFO:Waiting for application startup.
+2022-03-08 17:59:26,884:INFO:Application startup complete.
+2022-03-08 18:10:02,128:INFO:Shutting down
+2022-03-08 18:10:02,225:INFO:Stopping reloader process [11344]
+2022-03-08 18:10:03,246:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-03-08 18:10:03,246:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-03-08 18:10:03,246:INFO:Started reloader process [10104] using statreload
+2022-03-08 18:10:04,067:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-08 18:10:04,068:DEBUG:Using selector: SelectSelector
+2022-03-08 18:10:04,102:INFO:Started server process [3044]
+2022-03-08 18:10:04,102:INFO:Waiting for application startup.
+2022-03-08 18:10:04,102:INFO:Application startup complete.
+2022-03-08 18:10:05,095:INFO:Shutting down
+2022-03-08 18:10:05,111:INFO:Stopping reloader process [10104]
+2022-03-09 09:54:08,875:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-03-09 09:54:08,883:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-03-09 09:54:08,883:INFO:Started reloader process [15104] using statreload
+2022-03-09 09:54:09,637:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-09 09:54:09,637:DEBUG:Using selector: SelectSelector
+2022-03-09 09:54:09,686:INFO:Started server process [7124]
+2022-03-09 09:54:09,686:INFO:Waiting for application startup.
+2022-03-09 09:54:09,686:INFO:Application startup complete.
+2022-03-09 09:54:29,417:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-09 09:54:29,937:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-03-09 09:54:31,053:WARNING:The --reload flag should not be used in production on Windows.
+2022-03-09 09:54:31,054:DEBUG:Using selector: SelectSelector
+2022-03-09 09:54:31,097:INFO:Started server process [12328]
+2022-03-09 09:54:31,097:INFO:Waiting for application startup.
+2022-03-09 09:54:31,097:INFO:Application startup complete.
