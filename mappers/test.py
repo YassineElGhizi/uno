@@ -41,5 +41,5 @@ dict_val_to_list =list(new_list)
 big_list = []
 
 [big_list.append(x) for x in dict_val_to_list]
-
+print('Results\n')
 [ ([print(f'{y}') for y in yy] , print('=============\n')) for yy in big_list]

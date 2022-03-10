@@ -13,16 +13,6 @@ try:
     # Create a cursor object
     cursorObject = connectionObject.cursor()
 
-    # # SQL query string
-    # sqlQuery = "CREATE TABLE Categories(id int primary key not null AUTO_INCREMENT, name varchar(255))"
-    # # Execute the sqlQuery
-    # cursorObject.execute(sqlQuery)
-
-    # # SQL query string
-    # sqlQuery = "CREATE TABLE Subcategories(id int primary key not null AUTO_INCREMENT, name varchar(255), id_cat int, foreign key (id_cat) references categories(id))"
-    # # Execute the sqlQuery
-    # cursorObject.execute(sqlQuery)
-
     # SQL query string
     sqlQuery = "CREATE TABLE Stores(id int primary key not null AUTO_INCREMENT, name varchar(255), link text ,updated_at timestamp )"
     # Execute the sqlQuery
@@ -38,6 +28,26 @@ try:
 
     # SQL query string
     sqlQuery = "CREATE TABLE Prices(id_item int , price double, created_at timestamp, foreign key (id_item) references items(id))"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE mapped_prod_names(id int primary key not null AUTO_INCREMENT, name varchar(255))"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE bots(id int primary key not null AUTO_INCREMENT, name varchar(255) , type int , status int , last_beat timestamp)"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE categories(id int primary key not null AUTO_INCREMENT, name_cat_in_store varchar(255) , id_store int , foreign key (id_store) references stores(id))"
+    # Execute the sqlQuery
+    cursorObject.execute(sqlQuery)
+
+    # SQL query string
+    sqlQuery = "CREATE TABLE jobs(id int primary key not null AUTO_INCREMENT, type int , bot_id int , runed_at timestamp , foreign key (bot_id) references bots(id))"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 

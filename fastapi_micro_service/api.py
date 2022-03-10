@@ -4,14 +4,13 @@ import logging
 from typing import List
 from typing import Optional
 
-
 from fastapi_micro_service.controllers.optionController import optionGetAll
 from fastapi_micro_service.controllers.productController import storeProduct
 from fastapi_micro_service.controllers.brandController import brandGetAll
 from fastapi_micro_service.models.mapper import Mapper
 from fastapi_micro_service.middleware.authHandler import AuthHandler
-auth_handler = AuthHandler()
 
+auth_handler = AuthHandler()
 logging.basicConfig(
     filename='fastapi.log',
     level=logging.DEBUG,
@@ -19,7 +18,7 @@ logging.basicConfig(
 )
 app = FastAPI()
 
-authorizer_mappers = [
+authorized_mappers = [
     {
         'username' : 'uno_mapper' ,
         'password' : '$2b$12$j1Xs6HvX7iZ9D70vulcrx.J99lQBPPujXPk5F8VZKgt2qSERr4axm' #unoMapperSupero2022
@@ -50,7 +49,7 @@ async def get_brands(user_name=Depends(auth_handler.auth_wrapper)):
 def login(reqBody : dict = Body(...)):
     m = Mapper(reqBody['username'] , reqBody['password'])
     pswd = None
-    for u in authorizer_mappers:
+    for u in authorized_mappers:
         if m.username == u['username']:
             pswd = u['password']
     if (pswd is None) or (not auth_handler.verify_password(m.password, pswd)):

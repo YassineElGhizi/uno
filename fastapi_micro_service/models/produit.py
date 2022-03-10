@@ -37,9 +37,6 @@ class Product(Base):
     def __toString__(self):
         print(f"-->id = {self.id} ,slug = {self.slug} <--")
 
-    def __to_dict__(self):
-        d = {}
-        d['id'] = self.id
-        d['name'] = self.name
-        d['id_parent'] = self.id_parent
-        return d
+    def __str__(self):
+        return f'ID = {self.id} name = {self.name},title = {self.title},brand = {self.brand},category = {self.category},id_parent = {self.id_parent}'
+

@@ -5,54 +5,67 @@ from sqlalchemy.orm import sessionmaker
 import random
 import datetime
 import urllib.parse
-from itertools import groupby
+#To update product_id_parent
+from collections import defaultdict
 
 
 from ..controllers.storeProductDetailsController import storeProductDetails
 from ..controllers.product__storeController import storeProduct__store
 from ..models.produit import Product
 
-
-
-def network_heart_beats(website : str ,nb_prods : int ):
-    now = datetime.datetime.now()
-    created_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
-    with open('../network_heart_beats.txt' , 'a' , encoding="utf8") as f:
-        f.write(f'{website} : {nb_prods} : {created_at}\n')
-        f.close()
-
 def generate_slug(title:str) -> str:
     return f"{slugify(title)}-{random.randrange(10000000, 99999999)}"
 
-
-# define a fuction for key
-def key_func(k):
-    return k['name']
+def get_products_parent_id(prod_name : str , session):
+    res = session.query(Product.id_parent).filter(
+        Product.name == prod_name,
+        Product.id_parent != None
+    ).first()
+    if res is None:
+        return res
+    else:
+        return res[0]
 
 def update_id_parent(prod_list:List[Product] , session):
-    id_first_item = prod_list[0]
-    print(f'id_first_item = {id_first_item.id}')
-    print(f'TYPE id_first_item = {type(id_first_item.id)}')
-    rest =prod_list[1:]
-    for i in rest:
-        i.id_parent = id_first_item.id
+    groups = defaultdict(list)
+    [groups[obj.name].append(obj) for obj in prod_list]
+    names = groups.keys()
+    names_and_thier_id = []
+    for n in names:
+        tmp_d = {}
+        tmp = get_products_parent_id(n , session)
+        if tmp != None:
+            tmp_d[f'{n}'] = tmp
+            names_and_thier_id.append(tmp_d)
+
+    print('FININSHED With')
+    [print(z) for z in names_and_thier_id]
+    quit()
+    dict_val_to_list = list(groups.values())
+    big_list = []
+    [big_list.append(x) for x in dict_val_to_list]
+    [affect_parent_id_to_the_rest_of_items(yy) for yy in big_list]
+    # [([print(f'{y}') for y in yy], print('=============\n')) for yy in big_list]
     session.commit()
 
-engine = db.create_engine('mysql://root@localhost/exemple_supero2')
-ss = sessionmaker(bind=engine)
-s = ss()
+def affect_parent_id_to_the_rest_of_items(items : List[Product]):
+    rest_of_items = items[1:]
+    id = items[0].id
+    for i in rest_of_items:
+        i.id_parent = id
+
+
 
 default_apple_category = 5
 uno_store_id = 1
 
 async def storeProduct(website: str ,listProducts : List):
+    engine = db.create_engine('mysql://root@localhost/exemple_supero2')
+    ss = sessionmaker(bind=engine)
+    s = ss()
     bulk_insert = []
     prices = []
     if website == 'uno':
-        try:
-            network_heart_beats(website, len(listProducts))
-        except:
-            pass
         for item in listProducts:
             try:
                 name = item['prod_name']
@@ -86,16 +99,7 @@ async def storeProduct(website: str ,listProducts : List):
 
         s.add_all(bulk_insert)
         s.commit()
-
-        INFO = [x.__to_dict__() for x in bulk_insert]
-        # sort INFO data by 'name' key.
-        INFO = sorted(INFO, key=key_func)
-        for key, value in groupby(INFO, key_func):
-            print(key)
-            print(list(value))
-
         update_id_parent(bulk_insert , s)
-        quit()
         print("SUCCESS BULK INSERT #1 (product_details & products)")
         #loping over the new created products recoreds in order to create product__store
         await storeProduct__store(uno_store_id ,bulk_insert, prices)

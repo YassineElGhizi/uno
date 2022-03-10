@@ -819,3 +819,404 @@
 03/08/2022 05:57:41 PM MAPPED 354 ITEMS
 03/08/2022 05:57:41 PM Starting new HTTP connection (1): 127.0.0.1:9999
 03/08/2022 05:57:42 PM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:19:08 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:19:10 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:19:10 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:19:10 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:19:10 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:19:10 AM MAPPED 354 ITEMS
+03/09/2022 10:19:10 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:19:12 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:23:29 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:23:31 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:23:31 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:23:31 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:23:31 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:23:31 AM MAPPED 354 ITEMS
+03/09/2022 10:23:31 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:23:33 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:29:05 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:29:08 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:29:08 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:29:08 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:29:08 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:29:08 AM MAPPED 354 ITEMS
+03/09/2022 10:29:08 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:29:09 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:32:36 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:32:38 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:32:38 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:32:38 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:32:38 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:32:38 AM MAPPED 354 ITEMS
+03/09/2022 10:32:38 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:32:40 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:32:54 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:32:56 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:32:56 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:32:56 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:32:56 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:32:56 AM MAPPED 354 ITEMS
+03/09/2022 10:32:56 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:32:58 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:34:25 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:34:28 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:34:28 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:34:28 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:34:28 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:34:28 AM MAPPED 354 ITEMS
+03/09/2022 10:34:28 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:34:29 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:36:16 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:36:18 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:36:18 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:36:18 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:36:18 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:36:18 AM MAPPED 354 ITEMS
+03/09/2022 10:36:18 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:36:20 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:36:47 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:36:50 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:36:50 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:36:50 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:36:50 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:36:50 AM MAPPED 354 ITEMS
+03/09/2022 10:36:50 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:36:52 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:37:28 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:37:30 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:37:30 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:37:30 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:37:30 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:37:30 AM MAPPED 354 ITEMS
+03/09/2022 10:37:30 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:37:32 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:37:59 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:38:02 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:38:02 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:38:02 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:38:02 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:38:02 AM MAPPED 354 ITEMS
+03/09/2022 10:38:02 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:38:03 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:51:15 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:51:17 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:51:17 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:51:18 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:51:18 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:51:18 AM MAPPED 354 ITEMS
+03/09/2022 10:51:18 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:51:19 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 21
+03/09/2022 10:51:50 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:51:52 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:51:52 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:51:52 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:51:52 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:51:53 AM MAPPED 354 ITEMS
+03/09/2022 10:51:53 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:51:54 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:52:26 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:52:28 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:52:28 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:52:29 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:52:29 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:52:29 AM MAPPED 354 ITEMS
+03/09/2022 10:52:29 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:52:30 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/09/2022 10:54:46 AM Starting new HTTP connection (1): localhost:9999
+03/09/2022 10:54:48 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/09/2022 10:54:48 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:54:48 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/09/2022 10:54:48 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/09/2022 10:54:48 AM MAPPED 354 ITEMS
+03/09/2022 10:54:48 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/09/2022 10:54:52 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 200 14
+03/10/2022 10:21:37 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:21:43 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:21:45 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 10:21:45 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:21:45 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 10:21:45 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 10:21:45 AM MAPPED 354 ITEMS
+03/10/2022 10:21:45 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:21:49 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 200 14
+03/10/2022 10:50:07 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:50:10 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 10:50:10 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:50:10 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 10:50:10 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 10:50:10 AM MAPPED 354 ITEMS
+03/10/2022 10:50:10 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:50:11 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 10:52:18 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:52:20 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 10:52:20 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:52:20 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 10:52:20 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 10:52:20 AM MAPPED 354 ITEMS
+03/10/2022 10:52:20 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:52:22 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 10:57:12 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:57:14 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 10:57:14 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:57:14 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 10:57:14 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 10:57:15 AM MAPPED 354 ITEMS
+03/10/2022 10:57:15 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:57:16 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 10:57:36 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:57:38 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 10:57:38 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:57:38 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 10:57:38 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 10:57:38 AM MAPPED 354 ITEMS
+03/10/2022 10:57:38 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:57:40 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 10:58:18 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 10:58:21 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 10:58:21 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:58:21 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 10:58:21 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 10:58:21 AM MAPPED 354 ITEMS
+03/10/2022 10:58:21 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 10:58:22 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:04:57 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:05:00 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:05:00 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:05:00 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:05:00 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:05:00 AM MAPPED 354 ITEMS
+03/10/2022 11:05:00 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:05:01 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:05:47 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:05:50 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:05:50 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:05:50 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:05:50 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:05:50 AM MAPPED 354 ITEMS
+03/10/2022 11:05:50 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:05:51 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:06:39 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:06:41 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:06:41 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:06:42 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:06:42 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:06:42 AM MAPPED 354 ITEMS
+03/10/2022 11:06:42 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:06:43 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:07:29 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:07:31 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:07:31 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:07:31 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:07:31 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:07:31 AM MAPPED 354 ITEMS
+03/10/2022 11:07:31 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:07:33 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:09:41 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:09:43 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:09:43 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:09:43 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:09:43 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:09:43 AM MAPPED 354 ITEMS
+03/10/2022 11:09:43 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:09:44 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:10:55 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:10:58 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:10:58 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:10:58 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:10:58 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:10:58 AM MAPPED 354 ITEMS
+03/10/2022 11:10:58 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:10:59 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:12:02 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:12:05 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:12:05 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:12:05 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:12:05 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:12:05 AM MAPPED 354 ITEMS
+03/10/2022 11:12:05 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:12:06 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:12:52 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:12:54 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:12:54 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:12:54 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:12:54 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:12:54 AM MAPPED 354 ITEMS
+03/10/2022 11:12:54 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:12:56 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:16:37 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:16:39 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:16:39 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:16:39 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:16:39 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:16:39 AM MAPPED 354 ITEMS
+03/10/2022 11:16:39 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:16:41 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 21
+03/10/2022 11:17:00 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:17:03 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:17:03 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:17:03 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:17:03 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:17:03 AM MAPPED 354 ITEMS
+03/10/2022 11:17:03 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:17:05 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:18:26 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:18:28 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:18:28 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:18:28 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:18:28 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:18:28 AM MAPPED 354 ITEMS
+03/10/2022 11:18:28 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:18:30 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:21:56 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:21:58 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:21:58 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:21:59 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:21:59 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:21:59 AM MAPPED 354 ITEMS
+03/10/2022 11:21:59 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:22:00 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:27:36 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:27:38 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:27:38 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:27:38 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:27:38 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:27:38 AM MAPPED 354 ITEMS
+03/10/2022 11:27:38 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:27:40 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 21
+03/10/2022 11:28:09 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:28:12 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:28:12 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:28:12 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:28:12 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:28:12 AM MAPPED 354 ITEMS
+03/10/2022 11:28:12 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:28:13 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 21
+03/10/2022 11:28:43 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:28:46 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:28:46 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:28:46 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:28:46 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:28:46 AM MAPPED 354 ITEMS
+03/10/2022 11:28:46 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:28:48 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:33:50 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:33:53 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:33:53 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:33:53 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:33:53 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:33:53 AM MAPPED 354 ITEMS
+03/10/2022 11:33:53 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:33:55 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:35:03 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:35:05 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:35:05 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:35:05 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:35:05 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:35:05 AM MAPPED 354 ITEMS
+03/10/2022 11:35:05 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:35:07 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:36:35 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:36:37 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:36:37 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:36:37 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:36:37 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:36:37 AM MAPPED 354 ITEMS
+03/10/2022 11:36:37 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:36:39 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:37:08 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:37:10 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:37:10 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:37:10 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:37:10 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:37:10 AM MAPPED 354 ITEMS
+03/10/2022 11:37:10 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:37:12 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:39:30 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:39:32 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:39:32 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:39:32 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:39:32 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:39:32 AM MAPPED 354 ITEMS
+03/10/2022 11:39:32 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:39:34 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:40:56 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:40:58 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:40:58 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:40:58 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:40:58 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:40:58 AM MAPPED 354 ITEMS
+03/10/2022 11:40:58 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:41:00 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:41:19 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:41:22 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:41:22 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:41:22 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:41:22 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:41:22 AM MAPPED 354 ITEMS
+03/10/2022 11:41:22 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:41:24 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:41:38 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:41:40 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:41:40 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:41:40 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:41:40 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:41:40 AM MAPPED 354 ITEMS
+03/10/2022 11:41:40 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:41:42 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:42:10 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:42:12 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:42:12 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:42:12 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:42:12 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:42:12 AM MAPPED 354 ITEMS
+03/10/2022 11:42:12 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:42:14 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:42:55 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:42:57 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:42:57 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:42:58 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:42:58 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:42:58 AM MAPPED 354 ITEMS
+03/10/2022 11:42:58 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:42:59 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:44:09 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:44:12 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:44:12 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:44:12 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:44:12 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:44:12 AM MAPPED 354 ITEMS
+03/10/2022 11:44:12 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:44:14 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:45:07 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:45:09 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:45:09 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:45:09 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:45:09 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:45:09 AM MAPPED 354 ITEMS
+03/10/2022 11:45:09 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:45:11 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:45:22 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:45:25 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:45:25 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:45:25 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:45:25 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:45:25 AM MAPPED 354 ITEMS
+03/10/2022 11:45:25 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:45:27 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:46:13 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:46:16 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:46:16 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:46:16 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:46:16 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:46:16 AM MAPPED 354 ITEMS
+03/10/2022 11:46:16 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:46:17 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None
+03/10/2022 11:48:03 AM Starting new HTTP connection (1): localhost:9999
+03/10/2022 11:48:05 AM http://localhost:9999 "POST /login HTTP/1.1" 200 165
+03/10/2022 11:48:05 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:48:05 AM http://127.0.0.1:9999 "GET /options?website=uno HTTP/1.1" 200 6929
+03/10/2022 11:48:05 AM http://localhost:9999 "GET /brands HTTP/1.1" 200 8438
+03/10/2022 11:48:05 AM MAPPED 354 ITEMS
+03/10/2022 11:48:05 AM Starting new HTTP connection (1): 127.0.0.1:9999
+03/10/2022 11:48:07 AM http://127.0.0.1:9999 "POST /products?website=uno HTTP/1.1" 500 None

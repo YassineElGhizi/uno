@@ -1,27 +1,80 @@
-from typing import List
 import pymysql
-import json
 from requests import Session
 from mappers.Helpers.electroplanet import *
 
 
+def get_mapped_prod_names(mycursor) -> List:
+    l = []
+    sql = "select frome_to from mapped_prod_names"
+    mycursor.execute(sql,)
+    [l.append(i[0]) for i in mycursor.fetchall()]
+    return l
+
+def prod_names_reducer(mycursor):
+    l = []
+    list_reducers = []
+    sql = """
+        SELECT distinct name_in_store FROM ITEMS WHERE id_store = 3
+        and (category_in_store like 'iphone'
+        or category_in_store like 'telephone-android'
+        or category_in_store like 'ipad'
+        or category_in_store like 'tablettes-android'
+        or category_in_store like 'Domestique'
+        or category_in_store like 'Mobile'
+        or category_in_store like 'Cover de protection'
+        or category_in_store like 'Oreillettes bluetooth'
+        or category_in_store like 'Perche selfie filaire'
+        or category_in_store like 'Selfie sans fil'
+        or category_in_store like 'Macbook'
+        or category_in_store like 'Chargeur'
+        or category_in_store like 'Tablettes cover de protection'
+        or category_in_store like 'Tablettes support voiture'
+        or category_in_store like 'Adaptateurs telephone tablette'
+        or category_in_store like 'Cablage'
+        );
+        """
+    mycursor.execute(sql,)
+    [l.append(i[0]) for i in mycursor.fetchall()]
+    list_mapped_prod_names = get_mapped_prod_names(mycursor)
+    l.sort(key=len)
+
+    for i in list_mapped_prod_names:
+        for j in l:
+            if i.lower() in j.lower().replace(',' , '.'):
+                if not key_exists_in_list_of_dicts(list_reducers, j):
+                    reducer = {}
+                    reducer[f'{j}'] = i
+                    list_reducers.append(reducer)
+                    continue
+            if 'CHARGEUR' in j or 'CABLE' in j:
+                reducer = {}
+                reducer[f'{j}'] = 'Cable Chargeur'
+                list_reducers.append(reducer)
+                continue
+
+    no_names_products = []
+    for j in l:
+        if not key_exists_in_list_of_dicts(list_reducers, j):
+            no_names_products.append(j)
+    [print(x) for x in no_names_products]
+    print(f'len = {len(no_names_products)}')
+    return list_reducers
+
+def key_exists_in_list_of_dicts(l : List , k : str) -> bool:
+    for d in l:
+        if k in d:
+            return True
+    return False
+
 
 def smartphones_tablette(token:str , s:Session , brands : List) -> List:
-    all_keys = []
     url = "http://127.0.0.1:9999/options?website=electroplanet-iphone"
-    # url_post = "http://127.0.0.1:9999/products?website=uno"
-
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': f'Bearer {token}'
-    }
-
+    headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
     response = s.get(url , headers=headers)
     tmp = json.loads(response.text)
 
     mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
     mycursor = mydb.cursor()
-
     sql = """
     SELECT * FROM ITEMS WHERE id_store = 3
     and (category_in_store like 'iphone'
@@ -46,25 +99,10 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
     mycursor.execute(sql,)
     results = dictfetchall(mycursor)
 
-    for r in results:
-        x = json.loads(r["specification"])
-        keys = x.keys()
-        [ all_keys.append(k) for k in keys if k not in all_keys ]
-    secondary_keys = []
-    for r in results:
-        x = json.loads(r["specification"])
-        try:
-            all_brands.append(x["brand"])
-            item_ref.append(x["item_ref"])
-            specification_table.append(x["specification_table"])
-            for r in extract_specification(x["specification_table"]):
-                keys = r.keys()
-                [secondary_keys.append(k) for k in keys if k not in secondary_keys]
-        except Exception as e:
-            pass
-
-    all_keys = secondary_keys
-
+    x = prod_names_reducer(mycursor)
+    print('\n\n')
+    [ print(xx) for xx in x ]
+    quit()
 
     for t in tmp:
         if t['id_parent'] == 1:
@@ -97,7 +135,6 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
         if t['id_parent'] == 156:
             electroplanet_power.append(t)
             continue
-
 
     for r in results:
         tmp_d = {}
@@ -185,29 +222,6 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
         res_to_post_fastapi.append(tmp_d)
 
 
-
     [print(i) for i in res_to_post_fastapi]
     print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
     return res_to_post_fastapi
-    #
-    #
-    # nb_req = math.ceil(len(res_to_post_fastapi) / obe_by_req)
-    # reqs = []
-    # tmp = []
-    # for num , k in enumerate(res_to_post_fastapi):
-    #     tmp.append(k)
-    #     if (num+1) == len(res_to_post_fastapi):
-    #         reqs.append(tmp)
-    #     if (num+1) % obe_by_req == 0:
-    #         reqs.append(tmp)
-    #         tmp = []
-    #         continue
-    #
-    #
-    # for n ,r in enumerate(reqs):
-    #     print(f'preparing req NO {n}')
-    #     payload = json.dumps(r)
-    #     response = requests.request("POST", url_post, headers=headers, data=payload)
-    #     print(response.text)
-    #     print(f"response.elapsed.total_seconds() = {response.elapsed.total_seconds()}")
-    #     time.sleep(5)
