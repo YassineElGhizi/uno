@@ -38,23 +38,44 @@ def update_id_parent(prod_list:List[Product] , session):
             tmp_d[f'{n}'] = tmp
             names_and_thier_id.append(tmp_d)
 
-    print('FININSHED With')
-    [print(z) for z in names_and_thier_id]
-    quit()
+    keys_to_drop = []
+
+    #if the products already has id parent => pop'em
+    for x in groups:
+        for y in names_and_thier_id:
+            if x == list(y.keys())[0]:
+                keys_to_drop.append(x)
+    for k in keys_to_drop:
+        groups.pop(f'{k}')
+
+    special_traitemenet_parent_id(names_and_thier_id, session)
+    #giving the grouped by product one parent_id
     dict_val_to_list = list(groups.values())
     big_list = []
     [big_list.append(x) for x in dict_val_to_list]
     [affect_parent_id_to_the_rest_of_items(yy) for yy in big_list]
-    # [([print(f'{y}') for y in yy], print('=============\n')) for yy in big_list]
     session.commit()
+
+def special_traitemenet_parent_id( names_and_thier_id, s):
+    for item in names_and_thier_id:
+        key = list(item.keys())[0]
+        val = item[f'{key}']
+        prods = s.query(Product).filter(
+            Product.name == key,
+            Product.id_parent == None,
+            Product.id != val
+        ).all()
+        for p in prods:
+            p.id_parent = val
+        s.commit()
+
+
 
 def affect_parent_id_to_the_rest_of_items(items : List[Product]):
     rest_of_items = items[1:]
     id = items[0].id
     for i in rest_of_items:
         i.id_parent = id
-
-
 
 default_apple_category = 5
 uno_store_id = 1
@@ -103,7 +124,6 @@ async def storeProduct(website: str ,listProducts : List):
         print("SUCCESS BULK INSERT #1 (product_details & products)")
         #loping over the new created products recoreds in order to create product__store
         await storeProduct__store(uno_store_id ,bulk_insert, prices)
-
 
 
     return {"status" : 200 }
