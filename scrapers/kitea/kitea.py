@@ -1,4 +1,6 @@
 import json
+import time
+
 import pymysql
 import requests
 from bs4 import BeautifulSoup as BS
@@ -22,7 +24,7 @@ print("[+] requesting kiteak.com")
 res = requests.get("https://www.kitea.com/" , headers=headers)
 items = BS(res.text,features="html.parser")
 all_categories_toscrape = items.findAll('div' , {'class' : 'sm-megamenu-child sm_megamenu_dropdown_6columns'})
-print("[+] preparing cats adn subcats")
+print("[+] preparing cats & subcats")
 for i in all_categories_toscrape:
     in_site_category = i.findAll('a' , {'class' : 'sm_megamenu_nodrop'})
     for x in in_site_category:
@@ -58,8 +60,11 @@ def scrape():
             for num, ic in enumerate(items_cards):
                 image_item = ic.find('img' , {'class' : 'product-image-photo'}).get('src')
                 item_link = ic.find('a' , {'class' : 'product photo product-item-photo'}).get('href')
-                res2 = s.get(item_link , headers=headers)
-                sleep(random.randint(2,5))
+                try:
+                    res2 = s.get(item_link , headers=headers)
+                except:
+                    continue
+                sleep(random.randint(1,3))
                 html2 = res2.text
                 new_page = BS(html2,features="html.parser")
                 item_name_instore = new_page.find('span' , {"class" : "base"}).get_text()
@@ -135,4 +140,6 @@ def scrape():
         pass
 
 if __name__ == "__main__":
+    start = time.time()
     scrape()
+    print(f'Finished in {time.time() - start} seconds')

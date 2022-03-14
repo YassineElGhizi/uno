@@ -9638,3 +9638,5 @@ SystemExit: None
 2022-03-10 17:52:55,255:INFO:Application startup complete.
 2022-03-10 17:53:10,097:DEBUG:detected 'bcrypt' backend, version '3.2.0'
 2022-03-10 17:53:10,097:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-03-10 18:30:34,485:INFO:Shutting down
+2022-03-10 18:30:34,499:INFO:Stopping reloader process [7344]
