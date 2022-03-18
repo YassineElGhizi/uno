@@ -70,7 +70,6 @@ def special_traitemenet_parent_id( names_and_thier_id, s):
         s.commit()
 
 
-
 def affect_parent_id_to_the_rest_of_items(items : List[Product]):
     rest_of_items = items[1:]
     id = items[0].id

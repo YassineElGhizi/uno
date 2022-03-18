@@ -2,7 +2,6 @@ from fastapi import FastAPI, Body, HTTPException, Depends
 import uvicorn
 import logging
 from typing import List
-from typing import Optional
 
 from fastapi_micro_service.controllers.optionController import optionGetAll
 from fastapi_micro_service.controllers.productController import storeProduct

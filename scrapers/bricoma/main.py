@@ -1,4 +1,6 @@
 import json
+import time
+
 import pymysql
 import requests
 from bs4 import BeautifulSoup as BS
@@ -36,9 +38,9 @@ def scrape():
 
     try:
         print("[+] Getting categories")
+        sess = requests.session()
         for l in list_of_cats_and_thier_links :
-            res = requests.get("{}".format(l["link"]))
-            html = res.text
+            res = sess.get("{}".format(l["link"]))
 
             #DB Connexion
             mydb = pymysql.connect(
@@ -46,12 +48,12 @@ def scrape():
                 port=3306,
                 user="root",
                 password="",
-                database="datalake",
+                database="supero_datalake2",
             )
             mycursor = mydb.cursor()
 
             items = BS(
-                html,
+                res.text,
                 features="html.parser"
             )
             subcats = items.findAll('a' , {'class' : 'category-name'})
@@ -64,11 +66,14 @@ def scrape():
 
             print("         [+] Scraping Items")
             for item in list_of_subcats_and_thier_links:
-                res2 = requests.get("{}{}".format(item["link"] ,"?product_list_limit=32"))
-                sleep(random.randint(4 , 7))
-                html2 = res2.text
+                try:
+                    res2 = sess.get("{}{}".format(item["link"] ,"?product_list_limit=32"), timeout=3)
+                except Exception as e:
+                    print(f'Exception = {e}')
+                    continue
+                sleep(random.randint(1 , 3))
                 new_page2 = BS(
-                    html2,
+                    res2.text,
                     features="html.parser"
                 )
                 items_cards = new_page2.findAll('div' , {'class' : 'actions-primary'})
@@ -79,11 +84,10 @@ def scrape():
                     )
             print("             [+] Collecting data")
             for num, link in enumerate(mylist):
-                res2 = requests.get(link)
-                sleep(random.randint(4 , 7))
-                html2 = res2.text
+                res2 = sess.get(link)
+                sleep(random.randint(1 , 3))
                 new_page = BS(
-                    html2,
+                    res2.text,
                     features="html.parser"
                 )
 
@@ -181,4 +185,6 @@ def scrape():
 
 
 if __name__ == "__main__":
+    start = time.time()
     scrape()
+    print(f'Finished in {time.time() -start} seconds')
