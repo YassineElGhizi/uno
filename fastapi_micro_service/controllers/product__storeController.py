@@ -1,16 +1,10 @@
 from typing import List
-
-import datetime
-import sqlalchemy as db
 from sqlalchemy.orm import sessionmaker
 
-from .product_historyController import store_price_hostory
 from ..models.product__store import ProductStore
-from ..models.produit import Product
+from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
+from fastapi_micro_service.models.produit import Product
 
-engine = db.create_engine('mysql://root@localhost/exemple_supero2')
-ss = sessionmaker(bind=engine)
-s = ss()
 
 def retraive_price(l : list , keyword : str):
     for i in l:
@@ -22,10 +16,11 @@ def retraive_price(l : list , keyword : str):
 
 async def storeProduct__store(store_id : int, prod_list : List[Product], prices :List):
     bulk_insert = []
+    ss = sessionmaker(bind=engine)
+    s = ss()
     for obj in prod_list:
         price , link = retraive_price(prices , obj.slug)
-        now = datetime.datetime.now()
-        created_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
+        created_at = myTempStamp()
         ps = ProductStore(obj.id, store_id ,obj.title, price, link, created_at)
         bulk_insert.append(ps)
 
@@ -33,6 +28,7 @@ async def storeProduct__store(store_id : int, prod_list : List[Product], prices 
     s.commit()
     print("SUCCESS BULK INSERT #2 (ProductStore)")
     # loping over the new created products recoreds in order to create product_history
-    await store_price_hostory(prod_list, prices)
+    # await store_price_hostory(prod_list, prices)
+
 
 

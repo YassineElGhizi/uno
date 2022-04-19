@@ -9653,3 +9653,335 @@ SystemExit: None
 2022-03-14 14:21:24,860:INFO:Application shutdown complete.
 2022-03-14 14:21:24,860:INFO:Finished server process [3188]
 2022-03-14 14:21:24,985:INFO:Stopping reloader process [5216]
+2022-04-18 13:56:24,954:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-04-18 13:56:24,954:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-04-18 13:56:24,954:INFO:Started reloader process [3272] using statreload
+2022-04-18 13:56:25,761:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 13:56:25,761:DEBUG:Using selector: SelectSelector
+2022-04-18 13:56:25,817:INFO:Started server process [2276]
+2022-04-18 13:56:25,817:INFO:Waiting for application startup.
+2022-04-18 13:56:25,817:INFO:Application startup complete.
+2022-04-18 14:01:43,358:INFO:Shutting down
+2022-04-18 14:16:34,859:INFO:Will watch for changes in these directories: ['C:\\Users\\yassine_el_ghizi\\PycharmProjects\\unoScrapping\\fastapi_micro_service']
+2022-04-18 14:16:34,861:INFO:Uvicorn running on http://127.0.0.1:9999 (Press CTRL+C to quit)
+2022-04-18 14:16:34,861:INFO:Started reloader process [3664] using statreload
+2022-04-18 14:16:35,497:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:16:35,498:DEBUG:Using selector: SelectSelector
+2022-04-18 14:16:35,531:INFO:Started server process [13712]
+2022-04-18 14:16:35,531:INFO:Waiting for application startup.
+2022-04-18 14:16:35,531:INFO:Application startup complete.
+2022-04-18 14:16:59,932:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:17:02,060:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:17:03,120:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:17:03,120:DEBUG:Using selector: SelectSelector
+2022-04-18 14:17:03,160:INFO:Started server process [4736]
+2022-04-18 14:17:03,160:INFO:Waiting for application startup.
+2022-04-18 14:17:03,160:INFO:Application startup complete.
+2022-04-18 14:17:09,956:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:17:10,889:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:17:10,889:DEBUG:Using selector: SelectSelector
+2022-04-18 14:17:10,937:INFO:Started server process [4320]
+2022-04-18 14:17:10,937:INFO:Waiting for application startup.
+2022-04-18 14:17:10,937:INFO:Application startup complete.
+2022-04-18 14:17:49,582:WARNING:StatReload detected file change in 'env\databaseConnexion.py'. Reloading...
+2022-04-18 14:17:50,467:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:17:50,467:DEBUG:Using selector: SelectSelector
+2022-04-18 14:17:50,499:INFO:Started server process [2952]
+2022-04-18 14:17:50,499:INFO:Waiting for application startup.
+2022-04-18 14:17:50,499:INFO:Application startup complete.
+2022-04-18 14:18:40,300:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:18:41,161:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:18:41,161:DEBUG:Using selector: SelectSelector
+2022-04-18 14:18:41,200:INFO:Started server process [7908]
+2022-04-18 14:18:41,200:INFO:Waiting for application startup.
+2022-04-18 14:18:41,200:INFO:Application startup complete.
+2022-04-18 14:18:48,464:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:18:49,383:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:18:49,384:DEBUG:Using selector: SelectSelector
+2022-04-18 14:18:49,429:INFO:Started server process [2708]
+2022-04-18 14:18:49,429:INFO:Waiting for application startup.
+2022-04-18 14:18:49,430:INFO:Application startup complete.
+2022-04-18 14:18:49,431:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 46, in get_brands
+    return await brandGetAll()
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\brandController.py", line 8, in brandGetAll
+    options = db.Table('brands', metadata, autoload=True, autoload_with=engine)
+NameError: name 'metadata' is not defined
+2022-04-18 14:18:50,869:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:18:51,865:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:18:51,866:DEBUG:Using selector: SelectSelector
+2022-04-18 14:18:51,902:INFO:Started server process [3624]
+2022-04-18 14:18:51,902:INFO:Waiting for application startup.
+2022-04-18 14:18:51,902:INFO:Application startup complete.
+2022-04-18 14:19:00,495:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:19:01,420:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:01,420:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:01,459:INFO:Started server process [1016]
+2022-04-18 14:19:01,459:INFO:Waiting for application startup.
+2022-04-18 14:19:01,459:INFO:Application startup complete.
+2022-04-18 14:19:02,887:WARNING:StatReload detected file change in 'env\databaseConnexion.py'. Reloading...
+2022-04-18 14:19:03,840:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:03,841:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:03,883:INFO:Started server process [11248]
+2022-04-18 14:19:03,883:INFO:Waiting for application startup.
+2022-04-18 14:19:03,883:INFO:Application startup complete.
+2022-04-18 14:19:05,505:WARNING:StatReload detected file change in 'env\databaseConnexion.py'. Reloading...
+2022-04-18 14:19:06,345:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:06,346:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:06,388:INFO:Started server process [12024]
+2022-04-18 14:19:06,388:INFO:Waiting for application startup.
+2022-04-18 14:19:06,389:INFO:Application startup complete.
+2022-04-18 14:19:29,800:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:19:30,879:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:30,879:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:30,914:INFO:Started server process [4528]
+2022-04-18 14:19:30,914:INFO:Waiting for application startup.
+2022-04-18 14:19:30,915:INFO:Application startup complete.
+2022-04-18 14:19:32,517:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 46, in get_brands
+    return await brandGetAll()
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\brandController.py", line 6, in brandGetAll
+    options = db.Table('brands', metadata, autoload=True, autoload_with=engine)
+NameError: name 'engine' is not defined
+2022-04-18 14:19:33,171:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 46, in get_brands
+    return await brandGetAll()
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\brandController.py", line 6, in brandGetAll
+    options = db.Table('brands', metadata, autoload=True, autoload_with=engine)
+NameError: name 'engine' is not defined
+2022-04-18 14:19:33,915:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 46, in get_brands
+    return await brandGetAll()
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\brandController.py", line 6, in brandGetAll
+    options = db.Table('brands', metadata, autoload=True, autoload_with=engine)
+NameError: name 'engine' is not defined
+2022-04-18 14:19:40,977:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:19:41,967:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:41,968:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:42,014:INFO:Started server process [5224]
+2022-04-18 14:19:42,014:INFO:Waiting for application startup.
+2022-04-18 14:19:42,014:INFO:Application startup complete.
+2022-04-18 14:19:42,015:ERROR:Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 96, in __call__
+    raise exc from None
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\uvicorn\middleware\debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\venv\lib\site-packages\fastapi\routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\api.py", line 46, in get_brands
+    return await brandGetAll()
+  File "C:\Users\yassine_el_ghizi\PycharmProjects\unoScrapping\fastapi_micro_service\controllers\brandController.py", line 6, in brandGetAll
+    options = db.Table('brands', metadata, autoload=True, autoload_with=engine)
+NameError: name 'engine' is not defined
+2022-04-18 14:19:47,885:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:19:48,806:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:48,806:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:48,850:INFO:Started server process [12820]
+2022-04-18 14:19:48,851:INFO:Waiting for application startup.
+2022-04-18 14:19:48,851:INFO:Application startup complete.
+2022-04-18 14:19:54,672:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:19:55,464:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:55,464:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:55,528:INFO:Started server process [1356]
+2022-04-18 14:19:55,528:INFO:Waiting for application startup.
+2022-04-18 14:19:55,528:INFO:Application startup complete.
+2022-04-18 14:19:55,717:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:19:56,532:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:19:56,532:DEBUG:Using selector: SelectSelector
+2022-04-18 14:19:56,570:INFO:Started server process [3792]
+2022-04-18 14:19:56,570:INFO:Waiting for application startup.
+2022-04-18 14:19:56,571:INFO:Application startup complete.
+2022-04-18 14:22:26,578:DEBUG:detected 'bcrypt' backend, version '3.2.0'
+2022-04-18 14:22:26,579:DEBUG:'bcrypt' backend lacks $2$ support, enabling workaround
+2022-04-18 14:25:02,396:WARNING:StatReload detected file change in 'env\databaseConnexion.py'. Reloading...
+2022-04-18 14:25:03,274:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:25:03,275:DEBUG:Using selector: SelectSelector
+2022-04-18 14:25:03,340:INFO:Started server process [3840]
+2022-04-18 14:25:03,340:INFO:Waiting for application startup.
+2022-04-18 14:25:03,340:INFO:Application startup complete.
+2022-04-18 14:27:37,540:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:27:38,501:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:27:38,501:DEBUG:Using selector: SelectSelector
+2022-04-18 14:27:38,564:INFO:Started server process [12296]
+2022-04-18 14:27:38,564:INFO:Waiting for application startup.
+2022-04-18 14:27:38,564:INFO:Application startup complete.
+2022-04-18 14:27:50,378:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:27:51,277:WARNING:The --reload flag should not be used in production on Windows.
+2022-04-18 14:27:51,277:DEBUG:Using selector: SelectSelector
+2022-04-18 14:27:51,321:INFO:Started server process [5596]
+2022-04-18 14:27:51,321:INFO:Waiting for application startup.
+2022-04-18 14:27:51,321:INFO:Application startup complete.
+2022-04-18 14:28:58,987:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:29:00,568:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:29:04,553:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:29:34,753:WARNING:StatReload detected file change in 'controllers\optionController.py'. Reloading...
+2022-04-18 14:29:45,286:WARNING:StatReload detected file change in 'controllers\optionController.py'. Reloading...
+2022-04-18 14:29:50,825:WARNING:StatReload detected file change in 'controllers\optionController.py'. Reloading...
+2022-04-18 14:30:04,101:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:31:37,834:WARNING:StatReload detected file change in 'controllers\brandController.py'. Reloading...
+2022-04-18 14:31:53,980:WARNING:StatReload detected file change in 'env\databaseConnexion.py'. Reloading...
+2022-04-18 14:32:25,609:WARNING:StatReload detected file change in 'api.py'. Reloading...
+2022-04-18 14:33:05,557:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:33:15,039:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:33:19,044:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:33:57,578:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:33:59,441:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:34:02,096:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:39:38,423:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:39:45,883:WARNING:StatReload detected file change in 'controllers\productController.py'. Reloading...
+2022-04-18 14:43:12,302:WARNING:StatReload detected file change in 'controllers\product__storeController.py'. Reloading...
+2022-04-18 14:43:14,687:WARNING:StatReload detected file change in 'controllers\product__storeController.py'. Reloading...
+2022-04-18 14:43:17,068:WARNING:StatReload detected file change in 'controllers\product__storeController.py'. Reloading...
+2022-04-18 14:43:17,863:WARNING:StatReload detected file change in 'controllers\product__storeController.py'. Reloading...
+2022-04-18 14:43:40,169:WARNING:StatReload detected file change in 'controllers\product_historyController.py'. Reloading...
+2022-04-18 14:44:03,953:WARNING:StatReload detected file change in 'controllers\storeProductDetailsController.py'. Reloading...
+2022-04-18 14:44:21,298:INFO:Stopping reloader process [3664]

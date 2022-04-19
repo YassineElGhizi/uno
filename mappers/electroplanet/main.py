@@ -17,4 +17,8 @@ if __name__ == '__main__':
         quit()
     print("[+] token recieved with success")
     token = json.loads(response.text)['token']
-    smartphones_tablette(token, s, fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
+    smartphones_tablette(
+        token,
+        s,
+        fetch_brands(token, 'electroplanet_smartphones_tablette' , s)
+    )

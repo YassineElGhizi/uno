@@ -2,9 +2,9 @@ import datetime
 import sqlalchemy as db
 from sqlalchemy.orm import sessionmaker
 from ..models.productDetails import ProductDetail
+from fastapi_micro_service.env.databaseConnexion import engine
 
 
-engine = db.create_engine('mysql://root@localhost/exemple_supero2')
 ss = sessionmaker(bind=engine)
 s = ss()
 

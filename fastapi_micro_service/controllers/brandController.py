@@ -1,13 +1,11 @@
 import sqlalchemy as db
+from fastapi_micro_service.env.databaseConnexion import engine, metadata, connection
 
-engine = db.create_engine('mysql://root@localhost/exemple_supero2')
 async def brandGetAll():
-    connection = engine.connect()
-    metadata = db.MetaData()
-    options = db.Table('brands', metadata, autoload=True, autoload_with=engine)
+    brands = db.Table('brands', metadata, autoload=True, autoload_with=engine)
     query = db.select([
-        options.columns.id,
-        options.columns.name,
+        brands.columns.id,
+        brands.columns.name,
     ])
     ResultProxy = connection.execute(query)
     return ResultProxy.fetchall()

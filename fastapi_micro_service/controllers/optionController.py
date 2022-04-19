@@ -1,9 +1,7 @@
 import sqlalchemy as db
+from fastapi_micro_service.env.databaseConnexion import engine, metadata, connection
 
 async def optionGetAll(website : str):
-    engine = db.create_engine('mysql://root@localhost/exemple_supero2')
-    connection = engine.connect()
-    metadata = db.MetaData()
     if website == 'uno':
         options = db.Table('options', metadata, autoload=True, autoload_with=engine)
         query = db.select([

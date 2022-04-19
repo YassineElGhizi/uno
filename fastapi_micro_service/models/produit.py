@@ -1,6 +1,8 @@
 from sqlalchemy import Column, String, TIMESTAMP, Text, text, DECIMAL
 from sqlalchemy.dialects.mysql import BIGINT
 from sqlalchemy.ext.declarative import declarative_base
+import sqlalchemy as db
+from fastapi_micro_service.env.databaseConnexion import engine
 
 Base = declarative_base()
 metadata = Base.metadata

@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Body, HTTPException, Depends
 import uvicorn
-import logging
 from typing import List
 
 from fastapi_micro_service.controllers.optionController import optionGetAll
@@ -8,13 +7,10 @@ from fastapi_micro_service.controllers.productController import storeProduct
 from fastapi_micro_service.controllers.brandController import brandGetAll
 from fastapi_micro_service.models.mapper import Mapper
 from fastapi_micro_service.middleware.authHandler import AuthHandler
+from fastapi_micro_service.services.bestPriceByIdParentGroup import performeUpdateBestPrice,bestPirceByIdParent
+from fastapi_micro_service.controllers.product_historyController import price_history
 
 auth_handler = AuthHandler()
-logging.basicConfig(
-    filename='fastapi.log',
-    level=logging.DEBUG,
-    format='%(asctime)s:%(levelname)s:%(message)s'
-)
 app = FastAPI()
 
 authorized_mappers = [
@@ -38,7 +34,10 @@ async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper)
 
 @app.post("/products")
 async def insert_product(website : str, importance : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
-    return await storeProduct(website , importance)
+    await storeProduct(website , importance)
+    performeUpdateBestPrice(bestPirceByIdParent())
+    price_history()
+    return {'status' : '200 ok'}
 
 @app.get("/brands")
 async def get_brands(user_name=Depends(auth_handler.auth_wrapper)):
@@ -54,6 +53,10 @@ def login(reqBody : dict = Body(...)):
     if (pswd is None) or (not auth_handler.verify_password(m.password, pswd)):
         raise HTTPException(status_code=401, detail='Invalid username and/or password')
     return {'token': auth_handler.encode_token(m.username)}
+
+@app.get('/test')
+def test():
+    return 'App is Working'
 
 @app.get('/protected')
 def protected(user_name=Depends(auth_handler.auth_wrapper)):

@@ -1,10 +1,9 @@
-import time
 import pymysql
 import requests
 import json
 from mappers.Helpers.uno import *
 import logging
-import math
+
 from fetch_api import fetch_brands
 
 #VARS
@@ -14,7 +13,6 @@ url_post = "http://127.0.0.1:9999/products?website=uno"
 login_url = "http://localhost:9999/login"
 mapper_credetials = {"username": "uno_mapper","password": "unoMapperSupero2022"}
 payload = json.dumps(mapper_credetials)
-obe_by_req = 100
 
 #GETTING THE JWT TOKEN
 print("[+] preparing to get token")

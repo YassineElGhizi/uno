@@ -1,18 +1,19 @@
 from typing import List
-import sqlalchemy as db
 from slugify import slugify
 from sqlalchemy.orm import sessionmaker
 import random
-import datetime
 import urllib.parse
 #To update product_id_parent
 from collections import defaultdict
 
-
 from ..controllers.storeProductDetailsController import storeProductDetails
 from ..controllers.product__storeController import storeProduct__store
-from ..models.produit import Product
 
+from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
+from fastapi_micro_service.models.produit import Product
+
+default_apple_category = 5
+uno_store_id = 1
 def generate_slug(title:str) -> str:
     return f"{slugify(title)}-{random.randrange(10000000, 99999999)}"
 
@@ -69,18 +70,13 @@ def special_traitemenet_parent_id( names_and_thier_id, s):
             p.id_parent = val
         s.commit()
 
-
 def affect_parent_id_to_the_rest_of_items(items : List[Product]):
     rest_of_items = items[1:]
     id = items[0].id
     for i in rest_of_items:
         i.id_parent = id
 
-default_apple_category = 5
-uno_store_id = 1
-
 async def storeProduct(website: str ,listProducts : List):
-    engine = db.create_engine('mysql://root@localhost/exemple_supero2')
     ss = sessionmaker(bind=engine)
     s = ss()
     bulk_insert = []
@@ -104,14 +100,16 @@ async def storeProduct(website: str ,listProducts : List):
                     options = str([str(i) for i in item['options']])
                 except:
                     pass
-                now = datetime.datetime.now()
-                created_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
+
+                created_at = myTempStamp()
                 p = Product(name , title , slug ,brand ,category, product_details, images, id_parent, options ,created_at)
                 bulk_insert.append(p)
+
                 d = {}
                 d['slug'] = slug
                 d['current_price'] = item['current_price']
                 d['link'] = item['link']
+
                 prices.append(d)
             except Exception as e:
                 raise e
@@ -123,6 +121,5 @@ async def storeProduct(website: str ,listProducts : List):
         print("SUCCESS BULK INSERT #1 (product_details & products)")
         #loping over the new created products recoreds in order to create product__store
         await storeProduct__store(uno_store_id ,bulk_insert, prices)
-
 
     return {"status" : 200 }
