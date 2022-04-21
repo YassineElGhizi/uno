@@ -1,7 +1,14 @@
 import pymysql
 from requests import Session
-from mappers.Helpers.electroplanet import *
+from typing import List
+import json
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json, dictfetchall
 
+from mappers.Helpers.electroplanet import electroplanet_colors,electroplanet_storage,electroplanet_ram,electroplanet_taille_ecrant,electroplanet_type_hd,electroplanet_connector_adapter,electroplanet_type_stockage,electroplanet_power,electroplanet_lenght, get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_length_id,get_item_power_id
+
+
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import get_electroplanet_products, get_category_id
+from mappers.Helpers.electroplanet import extract_specification_json, get_brand_id
 
 def get_mapped_prod_names(mycursor) -> List:
     l = []
@@ -68,86 +75,31 @@ def key_exists_in_list_of_dicts(l : List , k : str) -> bool:
 
 
 def smartphones_tablette(token:str , s:Session , brands : List) -> List:
+    #Getting Options
     url = "http://127.0.0.1:9999/options?website=electroplanet-iphone"
     headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
     response = s.get(url , headers=headers)
-    tmp = json.loads(response.text)
+    organise_options_from_json(json.loads(response.text))
 
-    mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
-    mycursor = mydb.cursor()
-    sql = """
-    SELECT * FROM ITEMS WHERE id_store = 3
-    and (category_in_store like 'iphone'
-    or category_in_store like 'telephone-android'
-    or category_in_store like 'ipad'
-    or category_in_store like 'tablettes-android'
-    or category_in_store like 'Domestique'
-    or category_in_store like 'Mobile'
-    or category_in_store like 'Cover de protection'
-    or category_in_store like 'Oreillettes bluetooth'
-    or category_in_store like 'Perche selfie filaire'
-    or category_in_store like 'Selfie sans fil'
-    or category_in_store like 'Macbook'
-    or category_in_store like 'Chargeur'
-    or category_in_store like 'Tablettes cover de protection'
-    or category_in_store like 'Tablettes support voiture'
-    or category_in_store like 'Adaptateurs telephone tablette'
-    or category_in_store like 'Cablage'
-    );
-    """
+    #Getting Electroplanet Products
+    results = get_electroplanet_products()
 
-    mycursor.execute(sql,)
-    results = dictfetchall(mycursor)
-
-    x = prod_names_reducer(mycursor)
-    print('\n\n')
-    [ print(xx) for xx in x ]
-    quit()
-
-    for t in tmp:
-        if t['id_parent'] == 1:
-            electroplanet_colors.append(t)
-            continue
-        if t['id_parent'] == 2:
-            electroplanet_storage.append(t)
-            continue
-        if t['id_parent'] == 3:
-            electroplanet_ram.append(t)
-            continue
-        if t['id_parent'] == 5:
-            electroplanet_taille_ecrant.append(t)
-            continue
-        if t['id_parent'] == 6:
-            electroplanet_type_hd.append(t)
-            continue
-        if t['id_parent'] == 143:
-            electroplanet_garanties.append(t)
-            continue
-        if t['id_parent'] == 152:
-            electroplanet_connector_adapter.append(t)
-            continue
-        if t['id_parent'] == 187:
-            electroplanet_type_stockage.append(t)
-            continue
-        if t['id_parent'] == 4:
-            electroplanet_lenght.append(t)
-            continue
-        if t['id_parent'] == 156:
-            electroplanet_power.append(t)
-            continue
+    res_to_post_fastapi = []
 
     for r in results:
         tmp_d = {}
         item_options = []
+
         tmp_d["current_price"] = r["current_price"]
         tmp_d["category_in_store"] = r["category_in_store"]
-        tmp_d["category_id"] =get_category_id(r["category_in_store"])
+        tmp_d["category_id"] = get_category_id(r["category_in_store"])
         tmp_d["link"] = r["link"]
         tmp_d["prod_name"] = r["prod_name"]
         tmp_d["image_url"] = r["image_url"]
         tmp_d["current_price"] = r["current_price"]
         tmp_d["name_in_store"] = r["name_in_store"]
         tmp_d["details"] = r["details"]
+
         id_brand = None
         id_gatantie = None
         id_color = None
@@ -165,14 +117,12 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
         except Exception as e:
             continue
 
-        if 'marque' in  tmp_json:
+        if 'marque' in tmp_json:
             id_brand = get_brand_id(brands, tmp_json['marque'])
         if 'couleur' in tmp_json:
             id_color = get_item_color_id(tmp_json["couleur"])
         if 'coloris' in tmp_json:
             id_color = get_item_color_id(tmp_json["coloris"])
-        if 'garantie' in tmp_json:
-            id_gatantie = get_item_garantie_id(tmp_json["garantie"])
         if 'mémoire_ram' in tmp_json:
             id_ram = get_item_ram_id(tmp_json["mémoire_ram"])
         if 'mémoire_vive_(ram)' in tmp_json:
@@ -223,5 +173,5 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
 
 
     [print(i) for i in res_to_post_fastapi]
-    print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
-    return res_to_post_fastapi
+    # print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
+    # return res_to_post_fastapi

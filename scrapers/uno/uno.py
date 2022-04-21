@@ -4,10 +4,8 @@ import requests
 from bs4 import BeautifulSoup as BS
 from global_parametrs import *
 from time import sleep
-import logging
 import random
 
-logging.basicConfig(filename='uno_scraper.log', level=logging.DEBUG,format='%(asctime)s:%(levelname)s:%(message)s')
 def scrape(link , prod_name , id_store , id_subcat):
 
     headers = {
@@ -21,7 +19,6 @@ def scrape(link , prod_name , id_store , id_subcat):
         'Referer' : 'https://google.com'
     }
     s = requests.session()
-    # res = requests.get("{}".format(link) , headers=headers)
     res = s.get("{}".format(link) , headers=headers)
 
     #DB Connexion
@@ -54,7 +51,7 @@ def scrape(link , prod_name , id_store , id_subcat):
         item_stockage_type = find_device_type_stockage(item_title)
         item_lenght = find_device_lenght(item_title)
         item_power = find_device_power(item_title)
-        # res = requests.get(item_link , headers=headers)
+
         res = s.get(item_link , headers=headers)
         sleep(random.randint(2,5))
         items = BS(res.text,features="html.parser")

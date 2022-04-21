@@ -13,6 +13,5 @@ def myTempStamp():
 
 
 def get(query):
-    #Connection Needes to refreshed Because FASTAPI is async
     connection = engine.connect()
     return connection.execute(query).fetchall()

@@ -3,9 +3,11 @@ from itertools import groupby
 import re
 from typing import List
 from bs4 import BeautifulSoup as BS
-
+from mappers.config.urls import options_url
+import requests
 
 ##Vars that get populated from FASTAPI
+all_options = []
 electroplanet_colors =[]
 electroplanet_storage =[]
 electroplanet_ram =[]
@@ -15,7 +17,6 @@ electroplanet_connector_adapter = []
 electroplanet_type_stockage = []
 electroplanet_power = []
 electroplanet_lenght = []
-electroplanet_garanties = []
 
 #Vars to be used localy
 
@@ -36,8 +37,6 @@ all_keys = []
 res_to_post_fastapi = []
 
 #Global Function
-
-
 def extract_specification(html_table : str):
     soup = BS(html_table , features="html.parser")
     targets = []
@@ -98,13 +97,6 @@ def get_item_color_id(color:str):
             return c['id']
     return None
 
-def get_item_garantie_id(garantie:str):
-    garantie_digit = extract_digits(garantie)[0]
-    for c in electroplanet_garanties:
-        if int(c['value']) == garantie_digit:
-            return c['id']
-    return None
-
 def get_item_ram_id(ram:str):
     ram_digit = extract_digits(ram)[0]
     for c in electroplanet_ram:
@@ -120,6 +112,10 @@ def get_item_stockage_id(stockage:str):
     return None
 
 def get_item_connexion_adapter_id(connexion_adapter:str):
+    print(electroplanet_connector_adapter)
+    print('\n\n')
+    print(f'we v got {connexion_adapter}')
+
     for ca in electroplanet_connector_adapter:
         if str(ca['value']) == str(connexion_adapter):
             return ca['id']
@@ -173,16 +169,16 @@ def dictfetchall(cursor):
 
 def get_brand_id(brands:List , item_brand : str) -> str:
     for x in brands:
-        if x['name'] == item_brand.title():
+        if x['name'].title() == item_brand.title():
             return str(x['id'])
     print(f'new brands has been detected {item_brand}')
     for x in brands:
         if x['name'] == 'UNKNOW':
-            return  str(x['id'])
+            return str(x['id'])
 
 def get_category_id(cat_str : str) -> str:
     cats = []
-    with open('../electroplanet/electro_mapped_cats.json', 'r' , encoding='utf8') as j:
+    with open('electroplanet_helprs/electro_mapped_cats.json', 'r' , encoding='utf8') as j:
         cats =json.load(j)
     for dic_c in cats:
         if dic_c['electro_cat'] == cat_str:
@@ -190,3 +186,31 @@ def get_category_id(cat_str : str) -> str:
     for dic_c in cats:
         if dic_c['electro_cat'] == 'UNKNOWN':
             return dic_c['supero_cat']
+
+
+def get_options_from_api(token):
+    headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
+    r = requests.get(options_url, headers=headers)
+    all_options = json.loads(r.text)
+
+    for o in all_options:
+        if o["id_parent"] == 1:
+            electroplanet_colors.append(o)
+        if o["id_parent"] == 2:
+            electroplanet_storage.append(o)
+        if o["id_parent"] == 3:
+            electroplanet_ram.append(o)
+        if o["id_parent"] == 4:
+            electroplanet_lenght.append(o)
+        if o["id_parent"] == 5:
+            electroplanet_taille_ecrant.append(o)
+        if o["id_parent"] == 6:
+            electroplanet_type_hd.append(o)
+        if o["id_parent"] == 152:
+            electroplanet_connector_adapter.append(o)
+        if o["id_parent"] == 187:
+            electroplanet_type_stockage.append(o)
+        if o["id_parent"] == 156:
+            electroplanet_power.append(o)
+        if o["id_parent"] == 156:
+            electroplanet_power.append(o)

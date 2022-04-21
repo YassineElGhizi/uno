@@ -1,9 +1,11 @@
+import json
 from itertools import groupby
 import re
-
+from typing import List
 
 ##Vars that get populated from FASTAPI
-from typing import List
+import pymysql
+import requests
 
 uno_colors =[]
 uno_storage =[]
@@ -14,7 +16,6 @@ uno_connector_adapter = []
 uno_type_stockage = []
 uno_power = []
 uno_lenght = []
-uno_garanties = []
 
 #Vars to be used localy
 all_garantie =[]
@@ -55,13 +56,6 @@ def extract_digits_float(sentance : str):
 def get_item_color_id(color:str):
     for c in uno_colors:
         if color.title() == c["value"]:
-            return c['id']
-    return None
-
-def get_item_garantie_id(garantie:str):
-    garantie_digit = extract_digits(garantie)[0]
-    for c in uno_garanties:
-        if int(c['value']) == garantie_digit:
             return c['id']
     return None
 
@@ -123,10 +117,40 @@ def dictfetchall(cursor):
 def get_item_brand_id(brands:List, item_brand : str) -> str:
     try:
         for i in brands:
-            if i['name'] == item_brand.title():
-                return str(i['id'])
-        for i in brands:
-            if i['name'] == 'UNKNOW':
+            if i['name'].title().strip() == item_brand.title().strip():
                 return str(i['id'])
     except:
-        return '311'
+        return '507'
+
+
+def get_uno_products():
+    mydb = pymysql.connect(host="127.0.0.1", port=3306, user="root", password="", database="supero_datalake2", )
+    mycursor = mydb.cursor()
+    sql = "SELECT * FROM ITEMS WHERE id_store = 1"
+    mycursor.execute(sql, )
+    return dictfetchall(mycursor)
+
+def getting_jwt_token(s, login_url, payload):
+    headers = {'Content-Type': 'application/json'}
+    response = s.post(login_url, headers=headers, data=payload)
+    if response.status_code == 401:
+        print("[-] err 401 : Invalid username and/or password")
+        quit()
+    print("[+] token recieved with success")
+    return json.loads(response.text)['token']
+
+def parsing_specification_json_field(results):
+    for r in results:
+        x = json.loads(r["specification"])
+        try:
+            colors.append(x["color"])
+            all_garantie.append(x["garantie"])
+            all_ram.append(x["ram"])
+            all_stockage.append(x["stockage"])
+            connexion_adapter.append(x["connexion_adapter"])
+            screen_size.append(x["screen_size"])
+            stockage_type.append(x["stockage_type"])
+            length.append(x["length"])
+            power.append(x["power"])
+        except Exception as e:
+            pass

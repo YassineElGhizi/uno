@@ -1,14 +1,11 @@
-import pymysql
-import requests
-import json
 from mappers.Helpers.uno import *
-import logging
-
+from mappers.Helpers.fetch_from_local import get_mapped_procuts
+from mappers.Helpers.generale_purposed_functions import get_product_name_from_product_title, organise_options_from_json
 from fetch_api import fetch_brands
 
 #VARS
-logging.basicConfig(filename='../uno_mapper.log',encoding='utf-8',level=logging.DEBUG,format='%(asctime)s %(message)s',datefmt='%m/%d/%Y %I:%M:%S %p')
-url = "http://127.0.0.1:9999/options?website=uno"
+list_outlayers = ["anker","Silicon","power","Sandisk","LaCie","Beats",]
+options_url = "http://127.0.0.1:9999/options?website=uno"
 url_post = "http://127.0.0.1:9999/products?website=uno"
 login_url = "http://localhost:9999/login"
 mapper_credetials = {"username": "uno_mapper","password": "unoMapperSupero2022"}
@@ -16,51 +13,32 @@ payload = json.dumps(mapper_credetials)
 
 #GETTING THE JWT TOKEN
 print("[+] preparing to get token")
-headers = {'Content-Type': 'application/json'}
 s = requests.session()
-response = s.post(login_url, headers=headers, data=payload)
-if response.status_code == 401:
-    print("[-] err 401 : Invalid username and/or password")
-    quit()
-print("[+] token recieved with success")
-token = json.loads(response.text)['token']
+token = getting_jwt_token(s, login_url, payload)
+
 #GETTING OPTIONS
 headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
-response = requests.request("GET", url , headers=headers)
+response = requests.request("GET", options_url , headers=headers)
 tmp = json.loads(response.text)
+organise_options_from_json(tmp)
 
 #Fetching brands
 supero_brand = fetch_brands(token,s)
 
-#Fetching from LOCAL DB
-mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
-mycursor = mydb.cursor()
-sql = "SELECT * FROM ITEMS WHERE id_store = 1"
-mycursor.execute(sql,)
-results = dictfetchall(mycursor)
+#Fetching Products
+list_of_mapped_product_names = get_mapped_procuts()
 
-for r in results:
-    x = json.loads(r["specification"])
-    try:
-        colors.append(x["color"])
-        all_garantie.append(x["garantie"])
-        all_ram.append(x["ram"])
-        all_stockage.append(x["stockage"])
-        connexion_adapter.append(x["connexion_adapter"])
-        screen_size.append(x["screen_size"])
-        stockage_type.append(x["stockage_type"])
-        length.append(x["length"])
-        power.append(x["power"])
-    except Exception as e:
-        pass
+#Fetching Items
+results = get_uno_products()
+
+#Parsing specification json field
+parsing_specification_json_field(results)
 
 
 for r in results:
     tmp_d = {}
     item_options = []
-
     tmp_d["current_price"] = r["current_price"]
-    tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
     if r["category_in_store"] == 'iphone':
         tmp_d["category_in_store_to_id"] = 137
     if r["category_in_store"] == 'ipad':
@@ -90,7 +68,11 @@ for r in results:
 
     tmp_d["category_in_store"] = r["category_in_store"]
     tmp_d["link"] = r["link"]
-    tmp_d["prod_name"] = r["prod_name"]
+    tmp_d["prod_name"] = get_product_name_from_product_title((r["name_in_store"] , r["prod_name"]), list_of_mapped_product_names)
+    if tmp_d["prod_name"] not in list_outlayers:
+        tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
+    else:
+        tmp_d["brand_id"] = get_item_brand_id(supero_brand, tmp_d["prod_name"])
     tmp_d["image_url"] = r["image_url"]
     tmp_d["current_price"] = r["current_price"]
     tmp_d["name_in_store"] = r["name_in_store"]
@@ -108,11 +90,10 @@ for r in results:
     tmp_json = json.loads(r["specification"])
     tmp_all_keys = []
     keys = tmp_json.keys()
+
     [tmp_all_keys.append(k) for k in keys if k not in tmp_all_keys]
     if 'color' in keys:
         id_color = get_item_color_id(tmp_json["color"])
-    if 'garantie' in keys:
-        id_gatantie = get_item_garantie_id(tmp_json["garantie"])
     if 'ram' in keys:
         id_ram = get_item_ram_id(tmp_json["ram"])
     if 'stockage' in keys:
@@ -128,9 +109,7 @@ for r in results:
     if 'power' in keys:
         id_power = get_item_power_id(tmp_json['power'])
 
-    if id_gatantie != None:
-        tmp_d['id_gatantie'] = id_gatantie
-        item_options.append(id_gatantie)
+
     if id_color != None:
         tmp_d['id_color'] = id_color
         item_options.append(id_color)
@@ -155,8 +134,6 @@ for r in results:
 
     tmp_d['options'] = item_options
     res_to_post_fastapi.append(tmp_d)
-
-logging.info(f"MAPPED {len(res_to_post_fastapi)} ITEMS")
 
 # [print(x) for x in res_to_post_fastapi]
 print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
