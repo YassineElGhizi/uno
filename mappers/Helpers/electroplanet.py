@@ -3,8 +3,11 @@ from itertools import groupby
 import re
 from typing import List
 from bs4 import BeautifulSoup as BS
-from mappers.config.urls import options_url
+
+from mappers.config.urls import options_url, products_name_url
 import requests
+
+
 
 ##Vars that get populated from FASTAPI
 all_options = []
@@ -81,7 +84,7 @@ def extract_digits_float(sentance : str):
             try:
                 return float(sentance.split("\"")[0])
             except:
-                print(f"the follwoing has None : {sentance}")
+                # print(f"the follwoing has None : {sentance}")
                 return None
     except:
         res = extract_digits(sentance)
@@ -112,13 +115,11 @@ def get_item_stockage_id(stockage:str):
     return None
 
 def get_item_connexion_adapter_id(connexion_adapter:str):
-    print(electroplanet_connector_adapter)
-    print('\n\n')
-    print(f'we v got {connexion_adapter}')
-
     for ca in electroplanet_connector_adapter:
-        if str(ca['value']) == str(connexion_adapter):
+        if str(ca['value']).lower() == str(connexion_adapter).lower():
             return ca['id']
+    else:
+        print(f'NEW CONNEXION ADAPTER DETECTED {connexion_adapter}')
     return None
 
 def get_item_screen_size_id(screen_size:str):
@@ -214,3 +215,28 @@ def get_options_from_api(token):
             electroplanet_power.append(o)
         if o["id_parent"] == 156:
             electroplanet_power.append(o)
+
+def get_product_name_from_api(token):
+    headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
+    r = requests.get(products_name_url, headers=headers)
+    x =  [d['name'] for d in json.loads(r.text)]
+    # x.sort()
+    # return x
+    return Sorting(x)
+
+def Sorting(lst):
+    lst.sort(key=len)
+    lst.reverse()
+    return lst
+
+
+def get_product_name_id(prod_name_in_store , list_of_mapped_product_names):
+    not_found = True
+    product_names = list_of_mapped_product_names
+    for n in product_names:
+        if n.title() in prod_name_in_store.title().replace(',' , '.'):
+            not_found = False
+    if not_found:
+        print(f'new product name detected = {prod_name_in_store} \n')
+
+

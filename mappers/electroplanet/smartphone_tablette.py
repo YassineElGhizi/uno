@@ -1,14 +1,12 @@
-import pymysql
 from requests import Session
 from typing import List
 import json
-from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json, dictfetchall
-
-from mappers.Helpers.electroplanet import electroplanet_colors,electroplanet_storage,electroplanet_ram,electroplanet_taille_ecrant,electroplanet_type_hd,electroplanet_connector_adapter,electroplanet_type_stockage,electroplanet_power,electroplanet_lenght, get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_length_id,get_item_power_id
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json,dictfetchall
+from mappers.Helpers.electroplanet import get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_length_id,get_item_power_id
 
 
 from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import get_electroplanet_products, get_category_id
-from mappers.Helpers.electroplanet import extract_specification_json, get_brand_id
+from mappers.Helpers.electroplanet import extract_specification_json, get_brand_id, get_product_name_id
 
 def get_mapped_prod_names(mycursor) -> List:
     l = []
@@ -74,7 +72,7 @@ def key_exists_in_list_of_dicts(l : List , k : str) -> bool:
     return False
 
 
-def smartphones_tablette(token:str , s:Session , brands : List) -> List:
+def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_product_names) -> List:
     #Getting Options
     url = "http://127.0.0.1:9999/options?website=electroplanet-iphone"
     headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
@@ -94,7 +92,10 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
         tmp_d["category_in_store"] = r["category_in_store"]
         tmp_d["category_id"] = get_category_id(r["category_in_store"])
         tmp_d["link"] = r["link"]
-        tmp_d["prod_name"] = r["prod_name"]
+        print(r["link"])
+        # tmp_d["prod_name"] = r["prod_name"]
+
+        # tmp_d["prod_name"] =  get_product_name_id(r["prod_name"] , product_names)
         tmp_d["image_url"] = r["image_url"]
         tmp_d["current_price"] = r["current_price"]
         tmp_d["name_in_store"] = r["name_in_store"]
@@ -116,6 +117,10 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
             tmp_json = extract_specification_json(tmp_specification_json['specification_table'])
         except Exception as e:
             continue
+
+        if 'reference_fournisseur' in tmp_json:
+            tmp_d["prod_name"] = get_product_name_id(tmp_json["reference_fournisseur"] , list_of_mapped_product_names)
+
 
         if 'marque' in tmp_json:
             id_brand = get_brand_id(brands, tmp_json['marque'])
@@ -140,6 +145,7 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
         if 'puissance' in tmp_json:
             if not 'FAST' == tmp_json['puissance']:
                 id_power = get_item_power_id(tmp_json['puissance'])
+
 
         if id_gatantie != None:
             tmp_d['id_gatantie'] = id_gatantie
@@ -166,12 +172,14 @@ def smartphones_tablette(token:str , s:Session , brands : List) -> List:
             tmp_d['id_power'] = id_power
             item_options.append(id_power)
         if id_brand != None:
-            tmp_d['id_brand'] = id_brand
+            tmp_d['brand_id'] = id_brand
 
         tmp_d['options'] = item_options
         res_to_post_fastapi.append(tmp_d)
 
 
-    [print(i) for i in res_to_post_fastapi]
+    # [print(i) for i in res_to_post_fastapi]
     # print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
-    # return res_to_post_fastapi
+    quit()
+    return res_to_post_fastapi
+

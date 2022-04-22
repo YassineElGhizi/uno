@@ -11,6 +11,10 @@ from ..controllers.product__storeController import storeProduct__store
 
 from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
+from fastapi_micro_service.env.databaseConnexion import get
+
+import sqlalchemy as db
+
 
 default_apple_category = 5
 uno_store_id = 1
@@ -93,7 +97,8 @@ async def storeProduct(website: str ,listProducts : List):
                 except:
                     category = default_apple_category
                 product_details = storeProductDetails(item['details'] , title)
-                imgs = urllib.parse.quote_plus(item['image_url'])
+                # imgs = urllib.parse.quote_plus(item['image_url'].strip())
+                imgs = item['image_url']
                 images = f"[\"{imgs}\"]"
                 id_parent = None
                 try:
@@ -123,3 +128,7 @@ async def storeProduct(website: str ,listProducts : List):
         await storeProduct__store(uno_store_id ,bulk_insert, prices)
 
     return {"status" : 200 }
+
+
+async def productNames():
+    return get(db.select([Product.name ]).where(Product.id_parent == None))

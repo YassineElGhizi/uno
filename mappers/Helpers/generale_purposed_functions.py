@@ -1,5 +1,5 @@
 import json
-
+import requests
 from mappers.Helpers.uno import uno_colors, uno_storage, uno_ram, uno_taille_ecrant, uno_type_hd,uno_connector_adapter, uno_type_stockage,uno_power, uno_lenght
 
 
@@ -39,3 +39,11 @@ def get_jwt_token_or_fail(session, login_url, headers,payload):
         quit()
     print("[+] token recieved with success")
     return json.loads(response.text)['token']
+
+
+def get_product_names(session, prodcut_url, headers, payload):
+    response = session.post(prodcut_url, headers=headers, data=payload)
+    return json.loads(response.text)['token']
+
+
+

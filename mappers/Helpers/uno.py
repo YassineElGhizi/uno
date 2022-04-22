@@ -46,7 +46,7 @@ def extract_digits_float(sentance : str):
             try:
                 return float(sentance.split("\"")[0])
             except:
-                print(f"the follwoing has None : {sentance}")
+                # print(f"the follwoing has None : {sentance}")
                 return None
     except:
         res = extract_digits(sentance)

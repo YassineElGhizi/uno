@@ -3,12 +3,13 @@ import uvicorn
 from typing import List
 
 from fastapi_micro_service.controllers.optionController import optionGetAll
-from fastapi_micro_service.controllers.productController import storeProduct
+from fastapi_micro_service.controllers.productController import storeProduct, productNames
 from fastapi_micro_service.controllers.brandController import brandGetAll
 from fastapi_micro_service.models.mapper import Mapper
 from fastapi_micro_service.middleware.authHandler import AuthHandler
 from fastapi_micro_service.services.bestPriceByIdParentGroup import performeUpdateBestPrice,bestPirceByIdParent
 from fastapi_micro_service.controllers.product_historyController import price_history
+
 
 auth_handler = AuthHandler()
 app = FastAPI()
@@ -42,6 +43,11 @@ async def insert_product(website : str, importance : List = Body(...) , user_nam
 @app.get("/brands")
 async def get_brands(user_name=Depends(auth_handler.auth_wrapper)):
     return await brandGetAll()
+
+@app.get("/products_names")
+async def get_product_names():
+    return await productNames()
+
 
 @app.post('/login')
 def login(reqBody : dict = Body(...)):
