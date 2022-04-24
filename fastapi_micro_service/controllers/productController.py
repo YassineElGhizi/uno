@@ -2,7 +2,8 @@ from typing import List
 from slugify import slugify
 from sqlalchemy.orm import sessionmaker
 import random
-import urllib.parse
+import sqlalchemy as db
+
 #To update product_id_parent
 from collections import defaultdict
 
@@ -13,11 +14,9 @@ from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
 from fastapi_micro_service.env.databaseConnexion import get
 
-import sqlalchemy as db
-
 
 default_apple_category = 5
-uno_store_id = 1
+
 def generate_slug(title:str) -> str:
     return f"{slugify(title)}-{random.randrange(10000000, 99999999)}"
 
@@ -28,8 +27,7 @@ def get_products_parent_id(prod_name : str , session):
     ).first()
     if res is None:
         return res
-    else:
-        return res[0]
+    return res[0]
 
 def update_id_parent(prod_list:List[Product] , session):
     groups = defaultdict(list)
@@ -44,7 +42,6 @@ def update_id_parent(prod_list:List[Product] , session):
             names_and_thier_id.append(tmp_d)
 
     keys_to_drop = []
-
     #if the products already has id parent => pop'em
     for x in groups:
         for y in names_and_thier_id:
@@ -86,46 +83,49 @@ async def storeProduct(website: str ,listProducts : List):
     bulk_insert = []
     prices = []
     if website == 'uno':
-        for item in listProducts:
+        store_id = 1
+    if website == 'electroplanet':
+        store_id = 3
+
+    for item in listProducts:
+        try:
+            name = item['prod_name']
+            title = item['name_in_store']
+            slug = generate_slug(title)
+            brand = item['brand_id']
             try:
-                name = item['prod_name']
-                title = item['name_in_store']
-                slug = generate_slug(title)
-                brand = item['brand_id']
-                try:
-                    category = item['category_in_store_to_id']
-                except:
-                    category = default_apple_category
-                product_details = storeProductDetails(item['details'] , title)
-                # imgs = urllib.parse.quote_plus(item['image_url'].strip())
-                imgs = item['image_url']
-                images = f"[\"{imgs}\"]"
-                id_parent = None
-                try:
-                    options = str([str(i) for i in item['options']])
-                except:
-                    pass
-
-                created_at = myTempStamp()
-                p = Product(name , title , slug ,brand ,category, product_details, images, id_parent, options ,created_at)
-                bulk_insert.append(p)
-
-                d = {}
-                d['slug'] = slug
-                d['current_price'] = item['current_price']
-                d['link'] = item['link']
-
-                prices.append(d)
-            except Exception as e:
-                raise e
+                category = item['category_in_store_to_id']
+            except:
+                category = default_apple_category
+            product_details = storeProductDetails(item['details'] , title)
+            imgs = item['image_url']
+            images = f"[\"{imgs}\"]"
+            id_parent = None
+            try:
+                options = str([str(i) for i in item['options']])
+            except:
                 pass
 
-        s.add_all(bulk_insert)
-        s.commit()
-        update_id_parent(bulk_insert , s)
-        print("SUCCESS BULK INSERT #1 (product_details & products)")
-        #loping over the new created products recoreds in order to create product__store
-        await storeProduct__store(uno_store_id ,bulk_insert, prices)
+            created_at = myTempStamp()
+            p = Product(name , title , slug ,brand ,category, product_details, images, id_parent, options ,created_at)
+            bulk_insert.append(p)
+
+            d = {}
+            d['slug'] = slug
+            d['current_price'] = item['current_price']
+            d['link'] = item['link']
+
+            prices.append(d)
+        except Exception as e:
+            raise e
+            pass
+
+    s.add_all(bulk_insert)
+    s.commit()
+    update_id_parent(bulk_insert , s)
+    print("SUCCESS BULK INSERT #1 (product_details & products)")
+
+    await storeProduct__store(store_id ,bulk_insert, prices)
 
     return {"status" : 200 }
 

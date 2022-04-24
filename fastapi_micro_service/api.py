@@ -34,8 +34,8 @@ async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper)
     return await optionGetAll(website)
 
 @app.post("/products")
-async def insert_product(website : str, importance : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
-    await storeProduct(website , importance)
+async def insert_product(website : str, list_of_products : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
+    await storeProduct(website , list_of_products)
     performeUpdateBestPrice(bestPirceByIdParent())
     price_history()
     return {'status' : '200 ok'}
@@ -43,10 +43,6 @@ async def insert_product(website : str, importance : List = Body(...) , user_nam
 @app.get("/brands")
 async def get_brands(user_name=Depends(auth_handler.auth_wrapper)):
     return await brandGetAll()
-
-@app.get("/products_names")
-async def get_product_names():
-    return await productNames()
 
 
 @app.post('/login')

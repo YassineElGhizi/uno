@@ -34,11 +34,19 @@ results = get_uno_products()
 #Parsing specification json field
 parsing_specification_json_field(results)
 
-
 for r in results:
     tmp_d = {}
     item_options = []
     tmp_d["current_price"] = r["current_price"]
+
+    #Product Name
+    tmp_d["prod_name"] = get_product_name_from_product_title((r["name_in_store"] , r["prod_name"]), list_of_mapped_product_names)
+    if tmp_d["prod_name"] not in list_outlayers:
+        tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
+    else:
+        tmp_d["brand_id"] = get_item_brand_id(supero_brand, tmp_d["prod_name"])
+
+    #Categories
     if r["category_in_store"] == 'iphone':
         tmp_d["category_in_store_to_id"] = 137
     if r["category_in_store"] == 'ipad':
@@ -46,7 +54,7 @@ for r in results:
     if r["category_in_store"] == 'mac':
         tmp_d["category_in_store_to_id"] = 307
     if r["category_in_store"] == 'apple watch':
-        tmp_d["category_in_store_to_id"] = 139
+        tmp_d["category_in_store_to_id"] = 148
     if r["category_in_store"] == 'apple tv':
         continue
     if r["category_in_store"] == 'chargeur':
@@ -66,17 +74,19 @@ for r in results:
     if r["category_in_store"] == 'airpods':
         tmp_d["category_in_store_to_id"] = 143
 
+    if 'Cable USB' in tmp_d["prod_name"] or 'Cable Apple USB' in tmp_d["prod_name"]:
+        tmp_d["category_in_store_to_id"] = 145
+
     tmp_d["category_in_store"] = r["category_in_store"]
+
+
+
     tmp_d["link"] = r["link"]
-    tmp_d["prod_name"] = get_product_name_from_product_title((r["name_in_store"] , r["prod_name"]), list_of_mapped_product_names)
-    if tmp_d["prod_name"] not in list_outlayers:
-        tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
-    else:
-        tmp_d["brand_id"] = get_item_brand_id(supero_brand, tmp_d["prod_name"])
     tmp_d["image_url"] = r["image_url"]
     tmp_d["current_price"] = r["current_price"]
     tmp_d["name_in_store"] = r["name_in_store"]
     tmp_d["details"] = r["details"]
+
     id_gatantie = None
     id_color = None
     id_ram = None
@@ -135,7 +145,6 @@ for r in results:
     tmp_d['options'] = item_options
     res_to_post_fastapi.append(tmp_d)
 
-# [print(x) for x in res_to_post_fastapi]
 print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
 
 payload = json.dumps(res_to_post_fastapi)

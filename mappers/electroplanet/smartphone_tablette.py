@@ -15,56 +15,6 @@ def get_mapped_prod_names(mycursor) -> List:
     [l.append(i[0]) for i in mycursor.fetchall()]
     return l
 
-def prod_names_reducer(mycursor):
-    l = []
-    list_reducers = []
-    sql = """
-        SELECT distinct name_in_store FROM ITEMS WHERE id_store = 3
-        and (category_in_store like 'iphone'
-        or category_in_store like 'telephone-android'
-        or category_in_store like 'ipad'
-        or category_in_store like 'tablettes-android'
-        or category_in_store like 'Domestique'
-        or category_in_store like 'Mobile'
-        or category_in_store like 'Cover de protection'
-        or category_in_store like 'Oreillettes bluetooth'
-        or category_in_store like 'Perche selfie filaire'
-        or category_in_store like 'Selfie sans fil'
-        or category_in_store like 'Macbook'
-        or category_in_store like 'Chargeur'
-        or category_in_store like 'Tablettes cover de protection'
-        or category_in_store like 'Tablettes support voiture'
-        or category_in_store like 'Adaptateurs telephone tablette'
-        or category_in_store like 'Cablage'
-        );
-        """
-    mycursor.execute(sql,)
-    [l.append(i[0]) for i in mycursor.fetchall()]
-    list_mapped_prod_names = get_mapped_prod_names(mycursor)
-    l.sort(key=len)
-
-    for i in list_mapped_prod_names:
-        for j in l:
-            if i.lower() in j.lower().replace(',' , '.'):
-                if not key_exists_in_list_of_dicts(list_reducers, j):
-                    reducer = {}
-                    reducer[f'{j}'] = i
-                    list_reducers.append(reducer)
-                    continue
-            if 'CHARGEUR' in j or 'CABLE' in j:
-                reducer = {}
-                reducer[f'{j}'] = 'Cable Chargeur'
-                list_reducers.append(reducer)
-                continue
-
-    no_names_products = []
-    for j in l:
-        if not key_exists_in_list_of_dicts(list_reducers, j):
-            no_names_products.append(j)
-    [print(x) for x in no_names_products]
-    print(f'len = {len(no_names_products)}')
-    return list_reducers
-
 def key_exists_in_list_of_dicts(l : List , k : str) -> bool:
     for d in l:
         if k in d:
@@ -90,12 +40,8 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
 
         tmp_d["current_price"] = r["current_price"]
         tmp_d["category_in_store"] = r["category_in_store"]
-        tmp_d["category_id"] = get_category_id(r["category_in_store"])
+        tmp_d["category_in_store_to_id"] = get_category_id(r["category_in_store"])
         tmp_d["link"] = r["link"]
-        print(r["link"])
-        # tmp_d["prod_name"] = r["prod_name"]
-
-        # tmp_d["prod_name"] =  get_product_name_id(r["prod_name"] , product_names)
         tmp_d["image_url"] = r["image_url"]
         tmp_d["current_price"] = r["current_price"]
         tmp_d["name_in_store"] = r["name_in_store"]
@@ -109,7 +55,6 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         id_connexion_adapter = None
         id_screen_size = None
         id_stockage_type = None
-        id_length = None
         id_power = None
 
         tmp_specification_json = json.loads(r["specification"])
@@ -118,8 +63,11 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         except Exception as e:
             continue
 
-        if 'reference_fournisseur' in tmp_json:
-            tmp_d["prod_name"] = get_product_name_id(tmp_json["reference_fournisseur"] , list_of_mapped_product_names)
+        if int(tmp_d["category_in_store_to_id"]) != 141 :
+            if 'reference_fournisseur' in tmp_json:
+                tmp_d["prod_name"] = get_product_name_id(tmp_json["reference_fournisseur"] , list_of_mapped_product_names)
+        else:
+            tmp_d["prod_name"] = r["name_in_store"]
 
 
         if 'marque' in tmp_json:
@@ -178,8 +126,8 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         res_to_post_fastapi.append(tmp_d)
 
 
-    # [print(i) for i in res_to_post_fastapi]
-    # print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
-    quit()
+    # [print(i , '\n') for i in res_to_post_fastapi]s
+    print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
+    # quit()
     return res_to_post_fastapi
 

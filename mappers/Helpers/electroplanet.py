@@ -8,7 +8,6 @@ from mappers.config.urls import options_url, products_name_url
 import requests
 
 
-
 ##Vars that get populated from FASTAPI
 all_options = []
 electroplanet_colors =[]
@@ -22,7 +21,6 @@ electroplanet_power = []
 electroplanet_lenght = []
 
 #Vars to be used localy
-
 all_brands = []
 item_ref = []
 specification_table = []
@@ -84,7 +82,7 @@ def extract_digits_float(sentance : str):
             try:
                 return float(sentance.split("\"")[0])
             except:
-                # print(f"the follwoing has None : {sentance}")
+                print(f"the following has digit float : {sentance}")
                 return None
     except:
         res = extract_digits(sentance)
@@ -220,8 +218,6 @@ def get_product_name_from_api(token):
     headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
     r = requests.get(products_name_url, headers=headers)
     x =  [d['name'] for d in json.loads(r.text)]
-    # x.sort()
-    # return x
     return Sorting(x)
 
 def Sorting(lst):
@@ -231,12 +227,11 @@ def Sorting(lst):
 
 
 def get_product_name_id(prod_name_in_store , list_of_mapped_product_names):
-    not_found = True
     product_names = list_of_mapped_product_names
     for n in product_names:
         if n.title() in prod_name_in_store.title().replace(',' , '.'):
-            not_found = False
-    if not_found:
-        print(f'new product name detected = {prod_name_in_store} \n')
+            return n
+    print(f'CANT FIND PRODUCT NAME IN: {prod_name_in_store}')
+    return prod_name_in_store
 
 
