@@ -1,0 +1,75 @@
+[
+    {
+        "Mini bar" : "169"
+    },
+    {
+        "Petit Refrigerateur" : "169"
+    },
+    {
+        "Refrigerateur americain duo jumelable" : "169"
+    },
+    {
+        "Refrigerateur americain side by side" : "169"
+    },
+    {
+        "Refrigerateur avec congelateur en bas" : "169"
+    },
+    {
+        "Refrigerateur avec congelateur en haut" : "169"
+    },
+
+    {
+        "Cuisiniere 4 feux" : "173"
+    },
+    {
+        "Cuisiniere 5 feux" : "173"
+    },
+    {
+        "Cuisiniere 5 feux cache bouteille" : "173"
+    },
+
+    {
+        "Lave-vaisselle encastrable" : "171"
+    },
+    {
+        "Machine à laver encastrable" : "171"
+    },
+    {
+        "Plaque de cuisson a gaz" : "174"
+    },
+    {
+        "Plaque de cuisson electrique" : "174"
+    },
+
+
+
+    {
+        "Machine a laver a hublot" : "171"
+    },
+    {
+        "Machine a laver ouverture en haut" : "171"
+    },
+    {
+        "machine a laver sechante" : "171"
+    },
+    {
+        "Machine a laver semi automatique avec essorage" : "171"
+    },
+    {
+        "Machine a laver semi automatique sans essorage" : "171"
+    },
+    {
+        "Lave vaisselle pose libre" : "171"
+    },
+
+
+    {
+        "Climatiseur" : "168"
+    },
+
+
+    {
+        "UNKNOWN" : "311"
+    }
+]
+

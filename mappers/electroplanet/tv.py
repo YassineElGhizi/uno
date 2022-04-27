@@ -1,24 +1,18 @@
 from requests import Session
 from typing import List
 import json
-from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json, get_tv
 from mappers.Helpers.electroplanet import get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_length_id,get_item_power_id
 
 
-from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import get_electroplanet_products, get_category_id
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import get_category_id
 from mappers.Helpers.electroplanet import extract_specification_json, get_brand_id, get_product_name_id
 
 
 
-def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_product_names) -> List:
-    #Getting Options
-    url = "http://127.0.0.1:9999/options?website=electroplanet-iphone"
-    headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
-    response = s.get(url , headers=headers)
-    organise_options_from_json(json.loads(response.text))
-
+def tv( brands : List) -> List:
     #Getting Electroplanet Products
-    results = get_electroplanet_products()
+    results = get_tv()
 
     res_to_post_fastapi = []
 
@@ -114,8 +108,8 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         res_to_post_fastapi.append(tmp_d)
 
 
-    # [print(i , '\n') for i in res_to_post_fastapi]s
-    print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
-    # quit()
+    [print(i , '\n') for i in res_to_post_fastapi]
+    # print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
+    quit()
     return res_to_post_fastapi
 

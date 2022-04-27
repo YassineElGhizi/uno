@@ -170,7 +170,7 @@ def get_brand_id(brands:List , item_brand : str) -> str:
     for x in brands:
         if x['name'].title() == item_brand.title():
             return str(x['id'])
-    print(f'new brands has been detected {item_brand}')
+    print(f'NEW BRANDS HAS BEEN DETECTED {item_brand}')
     for x in brands:
         if x['name'] == 'UNKNOW':
             return str(x['id'])
