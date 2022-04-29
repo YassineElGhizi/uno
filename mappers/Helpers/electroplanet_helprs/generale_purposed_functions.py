@@ -149,30 +149,51 @@ def get_electroplanet_small_electromenager():
 
 
 def get_category_id(cat_in_store):
-    # NB PATH IS RELATIVE TO MAIN
-    f = open('../Helpers/electroplanet_helprs/electro_mapped_cats.json')
+    f = open('../mappeed_categories/tv.json')
     data = json.load(f)
     f.close()
 
-    prod_cat={}
     for c in data:
         if cat_in_store in c.keys():
             prod_cat = c[str(cat_in_store)]
             break
     else:
         prod_cat= '311'
+    return prod_cat
 
+def get_smartphone_category_id(cat_in_store):
+    f = open('../mappeed_categories/electro_mapped_cats.json')
+    data = json.load(f)
+    f.close()
+
+    for c in data:
+        if cat_in_store in c.keys():
+            prod_cat = c[str(cat_in_store)]
+            break
+    else:
+        prod_cat= '311'
+    return prod_cat
+
+def get_informatique_category_id(cat_in_store):
+    f = open('../mappeed_categories/informatique.json')
+    data = json.load(f)
+    f.close()
+
+    for c in data:
+        if cat_in_store in c.keys():
+            prod_cat = c[str(cat_in_store)]
+            break
+    else:
+        prod_cat= '311'
     return prod_cat
 
 
 
 def get_category_id_beaute_sante(cat_in_store):
-    # NB PATH IS RELATIVE TO MAIN
     f = open('../mappeed_categories/Beaute_sante.json')
     data = json.load(f)
     f.close()
 
-    prod_cat={}
     for c in data:
         if cat_in_store in c.keys():
             prod_cat = c[str(cat_in_store)]
@@ -252,7 +273,27 @@ def get_tv():
     sql = """
            SELECT distinct * FROM ITEMS WHERE id_store = 3
        and (
-       category_in_store like 'BTeleviseur'
+       category_in_store like 'Televiseur'
+       or category_in_store like 'Smart tv'
+       or category_in_store like 'Televiseurs 4k uhd'
+       or category_in_store like 'Televiseurs premium 4k uhd'
+       or category_in_store like 'Oled'
+       or category_in_store like 'Oanocell'
+       or category_in_store like 'Support TV'
+       or category_in_store like 'Demodulateurs et recepteurs tnt'
+       );
+       """
+    mycursor.execute(sql, )
+    results = dictfetchall(mycursor)
+    return results
+
+
+def get_assecoire_tv():
+    mycursor = mydb.cursor()
+    sql = """
+           SELECT distinct * FROM ITEMS WHERE id_store = 3
+       and (
+       category_in_store like 'Televiseur'
        or category_in_store like 'Smart tv'
        or category_in_store like 'Televiseurs 4k uhd'
        or category_in_store like 'Televiseurs premium 4k uhd'
@@ -260,6 +301,86 @@ def get_tv():
        or category_in_store like 'Oanocell'
        );
        """
+    mycursor.execute(sql, )
+    results = dictfetchall(mycursor)
+    return results
+
+
+def get_electroplanet_appareil_photo():
+    mycursor = mydb.cursor()
+    sql = """
+               SELECT distinct * FROM ITEMS WHERE id_store = 3
+           and (
+           category_in_store like 'Appareil photo bridge'
+           or category_in_store like 'Appareil photo compact'
+           or category_in_store like 'Appareil photo instantane'
+           or category_in_store like 'Appareil photo reflex'
+           );
+           """
+    mycursor.execute(sql, )
+    results = dictfetchall(mycursor)
+    return results
+
+
+def get_category_id_appareil_photo(cat_in_store):
+    f = open('../mappeed_categories/appareil_photo.json')
+    data = json.load(f)
+    f.close()
+
+    for c in data:
+        if cat_in_store in c.keys():
+            prod_cat = c[str(cat_in_store)]
+            break
+    else:
+        prod_cat = '311'
+
+    return prod_cat
+
+
+def get_electroplanet_audio():
+    mycursor = mydb.cursor()
+    sql = """
+               SELECT distinct * FROM ITEMS WHERE id_store = 3
+           and (
+           category_in_store like 'Haut parleurs et enceintes'
+           or category_in_store like 'casque audio avec micro'
+           or category_in_store like 'casque audio avec micro sans fil'
+           or category_in_store like 'Ecouteurs avec micro'
+           or category_in_store like 'Ecouteurs avec micro sans fil'
+           or category_in_store like 'Ecouteurs sportifs avec micro sans fil'
+           or category_in_store like 'Ecouteurs sportifs avec micro'
+           );
+           """
+    mycursor.execute(sql, )
+    results = dictfetchall(mycursor)
+    return results
+
+def get_category_id_audio(cat_in_store):
+    f = open('../mappeed_categories/audio.json')
+    data = json.load(f)
+    f.close()
+
+    for c in data:
+        if cat_in_store in c.keys():
+            prod_cat = c[str(cat_in_store)]
+            break
+    else:
+        prod_cat = '311'
+
+    return prod_cat
+
+
+def get_electro_informartique_products():
+    mycursor = mydb.cursor()
+    sql = """
+           SELECT distinct * FROM ITEMS WHERE id_store = 3
+           and (
+           category_in_store like 'netbook'
+           or category_in_store like 'Notebook'
+           or category_in_store like 'Pc gamer'
+           or category_in_store like 'Ultrabook'
+           );
+               """
     mycursor.execute(sql, )
     results = dictfetchall(mycursor)
     return results

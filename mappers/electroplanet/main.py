@@ -5,12 +5,16 @@ from mappers.electroplanet.smartphone_tablette import smartphones_tablette
 from mappers.electroplanet.beaute_sante import beaute_sante
 from mappers.electroplanet.small_electromenager import small_electromenager
 from mappers.electroplanet.tv import tv
+from mappers.electroplanet.appareil_photo import appareil_photo
+from mappers.electroplanet.audio import audio
+from mappers.electroplanet.informatique import informartique
 
 from mappers.electroplanet.fetch_api import fetch_brands
 from mappers.electroplanet.big_electromenager import big_electromenager
 from mappers.Helpers.generale_purposed_functions import get_jwt_token_or_fail
 from mappers.Helpers.electroplanet import get_options_from_api
 from mappers.Helpers.fetch_from_local import get_mapped_procuts
+
 
 
 mapper_credetials = {"username": "electroplanet_mapper", "password": "electroplanetMapperSupero2022"}
@@ -38,25 +42,37 @@ if __name__ == '__main__':
 
     print("[+] getting options from API")
     get_options_from_api(token)
-    print("[+] getting product namres from API")
 
-    # print('\t=> Starting : smartphones_tablette()')
-    # listof_products = smartphones_tablette(token,s,fetch_brands(token, 'electroplanet_smartphones_tablette' , s) , list_of_mapped_product_names)
-    # post_list_of_product(listof_products, token)
-    #
-    # print('\t=> Starting : beaute_sante()')
-    # listof_products = beaute_sante(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
-    # post_list_of_product(listof_products, token)
-    #
-    # print('\t=> Starting : small_electromenager()')
-    # listof_products = small_electromenager(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
-    # post_list_of_product(listof_products, token)
-    #
-    # print('\t=> Starting : big_electromenager()')
-    # listof_products = big_electromenager(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
-    # post_list_of_product(listof_products, token)
+    print('\t=> Starting : smartphones_tablette()')
+    listof_products = smartphones_tablette(token,s,fetch_brands(token, 'electroplanet_smartphones_tablette' , s) , list_of_mapped_product_names)
+    post_list_of_product(listof_products, token)
 
+    print('\t=> Starting : beaute_sante()')
+    listof_products = beaute_sante(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
+    post_list_of_product(listof_products, token)
 
-    listof_products = tv(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
-    # post_list_of_product(listof_products, token)
+    print('\t=> Starting : small_electromenager()')
+    listof_products = small_electromenager(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
+    post_list_of_product(listof_products, token)
+
+    print('\t=> Starting : big_electromenager()')
+    listof_products = big_electromenager(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
+    post_list_of_product(listof_products, token)
+
+    print('\t=> Starting : tv()')
+    listof_products = tv(fetch_brands(token, 'electroplanet_smartphones_tablette' , s) , list_of_mapped_product_names)
+    post_list_of_product(listof_products, token)
+
+    print('\t=> Starting : appareil_photo()')
+    listof_products = appareil_photo(fetch_brands(token, 'electroplanet_smartphones_tablette', s))
+    post_list_of_product(listof_products, token)
+
+    print('\t=> Starting : audio()')
+    listof_products = audio(fetch_brands(token, 'electroplanet_smartphones_tablette', s))
+    post_list_of_product(listof_products, token)
+
+    print('\t=> Starting : informatique()')
+    listof_products = informartique(fetch_brands(token, 'electroplanet_smartphones_tablette' , s) , list_of_mapped_product_names)
+    post_list_of_product(listof_products, token)
+
 

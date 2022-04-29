@@ -122,7 +122,6 @@ def get_item_connexion_adapter_id(connexion_adapter:str):
 
 def get_item_screen_size_id(screen_size:str):
     screen_size_digit = extract_digits_float(screen_size)
-
     for c in electroplanet_taille_ecrant:
         if float(c['value']) == screen_size_digit:
             return c['id']
@@ -177,7 +176,7 @@ def get_brand_id(brands:List , item_brand : str) -> str:
 
 def get_category_id(cat_str : str) -> str:
     cats = []
-    with open('electroplanet_helprs/electro_mapped_cats.json', 'r' , encoding='utf8') as j:
+    with open('../mappeed_categories/electro_mapped_cats.json', 'r' , encoding='utf8') as j:
         cats =json.load(j)
     for dic_c in cats:
         if dic_c['electro_cat'] == cat_str:

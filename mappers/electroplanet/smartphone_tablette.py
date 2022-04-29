@@ -1,7 +1,8 @@
 from requests import Session
 from typing import List
 import json
-from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json, \
+    get_smartphone_category_id
 from mappers.Helpers.electroplanet import get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_length_id,get_item_power_id
 
 
@@ -28,7 +29,7 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
 
         tmp_d["current_price"] = r["current_price"]
         tmp_d["category_in_store"] = r["category_in_store"]
-        tmp_d["category_in_store_to_id"] = get_category_id(r["category_in_store"])
+        tmp_d["category_in_store_to_id"] = get_smartphone_category_id(r["category_in_store"])
         tmp_d["link"] = r["link"]
         tmp_d["image_url"] = r["image_url"]
         tmp_d["current_price"] = r["current_price"]
@@ -114,8 +115,8 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         res_to_post_fastapi.append(tmp_d)
 
 
-    # [print(i , '\n') for i in res_to_post_fastapi]s
-    print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
+    # [print(i , '\n') for i in res_to_post_fastapi]
     # quit()
+    print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
     return res_to_post_fastapi
 

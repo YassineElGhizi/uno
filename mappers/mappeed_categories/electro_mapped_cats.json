@@ -1,0 +1,53 @@
+[
+    {
+        "iphone" : "137"
+    },
+    {
+        "telephone-android" : "136"
+    },
+    {
+        "ipad" : "152"
+    },
+    {
+        "tablettes-android" : "152"
+    },
+    {
+        "Domestique" : "138"
+    },
+    {
+        "Mobile" : "138"
+    },
+    {
+        "Cover de protection" : "141"
+    },
+    {
+        "Oreillettes bluetooth" : "143"
+    },
+    {
+        "Perche selfie filaire" : "150"
+    },
+    {
+        "Selfie sans fil" : "150"
+    },
+    {
+        "Macbook" : "307"
+    },
+    {
+        "Chargeur" : "144"
+    },
+    {
+        "Tablettes cover de protection" : "153"
+    },
+    {
+        "Tablettes support voiture" : "153"
+    },
+    {
+        "Adaptateurs telephone tablette" : "145"
+    },
+    {
+        "Cablage" : "145"
+    },
+    {
+        "UNKNOWN" : "311"
+    }
+]
