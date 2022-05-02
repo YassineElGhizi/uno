@@ -96,6 +96,7 @@ def get_item_color_id(color:str):
     for c in electroplanet_colors:
         if color.title() == c["value"]:
             return c['id']
+    print(f'NEW COLOR {color}')
     return None
 
 def get_item_ram_id(ram:str):

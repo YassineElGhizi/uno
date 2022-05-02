@@ -219,6 +219,21 @@ def get_category_id_small_electromenager(cat_in_store):
 
     return prod_cat
 
+def get_category_id_maison_et_cuisine(cat_in_store):
+    # NB PATH IS RELATIVE TO MAIN
+    f = open('../mappeed_categories/maison_et_cuisine.json')
+    data = json.load(f)
+    f.close()
+
+    for c in data:
+        if cat_in_store in c.keys():
+            prod_cat = c[str(cat_in_store)]
+            break
+    else:
+        prod_cat= '311'
+
+    return prod_cat
+
 def get_category_id_big_electromenager(cat_in_store):
     # NB PATH IS RELATIVE TO MAIN
     f = open('../mappeed_categories/big_electromenager.json')
@@ -349,6 +364,7 @@ def get_electroplanet_audio():
            or category_in_store like 'Ecouteurs avec micro sans fil'
            or category_in_store like 'Ecouteurs sportifs avec micro sans fil'
            or category_in_store like 'Ecouteurs sportifs avec micro'
+           or category_in_store like 'Casques gamers'
            );
            """
     mycursor.execute(sql, )
@@ -379,6 +395,31 @@ def get_electro_informartique_products():
            or category_in_store like 'Notebook'
            or category_in_store like 'Pc gamer'
            or category_in_store like 'Ultrabook'
+           or category_in_store like 'Desktop Gamer'
+           or category_in_store like 'Pc gamer'
+           or category_in_store like 'Ecran pour pc'
+           or category_in_store like 'Imac'
+           or category_in_store like 'All in one'
+           or category_in_store like 'Imprimante jet d encre'
+           or category_in_store like 'Imprimante laser'
+           or category_in_store like 'Claviers'
+           or category_in_store like 'Souris gamers'
+           or category_in_store like 'Souris'
+           or category_in_store like 'Support ventilateur pc'
+           or category_in_store like 'Webcam'
+           );
+               """
+    mycursor.execute(sql, )
+    results = dictfetchall(mycursor)
+    return results
+
+def get_electroplanet_maison_et_cuisine():
+    mycursor = mydb.cursor()
+    sql = """
+           SELECT distinct * FROM ITEMS WHERE id_store = 3
+           and (
+           category_in_store like 'Ustensiles de cuisine'
+           or category_in_store like 'Cafetieres'
            );
                """
     mycursor.execute(sql, )

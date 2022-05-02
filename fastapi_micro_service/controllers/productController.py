@@ -2,7 +2,6 @@ from typing import List
 from slugify import slugify
 from sqlalchemy.orm import sessionmaker
 import random
-import sqlalchemy as db
 
 #To update product_id_parent
 from collections import defaultdict
@@ -12,7 +11,6 @@ from ..controllers.product__storeController import storeProduct__store
 
 from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
-from fastapi_micro_service.env.databaseConnexion import get
 
 
 default_apple_category = 5
@@ -86,6 +84,10 @@ async def storeProduct(website: str ,listProducts : List):
         store_id = 1
     if website == 'electroplanet':
         store_id = 3
+    if website == 'kitea':
+        store_id = 4
+    if website == 'bricoma':
+        store_id = 5
 
     for item in listProducts:
         try:
@@ -128,7 +130,3 @@ async def storeProduct(website: str ,listProducts : List):
     await storeProduct__store(store_id ,bulk_insert, prices)
 
     return {"status" : 200 }
-
-
-async def productNames():
-    return get(db.select([Product.name ]).where(Product.id_parent == None))

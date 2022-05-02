@@ -1,6 +1,5 @@
 import json
 import time
-
 import pymysql
 import requests
 from bs4 import BeautifulSoup as BS
@@ -136,7 +135,7 @@ def scrape():
 
             mydb.close()
     except Exception as e:
-        print(e)
+        print(f'Exception detetcted {e} ! ,We will continue :D ')
         pass
 
 if __name__ == "__main__":

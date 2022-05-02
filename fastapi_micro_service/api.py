@@ -3,7 +3,7 @@ import uvicorn
 from typing import List
 
 from fastapi_micro_service.controllers.optionController import optionGetAll
-from fastapi_micro_service.controllers.productController import storeProduct, productNames
+from fastapi_micro_service.controllers.productController import storeProduct
 from fastapi_micro_service.controllers.brandController import brandGetAll
 from fastapi_micro_service.models.mapper import Mapper
 from fastapi_micro_service.middleware.authHandler import AuthHandler

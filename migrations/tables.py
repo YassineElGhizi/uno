@@ -18,12 +18,14 @@ try:
     cursorObject.execute(sqlQuery)
 
 
-    sqlQuery = "CREATE TABLE items(last_updated_at timestamp, id int primary key not null AUTO_INCREMENT, name_in_store varchar(255), prod_name varchar(255), link varchar(255), id_store int, category_in_store varchar(255), specification text , details text ,image_url text,current_price double, foreign key (id_store) references stores(id))"
+    # sqlQuery = "CREATE TABLE items(last_updated_at timestamp, id int primary key not null AUTO_INCREMENT, name_in_store varchar(255), prod_name varchar(255), link varchar(255), id_store int, category_in_store varchar(255), specification text , details text ,image_url text,current_price double, foreign key (id_store) references stores(id))"
+    sqlQuery = "CREATE TABLE items(last_updated_at timestamp, id int primary key not null AUTO_INCREMENT, name_in_store varchar(255), prod_name varchar(255), link varchar(255), id_store int, category_in_store varchar(255), specification text , details text ,image_url text,current_price double)"
     cursorObject.execute(sqlQuery)
 
 
 
-    sqlQuery = "CREATE TABLE Prices(id_item int , price double, created_at timestamp, foreign key (id_item) references items(id))"
+    # sqlQuery = "CREATE TABLE Prices(id_item int , price double, created_at timestamp, foreign key (id_item) references items(id))"
+    sqlQuery = "CREATE TABLE prices(id_item int , price double, created_at timestamp)"
     cursorObject.execute(sqlQuery)
 
     # SQL query string
@@ -37,12 +39,14 @@ try:
     cursorObject.execute(sqlQuery)
 
     # SQL query string
-    sqlQuery = "CREATE TABLE categories(id int primary key not null AUTO_INCREMENT, name_cat_in_store varchar(255) , id_store int , foreign key (id_store) references stores(id))"
+    # sqlQuery = "CREATE TABLE categories(id int primary key not null AUTO_INCREMENT, name_cat_in_store varchar(255) , id_store int , foreign key (id_store) references stores(id))"
+    sqlQuery = "CREATE TABLE categories(id int primary key not null AUTO_INCREMENT, name_cat_in_store varchar(255) , id_store int)"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 
     # SQL query string
-    sqlQuery = "CREATE TABLE jobs(id int primary key not null AUTO_INCREMENT, type int , bot_id int , runed_at timestamp , foreign key (bot_id) references bots(id))"
+    # sqlQuery = "CREATE TABLE jobs(id int primary key not null AUTO_INCREMENT, type int , bot_id int , runed_at timestamp , foreign key (bot_id) references bots(id))"
+    sqlQuery = "CREATE TABLE jobs(id int primary key not null AUTO_INCREMENT, type int , bot_id int , runed_at timestamp)"
     # Execute the sqlQuery
     cursorObject.execute(sqlQuery)
 

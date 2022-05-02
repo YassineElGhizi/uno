@@ -48,7 +48,7 @@ def scrape():
             port=3306,
             user="root",
             password="",
-            database="datalake",
+            database="supero_datalake2",
         )
         mycursor = mydb.cursor()
 
@@ -154,8 +154,7 @@ def scrape():
         print(e.__traceback__.tb_lineno)
         print(__file__)
         pass
-    finally:
-        mydb.close()
+
 
 
 if __name__ == "__main__":

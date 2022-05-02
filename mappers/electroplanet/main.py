@@ -1,6 +1,7 @@
 import requests
 import json
 
+from mappers.electroplanet.maison_et_cuisine import maison_et_cuisine
 from mappers.electroplanet.smartphone_tablette import smartphones_tablette
 from mappers.electroplanet.beaute_sante import beaute_sante
 from mappers.electroplanet.small_electromenager import small_electromenager
@@ -73,6 +74,10 @@ if __name__ == '__main__':
 
     print('\t=> Starting : informatique()')
     listof_products = informartique(fetch_brands(token, 'electroplanet_smartphones_tablette' , s) , list_of_mapped_product_names)
+    post_list_of_product(listof_products, token)
+
+    print('\t=> Starting : maison_et_cuisine()')
+    listof_products = maison_et_cuisine(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
     post_list_of_product(listof_products, token)
 
 

@@ -2,5 +2,17 @@
   {"Netbook" :  "177"},
   {"Notebook" :  "177"},
   {"Pc gamer" :  "177"},
-  {"Ultrabook" :  "177"}
+  {"Ultrabook" :  "177"},
+  {"Desktop Gamer" :  "178"},
+  {"Pc gamer" :  "178"},
+  {"Ecran pour pc" :  "182"},
+  {"Imac" :  "182"},
+  {"All in one" :  "180"},
+  {"Imprimante jet d encre" :  "183"},
+  {"Imprimante laser" :  "183"},
+  {"Claviers" :  "186"},
+  {"Souris gamers" :  "185"},
+  {"Souris" :  "185"},
+  {"Support ventilateur pc" :  "198"},
+  {"Webcam" :  "188"}
 ]
