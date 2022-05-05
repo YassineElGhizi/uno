@@ -52,9 +52,9 @@ def main(brands : List) -> List:
         res_to_post_fastapi.append(tmp_d)
 
 
-    [print(i , '\n') for i in res_to_post_fastapi]
+    # [print(i , '\n') for i in res_to_post_fastapi]
     print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
-    quit()
+    # quit()
     return res_to_post_fastapi
 
 

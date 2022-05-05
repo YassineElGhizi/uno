@@ -88,6 +88,8 @@ async def storeProduct(website: str ,listProducts : List):
         store_id = 4
     if website == 'bricoma':
         store_id = 5
+    if website == 'decathlon':
+        store_id = 6
 
     for item in listProducts:
         try:

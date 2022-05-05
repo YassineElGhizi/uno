@@ -38,10 +38,17 @@ def get_category_id_decathlon(cat_in_store):
         tmp =cat_in_store.replace('è' , 'e')
         tmp =tmp.replace('é' , 'e')
         tmp = tmp.replace('à' , 'a')
+        tmp = tmp.replace('É' , 'E')
+        tmp = tmp.replace('ê' , 'e')
+        tmp = tmp.replace('î' , 'i')
+        tmp = tmp.replace('ï' , 'i')
         if tmp in c.keys():
             prod_cat = c[str(tmp)]
             break
     else:
+        if cat_in_store == 'Protection Solaire':
+            return '389'
         prod_cat= '311'
+        print(f'311 FOR: {cat_in_store}')
     return prod_cat
 
