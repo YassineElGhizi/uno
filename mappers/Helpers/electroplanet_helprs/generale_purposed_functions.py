@@ -199,6 +199,7 @@ def get_category_id_beaute_sante(cat_in_store):
             prod_cat = c[str(cat_in_store)]
             break
     else:
+        print(f'WARNING CANT DETECTED CATEGORY !! : {cat_in_store}')
         prod_cat= '311'
 
     return prod_cat
@@ -210,11 +211,16 @@ def get_category_id_small_electromenager(cat_in_store):
     data = json.load(f)
     f.close()
 
+    tmp = cat_in_store.replace('è' , 'e')
+    tmp = tmp.replace('é' , 'e')
+    tmp = tmp.replace('à' , 'a')
+
     for c in data:
-        if cat_in_store in c.keys():
-            prod_cat = c[str(cat_in_store)]
+        if tmp in c.keys():
+            prod_cat = c[str(tmp)]
             break
     else:
+        print(f'WARNING CANT DETECTED CATEGORY !! : {cat_in_store}')
         prod_cat= '311'
 
     return prod_cat

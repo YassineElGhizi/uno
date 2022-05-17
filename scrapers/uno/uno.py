@@ -98,47 +98,18 @@ def scrape(link , prod_name , id_store , id_subcat):
 
             jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
 
-            sql = "select current_price from items where name_in_store = %s and id_store = 1"
-            val = (item_title)
+            sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+            val = (prod_name, item_title, item_link, id_store, id_subcat, jsonStringify, items_details, image_item, item_price,scraped_at)
             mycursor.execute(sql, val)
-            myresult = mycursor.fetchall()
-            if(len(myresult) == 0):
-                sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
-                val = (prod_name, item_title, item_link, id_store, id_subcat, jsonStringify, items_details, image_item, item_price,scraped_at)
-                mycursor.execute(sql, val)
-                print("id = {}".format(mycursor.lastrowid))
-                sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-                val = (mycursor.lastrowid, item_price, scraped_at)
-                mycursor.execute(sql, val)
-                print("\n")
-                mydb.commit()
-            else:
-                if(myresult[0][0] != item_price ):
-
-                    sql = "select id from items where name_in_store = %s"
-                    val = (item_title,)
-                    mycursor.execute(sql, val)
-                    myresult = mycursor.fetchall()
-                    id = myresult[0][0]
-
-                    sql = "update items set current_price = %s , last_updated_at = %s where name_in_store = %s"
-                    val = (item_price , scraped_at , item_title)
-                    mycursor.execute(sql, val)
-                    mydb.commit()
-
-                    sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-                    val = (id, item_price, scraped_at)
-                    mycursor.execute(sql, val)
-                    mydb.commit()
-                else:
-                    print("PRICES ARE STILL THE SAME")
-                    print(" -> {} == {}".format(myresult[0][0] , item_price))
-
-
+            print("id = {}".format(mycursor.lastrowid))
+            sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
+            val = (mycursor.lastrowid, item_price, scraped_at)
+            mycursor.execute(sql, val)
+            print("\n")
+            mydb.commit()
         except Exception as e:
-            print(e)
-            print("Database conn error !")
-
+            print(f'EXCEPTION {e}')
+            continue
 
     mydb.close()
 

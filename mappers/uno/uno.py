@@ -39,8 +39,11 @@ for r in results:
     item_options = []
     tmp_d["current_price"] = r["current_price"]
 
-    #Product Name
-    tmp_d["prod_name"] = get_product_name_from_product_title((r["name_in_store"] , r["prod_name"]), list_of_mapped_product_names)
+    if r["category_in_store"] != 'accessoires iphone' and r["category_in_store"] != 'apple tv' and r["category_in_store"] != 'tablette graphique' and r["category_in_store"] != 'accessoires mac':
+        tmp_d["prod_name"] = get_product_name_from_product_title((r["name_in_store"] , r["prod_name"]), list_of_mapped_product_names)
+    else:
+        tmp_d["prod_name"] = r["name_in_store"]
+
     if tmp_d["prod_name"] not in list_outlayers:
         tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
     else:
@@ -56,7 +59,7 @@ for r in results:
     if r["category_in_store"] == 'apple watch':
         tmp_d["category_in_store_to_id"] = 148
     if r["category_in_store"] == 'apple tv':
-        continue
+        tmp_d["category_in_store_to_id"] = 270
     if r["category_in_store"] == 'chargeur':
         tmp_d["category_in_store_to_id"] = 144
     if r["category_in_store"] == 'accessoires iphone':
@@ -70,7 +73,7 @@ for r in results:
     if r["category_in_store"] == 'disque dur externe':
         tmp_d["category_in_store_to_id"] = 191
     if r["category_in_store"] == 'tablette graphique':
-        continue
+        tmp_d["category_in_store_to_id"] = 152
     if r["category_in_store"] == 'airpods':
         tmp_d["category_in_store_to_id"] = 143
 
@@ -146,6 +149,9 @@ for r in results:
     res_to_post_fastapi.append(tmp_d)
 
 print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
+
+# [print(x) for x in res_to_post_fastapi]
+# quit()
 
 payload = json.dumps(res_to_post_fastapi)
 response = requests.request("POST", url_post, headers=headers, data=payload)

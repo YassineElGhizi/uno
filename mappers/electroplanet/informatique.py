@@ -39,7 +39,7 @@ def informartique( brands : List , list_of_mapped_product_names) -> List:
         except Exception as e:
             continue
 
-        if int(tmp_d["category_in_store_to_id"]) != 141 :
+        if int(tmp_d["category_in_store_to_id"]) != 141 and int(tmp_d["category_in_store_to_id"]) != 185:
             if 'reference_fournisseur' in tmp_json:
                 tmp_d["prod_name"] = get_product_name_id(tmp_json["reference_fournisseur"] , list_of_mapped_product_names)
         else:

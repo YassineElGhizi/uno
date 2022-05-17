@@ -176,7 +176,6 @@ def get_brand_id(brands:List , item_brand : str) -> str:
             return str(x['id'])
 
 def get_category_id(cat_str : str) -> str:
-    cats = []
     with open('../mappeed_categories/electro_mapped_cats.json', 'r' , encoding='utf8') as j:
         cats =json.load(j)
     for dic_c in cats:
@@ -233,5 +232,4 @@ def get_product_name_id(prod_name_in_store , list_of_mapped_product_names):
             return n
     print(f'CANT FIND PRODUCT NAME IN: {prod_name_in_store}')
     return prod_name_in_store
-
 

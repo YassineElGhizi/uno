@@ -52,15 +52,18 @@ def scrape():
             port=3306,
             user="root",
             password="",
-            database="datalake",
+            database="supero_datalake2",
         )
         mycursor = mydb.cursor()
 
         print("         [+] Scraping Items")
+        [print(x) for x in list_of_subcats_and_thier_links]
+        print(len(list_of_subcats_and_thier_links))
+        quit()
         for item in list_of_subcats_and_thier_links:
-
-            res2 = requests.get("{}".format(item["link"]))
-            sleep(random.randint(4 , 7))
+            s = requests.session()
+            res2 = s.get("{}".format(item["link"]))
+            sleep(random.randint(0 , 1))
             new_page2 = BS(res2.text,features="html.parser")
             items_cards = new_page2.findAll('a', {'class': 'ps-product__title'})
             mylist = list()
@@ -72,8 +75,8 @@ def scrape():
 
             print("             [+] Collecting data")
             for num, link in enumerate(mylist):
-                res2 = requests.get(link)
-                sleep(random.randint(4 , 7))
+                res2 = s.get(link)
+                sleep(random.randint(0 , 1))
                 new_page = BS(res2.text,features="html.parser")
 
                 try:
@@ -152,15 +155,11 @@ def scrape():
                     print(__file__)
                     print("Database conn error !")
                     pass
-
-        mydb.close()
     except Exception as e:
         print(e)
         print(e.__traceback__.tb_lineno)
         print(__file__)
         pass
-    finally:
-        mydb.close()
 
 
 if __name__ == "__main__":

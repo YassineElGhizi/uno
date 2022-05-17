@@ -8,7 +8,6 @@ from collections import defaultdict
 
 from ..controllers.storeProductDetailsController import storeProductDetails
 from ..controllers.product__storeController import storeProduct__store
-
 from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
 
@@ -90,6 +89,10 @@ async def storeProduct(website: str ,listProducts : List):
         store_id = 5
     if website == 'decathlon':
         store_id = 6
+    if website == 'ikea':
+        store_id = 7
+    if website == 'cosmoseelectro':
+        store_id = 8
 
     for item in listProducts:
         try:
@@ -106,7 +109,7 @@ async def storeProduct(website: str ,listProducts : List):
             images = f"[\"{imgs}\"]"
             id_parent = None
             try:
-                options = str([str(i) for i in item['options']])
+                options = str([i for i in item['options']])
             except:
                 pass
 
