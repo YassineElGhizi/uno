@@ -431,7 +431,6 @@ electroplanet_accessoires_gaming = [
     {"link": "https://www.electroplanet.ma/jeux-consoles/accessoires-gaming/support?product_list_limit=60", "id_store": 3,"subcategory": "Poele"},
 ]
 
-
 electroplanet_console = [
     {"link": "https://www.electroplanet.ma/jeux-consoles/consoles/consoles-play-station?product_list_limit=60", "id_store": 3,"subcategory": "Consoles"},
     {"link": "https://www.electroplanet.ma/jeux-consoles/jeux-video/jeux?product_list_limit=60", "id_store": 3,"subcategory": "Consoles"},

@@ -11,15 +11,12 @@ import random
 list_of_cats_and_thier_links = list()
 list_of_subcats_and_thier_links = list()
 now = datetime.datetime.now()
-scraped_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
+
 
 def init():
     print("[+] Initialisation")
     res = requests.get("https://www.bricoma.ma/")
-    items = BS(
-        res.text,
-        features="html.parser"
-    )
+    items = BS(res.text,features="html.parser")
     all_categories_toscrape = items.findAll('a' , {'class' : 'level-top'})
     for i in all_categories_toscrape:
         d = dict()
@@ -32,8 +29,7 @@ def scrape():
     try:
         init()
     except Exception as e:
-        print("Err in init() BRICOMA")
-        print(e)
+        print(f"Err in init() BRICOMA {e}")
         return -1
 
     try:
@@ -43,19 +39,9 @@ def scrape():
             res = sess.get("{}".format(l["link"]))
 
             #DB Connexion
-            mydb = pymysql.connect(
-                host="127.0.0.1",
-                port=3306,
-                user="root",
-                password="",
-                database="supero_datalake2",
-            )
+            mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
             mycursor = mydb.cursor()
-
-            items = BS(
-                res.text,
-                features="html.parser"
-            )
+            items = BS(res.text,features="html.parser")
             subcats = items.findAll('a' , {'class' : 'category-name'})
             print("     [+] Getting SubCategries")
             for s in subcats:
@@ -71,27 +57,19 @@ def scrape():
                 except Exception as e:
                     print(f'Exception = {e}')
                     continue
-                sleep(random.randint(1 , 3))
-                new_page2 = BS(
-                    res2.text,
-                    features="html.parser"
-                )
+                sleep(random.randint(1 , 2))
+                new_page2 = BS(res2.text,features="html.parser")
                 items_cards = new_page2.findAll('div' , {'class' : 'actions-primary'})
                 mylist = list()
                 for ihref in items_cards:
-                    mylist.append(
-                        ihref.find('a').get('href')
-                    )
+                    mylist.append(ihref.find('a').get('href'))
             print("             [+] Collecting data")
             for num, link in enumerate(mylist):
                 res2 = sess.get(link)
-                sleep(random.randint(1 , 3))
-                new_page = BS(
-                    res2.text,
-                    features="html.parser"
-                )
+                sleep(random.randint(1 , 2))
+                new_page = BS(res2.text,features="html.parser")
 
-                item_name_instore = new_page.select_one(
+                item_name_in_store = new_page.select_one(
                     '#maincontent > div.columns > div > div.product-info-main > div.page-title-wrapper.product > h1 > span'
                 ).get_text()
                 item_ref = new_page.select_one(
@@ -111,8 +89,9 @@ def scrape():
                 floatprice = "".join(tmp)
                 tmp = float(floatprice)
                 item_price = tmp
+                item_short_name = ''
 
-                print("item_name_instore = {}".format(item_name_instore))
+                print("item_name_in_store = {}".format(item_name_in_store))
                 print("item_ref = {}".format(item_ref))
                 print("item_description = {}".format(item_description))
                 print("item_specification = {}".format(item_specification))
@@ -128,43 +107,11 @@ def scrape():
                         myjson['specification_table'] = item_specification
                     jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
 
-                    sql = "select current_price from items where name_in_store = %s"
-                    val = (item_ref)
+
+                    sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,unique_id) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+                    val = (item_short_name, item_name_in_store, item_link, 5, item["subcategory_in_site"], jsonStringify, item_description, image_item, item_price,item_ref)
                     mycursor.execute(sql, val)
-                    myresult = mycursor.fetchall()
-                    if(len(myresult) == 0):
-                        sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
-                        val = (item_name_instore, item_ref, item_link, 5, item["subcategory_in_site"], jsonStringify, item_description, image_item, item_price,scraped_at)
-                        mycursor.execute(sql, val)
-                        print("id = {}".format(
-                            mycursor.lastrowid
-                        ))
-                        sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-                        val = (mycursor.lastrowid, item_price, scraped_at)
-                        mycursor.execute(sql, val)
-                        print("\n")
-                        mydb.commit()
-                    else:
-                        if(myresult[0][0] != item_price ):
-
-                            sql = "select id from items where name_in_store = %s"
-                            val = (item_ref,)
-                            mycursor.execute(sql, val)
-                            myresult = mycursor.fetchall()
-                            id = myresult[0][0]
-
-                            sql = "update items set current_price = %s , last_updated_at = %s where name_in_store = %s"
-                            val = (item_price , scraped_at , item_ref)
-                            mycursor.execute(sql, val)
-                            mydb.commit()
-
-                            sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-                            val = (id, item_price, scraped_at)
-                            mycursor.execute(sql, val)
-                            mydb.commit()
-                        else:
-                            print("PRICES ARE STILL THE SAME")
-                            print(" -> {} == {}".format(myresult[0][0] , item_price))
+                    mydb.commit()
 
 
                 except Exception as e:
@@ -180,9 +127,6 @@ def scrape():
         print(e.__traceback__.tb_lineno)
         print(__file__)
         pass
-    finally:
-        mydb.close()
-
 
 if __name__ == "__main__":
     start = time.time()

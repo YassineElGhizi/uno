@@ -3,13 +3,10 @@ import pymysql
 import requests
 from bs4 import BeautifulSoup as BS
 from time import sleep
-import datetime
 import random
 
 list_of_cats_and_thier_links = list()
 list_of_subcats_and_thier_links = list()
-now = datetime.datetime.now()
-scraped_at = "{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
 
 def formatPrice(price):
     tmp = price.replace('Dhs' , '')
@@ -47,19 +44,12 @@ def scrape():
     try:
         init()
 
-        mydb = pymysql.connect(
-            host="127.0.0.1",
-            port=3306,
-            user="root",
-            password="",
-            database="supero_datalake2",
-        )
+        mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
         mycursor = mydb.cursor()
 
         print("         [+] Scraping Items")
-        [print(x) for x in list_of_subcats_and_thier_links]
-        print(len(list_of_subcats_and_thier_links))
-        quit()
+        # [print(x) for x in list_of_subcats_and_thier_links]
+
         for item in list_of_subcats_and_thier_links:
             s = requests.session()
             res2 = s.get("{}".format(item["link"]))
@@ -80,11 +70,12 @@ def scrape():
                 new_page = BS(res2.text,features="html.parser")
 
                 try:
-                    item_name_instore = new_page.select_one(
+                    item_name_in_store = new_page.select_one(
                         '#product-page > div.ps-container > div > div.ps-page--product > div > div.ps-page__container > div.ps-page__left > div > div.ps-product__header > div.ps-product__info > h1'
                     ).get_text().strip()
 
-                    item_ref = new_page.select_one('#product-sku').get_text().strip()
+                    item_ref = new_page.select_one('#product-page > div.ps-container > div > div.ps-page--product > div > div.ps-page__container > div.ps-page__left > div > div.ps-product__header > div.ps-product__info > div.ps-product__desc > div > ul > li:nth-child(1)').get_text().strip()
+                    item_ref = item_ref.replace('Référence : ' , '')
                     item_description = new_page.select_one('#tab-description > div').get_text().strip()
                     item_specification = new_page.select_one('#product-specs > tbody')
                     item_link = link
@@ -93,8 +84,10 @@ def scrape():
                         '#product-page > div.ps-container > div > div.ps-page--product > div > div.ps-page__container > div.ps-page__left > div > div.ps-product__header > div.ps-product__info > h4 > span'
                     ).get_text().strip()
                     item_price = formatPrice(item_price)
+                    item_short_name = ''
 
-                    print("item_name_instore = {}".format(item_name_instore))
+
+                    print("item_name_in_store = {}".format(item_name_in_store))
                     print("item_ref = {}".format(item_ref))
                     print("item_description = {}".format(item_description))
                     print("item_specification = {}".format(item_specification))
@@ -103,11 +96,10 @@ def scrape():
                     print("item_price = {}".format(item_price))
                     print("item_subcat_in_website = {}".format(item["subcat_name"]))
                     print("\n")
+
                 except Exception as e:
-                    print("something wroing in parsing html")
                     print(e)
                     print(e.__traceback__.tb_lineno)
-                    print(__file__)
                     continue
                 try:
                     myjson = dict()
@@ -115,50 +107,19 @@ def scrape():
                         myjson['specification_table'] = item_specification
                     jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
 
-                    sql = "select current_price from items where name_in_store = %s"
-                    val = (item_ref)
-                    mycursor.execute(sql, val)
-                    myresult = mycursor.fetchall()
-                    if(len(myresult) == 0):
-                        sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
-                        val = (item_name_instore, item_ref, item_link, 8, item["subcat_name"], jsonStringify, item_description, image_item, item_price,scraped_at)
+                    try:
+                        sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,unique_id) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+                        val = (item_short_name, item_name_in_store, item_link, 8, item["subcat_name"], jsonStringify, item_description, image_item, item_price,item_ref)
                         mycursor.execute(sql, val)
-                        print("id = {}".format(mycursor.lastrowid))
-                        sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-                        val = (mycursor.lastrowid, item_price, scraped_at)
-                        mycursor.execute(sql, val)
-                        print("\n")
                         mydb.commit()
-                    else:
-                        if(myresult[0][0] != item_price ):
-                            sql = "select id from items where name_in_store = %s"
-                            val = (item_ref,)
-                            mycursor.execute(sql, val)
-                            myresult = mycursor.fetchall()
-                            id = myresult[0][0]
-                            sql = "update items set current_price = %s , last_updated_at = %s where name_in_store = %s"
-                            val = (item_price , scraped_at , item_ref)
-                            mycursor.execute(sql, val)
-                            mydb.commit()
-
-                            sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-                            val = (id, item_price, scraped_at)
-                            mycursor.execute(sql, val)
-                            mydb.commit()
-                        else:
-                            print("PRICES ARE STILL THE SAME")
-                            print(" -> {} == {}".format(myresult[0][0] , item_price))
+                    except Exception as e:
+                        print(f'Exception {e}')
 
                 except Exception as e:
                     print(e)
-                    print(e.__traceback__.tb_lineno)
-                    print(__file__)
-                    print("Database conn error !")
                     pass
     except Exception as e:
         print(e)
-        print(e.__traceback__.tb_lineno)
-        print(__file__)
         pass
 
 

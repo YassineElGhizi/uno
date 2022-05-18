@@ -19,19 +19,13 @@ def scrape(link , prod_name , id_store , id_subcat):
         'Referer' : 'https://google.com'
     }
     s = requests.session()
-    res = s.get("{}".format(link) , headers=headers)
+    res = s.get("{}".format(link), headers=headers)
 
     #DB Connexion
-    mydb = pymysql.connect(
-        host="127.0.0.1",
-        port=3306,
-        user="root",
-        password="",
-        database="supero_datalake2",
-    )
+    mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
 
     mycursor = mydb.cursor()
-    items = BS(res.text ,features="html.parser")
+    items = BS(res.text, features="html.parser")
 
     items_cards = items.findAll('li' , {'class' ,'item sale-product' }  )
 
@@ -53,26 +47,33 @@ def scrape(link , prod_name , id_store , id_subcat):
         item_power = find_device_power(item_title)
 
         res = s.get(item_link , headers=headers)
-        sleep(random.randint(2,5))
-        items = BS(res.text,features="html.parser")
+        sleep(random.randint(1, 2))
+        items = BS(res.text, features="html.parser")
+        try:
+            item_ref = (items.prettify().split('"sku":"')[1]).split('","description"')[0]
+            item_ref = item_ref.replace('\/' , '/')
+        except:
+            print(f'NO REF FOUND IN {item_link}')
+            continue
+
         items_details = items.find('div', {'class', 'product-tabs-content tabs-content std'})
 
-        print("================= #{} ============".format(num+1))
-        print("item_title = {}".format(item_title))
+        # print(f'item_ref = {item_ref}')
+        # print("item_title = {}".format(item_title))
         print("item_link = {}".format(item_link))
-        print("item_price = {}".format(item_price))
-        print("stockage = {}".format(item_stockage))
-        print("item_color = {}".format(item_color))
-        print("scraped_at = {}".format(scraped_at))
-        print("image_item = {}".format(image_item))
-        print("item_screen_size = {}".format(item_screen_size))
-        print("item_connexion_adapter = {}".format(item_connexion_adapter))
-        print("item_garantie = {}".format(item_garantie))
-        print("prod_name= {}".format(prod_name))
-        print("item_ram= {}".format(item_ram))
-        print("item_stockage_type= {}".format(item_stockage_type))
-        print("item_lenght= {}".format(item_lenght))
-        print("item_power= {}".format(item_power))
+        # print("item_price = {}".format(item_price))
+        # print("stockage = {}".format(item_stockage))
+        # print("item_color = {}".format(item_color))
+        # print("scraped_at = {}".format(scraped_at))
+        # print("image_item = {}".format(image_item))
+        # print("item_screen_size = {}".format(item_screen_size))
+        # print("item_connexion_adapter = {}".format(item_connexion_adapter))
+        # print("item_garantie = {}".format(item_garantie))
+        # print("prod_name= {}".format(prod_name))
+        # print("item_ram= {}".format(item_ram))
+        # print("item_stockage_type= {}".format(item_stockage_type))
+        # print("item_lenght= {}".format(item_lenght))
+        # print("item_power= {}".format(item_power))
 
         try:
             myjson = dict()
@@ -98,14 +99,9 @@ def scrape(link , prod_name , id_store , id_subcat):
 
             jsonStringify = json.dumps(myjson, indent=4, sort_keys=True, default=str)
 
-            sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,last_updated_at) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
-            val = (prod_name, item_title, item_link, id_store, id_subcat, jsonStringify, items_details, image_item, item_price,scraped_at)
+            sql = "INSERT INTO items (prod_name ,name_in_store,link, id_store ,category_in_store ,specification,details ,image_url,current_price,unique_id) VALUES (%s, %s, %s, %s, %s ,%s ,%s,%s ,%s, %s)"
+            val = ("", item_title, item_link, 1, id_subcat, jsonStringify, "", image_item,item_price, item_ref)
             mycursor.execute(sql, val)
-            print("id = {}".format(mycursor.lastrowid))
-            sql = "INSERT INTO prices (id_item ,price,created_at) VALUES (%s, %s, %s)"
-            val = (mycursor.lastrowid, item_price, scraped_at)
-            mycursor.execute(sql, val)
-            print("\n")
             mydb.commit()
         except Exception as e:
             print(f'EXCEPTION {e}')
@@ -117,28 +113,28 @@ def scrape(link , prod_name , id_store , id_subcat):
 if __name__ == "__main__":
     for l in uno_iphones_links:
         scrape( "{}".format(l['link']), "{}".format(l['product_name']) ,l["id_store"] , l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
 
     for l in uno_ipads_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
 
     for l in uno_mac_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
 
     for l in uno_watches_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
 
     for l in uno_tvs_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
 
     for l in uno_accessoires_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
 
     for l in uno_headphones_links:
         scrape("{}".format(l['link']), "{}".format(l['product_name']), l["id_store"], l["subcategory"])
-        sleep(random.randint(2,5))
+        sleep(random.randint(1,2))
