@@ -20,18 +20,29 @@ def small_electromenager(brands : List) -> List:
         tmp_d["image_url"] = r["image_url"]
         tmp_d["current_price"] = r["current_price"]
         tmp_d["name_in_store"] = r["name_in_store"]
-        tmp_d["prod_name"] = r ["prod_name"]
         tmp_d["details"] = r["details"]
+        tmp_d["unique_id"] = r["unique_id"]
 
         tmp_specification_json = json.loads(r["specification"])
         try:
             tmp_json = extract_specification_json(tmp_specification_json['specification_table'])
-        except Exception as e:
+        except:
             continue
 
-        id_brand = None
+        id_brand = 596
         if 'marque' in tmp_json:
             id_brand = get_brand_id(brands, tmp_json['marque'])
+            if tmp_json['marque'].title() not in r["name_in_store"].title():
+                tmp_d["prod_title"] = tmp_json['marque'].title() + ' ' + r["name_in_store"] + " - " + tmp_d["unique_id"]
+            else:
+                tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
+        else:
+            tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
+
+
+
+
+
         if id_brand != None:
             tmp_d['brand_id'] = id_brand
 

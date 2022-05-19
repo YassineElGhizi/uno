@@ -1,4 +1,7 @@
 [
   {"Ustensiles de cuisine" :  "113"},
-  {"Cafetieres" :  "160"}
+  {"Cafetieres" :  "160"},
+    {
+    "UNKNOWN" : "499"
+  }
 ]

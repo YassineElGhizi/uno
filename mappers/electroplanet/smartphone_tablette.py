@@ -3,19 +3,16 @@ from typing import List
 import json
 from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import organise_options_from_json, \
     get_smartphone_category_id
-from mappers.Helpers.electroplanet import get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_length_id,get_item_power_id
+from mappers.Helpers.electroplanet import get_item_color_id, get_item_ram_id, get_item_stockage_id, get_item_connexion_adapter_id,get_item_screen_size_id,get_item_power_id
+from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import get_electroplanet_products
+from mappers.Helpers.electroplanet import extract_specification_json, get_brand_id
 
 
-from mappers.Helpers.electroplanet_helprs.generale_purposed_functions import get_electroplanet_products, get_category_id
-from mappers.Helpers.electroplanet import extract_specification_json, get_brand_id, get_product_name_id
-
-
-
-def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_product_names) -> List:
+def smartphones_tablette(token:str , s:Session , brands : List) -> List:
     #Getting Options
     url = "http://127.0.0.1:9999/options?website=electroplanet-iphone"
-    headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
-    response = s.get(url , headers=headers)
+    headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
+    response = s.get(url, headers=headers)
     organise_options_from_json(json.loads(response.text))
 
     #Getting Electroplanet Products
@@ -35,8 +32,9 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         tmp_d["current_price"] = r["current_price"]
         tmp_d["name_in_store"] = r["name_in_store"]
         tmp_d["details"] = r["details"]
+        tmp_d["unique_id"] = r["unique_id"]
 
-        id_brand = None
+        id_brand = 596
         id_gatantie = None
         id_color = None
         id_ram = None
@@ -49,18 +47,19 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
         tmp_specification_json = json.loads(r["specification"])
         try:
             tmp_json = extract_specification_json(tmp_specification_json['specification_table'])
-        except Exception as e:
+        except:
             continue
-
-        if int(tmp_d["category_in_store_to_id"]) != 141 :
-            if 'reference_fournisseur' in tmp_json:
-                tmp_d["prod_name"] = get_product_name_id(tmp_json["reference_fournisseur"] , list_of_mapped_product_names)
-        else:
-            tmp_d["prod_name"] = r["name_in_store"]
-
 
         if 'marque' in tmp_json:
             id_brand = get_brand_id(brands, tmp_json['marque'])
+            if tmp_json['marque'].title() not in r["name_in_store"].title():
+                tmp_d["prod_title"] = tmp_json['marque'].title() + ' ' + r["name_in_store"] + " - " + tmp_d["unique_id"]
+            else:
+                tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
+        else:
+            tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
+
+
         if 'couleur' in tmp_json:
             id_color = get_item_color_id(tmp_json["couleur"])
         if 'coloris' in tmp_json:
@@ -77,8 +76,6 @@ def smartphones_tablette(token:str , s:Session , brands : List , list_of_mapped_
             id_connexion_adapter = get_item_connexion_adapter_id(tmp_json['reseau'])
         if 'taille_d\'ecran' in tmp_json:
             id_screen_size = get_item_screen_size_id(tmp_json['taille_d\'ecran'])
-        if 'longueur' in tmp_json:
-            id_length = get_item_length_id(tmp_json['longueur'])
         if 'puissance' in tmp_json:
             if not 'FAST' == tmp_json['puissance']:
                 id_power = get_item_power_id(tmp_json['puissance'])

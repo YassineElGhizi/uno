@@ -3,7 +3,7 @@ import uvicorn
 from typing import List
 
 from fastapi_micro_service.controllers.optionController import optionGetAll
-from fastapi_micro_service.controllers.productController import storeProduct
+from fastapi_micro_service.controllers.productController import storeProduct, update_id_parent
 from fastapi_micro_service.controllers.brandController import brandGetAll
 from fastapi_micro_service.models.mapper import Mapper
 from fastapi_micro_service.middleware.authHandler import AuthHandler
@@ -36,9 +36,10 @@ async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper)
 @app.post("/products")
 async def insert_product(website : str, list_of_products : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
     await storeProduct(website , list_of_products)
+    update_id_parent()
     performeUpdateBestPrice(bestPirceByIdParent())
     price_history()
-    return {'status' : '200 ok'}
+    return {'status': '200 ok'}
 
 @app.get("/brands")
 async def get_brands(user_name=Depends(auth_handler.auth_wrapper)):
@@ -63,7 +64,6 @@ def test():
 @app.get('/protected')
 def protected(user_name=Depends(auth_handler.auth_wrapper)):
     return { 'server_response': f'user : {user_name} is Authorised' }
-
 
 if __name__ == "__main__":
     uvicorn.run("api:app", port=9999, reload=True, debug=True)

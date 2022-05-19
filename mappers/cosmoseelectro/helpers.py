@@ -22,54 +22,7 @@ def dictfetchall(cursor):
 
 def get_cosmoseelectro_products():
     mycursor = mydb.cursor()
-    sql = """
-           SELECT distinct * FROM ITEMS WHERE id_store = 8
-           and (
-           category_in_store like 'Bébé'
-           or category_in_store like 'Coiffure'
-           or category_in_store like 'Rasage pour lui'
-           or category_in_store like 'Préparation culinaire'
-           or category_in_store like 'Cuisson'
-           or category_in_store like 'Cafetière et expresso'
-           or category_in_store like 'Aide culinaire'
-           or category_in_store like 'Cuisson conviviale'
-           or category_in_store like 'Friteuses'
-           or category_in_store like 'Réfrigérateur'
-           or category_in_store like 'Encastrable'
-           or category_in_store like 'Hotte aspirante'
-           or category_in_store like 'Cuisinière'
-           or category_in_store like 'Pack électroménager'
-           or category_in_store like 'Machine à laver'
-           or category_in_store like 'Sèche linge'
-           or category_in_store like 'Lave-vaisselle'
-           or category_in_store like 'Plaque de cuisson'
-           or category_in_store like 'Congélateur'
-           or category_in_store like 'Entretien du sol'
-           or category_in_store like 'Soin du linge'
-           or category_in_store like 'Chauffe eau'
-           or category_in_store like 'Climatisation'
-           or category_in_store like 'Chauffage'
-           or category_in_store like 'Traitement air'
-           or category_in_store like 'Téléviseur'
-           or category_in_store like 'Appareil photo numérique'
-           or category_in_store like 'Accessoires tv-vidéo'
-           or category_in_store like 'Barre de son'
-           or category_in_store like 'Enceinte'
-           or category_in_store like 'Casque audio'
-           or category_in_store like 'Ecouteurs'
-           or category_in_store like 'Home cinéma'
-           or category_in_store like 'Article de boisson'
-           or category_in_store like 'Ordinateur portable'
-           or category_in_store like 'Bagagerie'
-           or category_in_store like 'Périphérique informatique'
-           or category_in_store like 'Imprimante et scanner'
-           or category_in_store like 'Accessoires  gaming'
-           or category_in_store like 'Tablettes'
-           or category_in_store like 'Accessoires smartphones & tablettes'
-           or category_in_store like 'Objets connectes'
-           or category_in_store like 'Smartphone'
-           );
-               """
+    sql = """SELECT distinct * FROM ITEMS WHERE id_store = 8;"""
     mycursor.execute(sql, )
     results = dictfetchall(mycursor)
     return results
@@ -105,7 +58,7 @@ def get_cosmose_category_id(cat_in_store):
     else:
         if cat_in_store == 'Protection Solaire':
             return '389'
-        prod_cat= '311'
+        prod_cat= '449'
         print(f'311 FOR: {cat_in_store}')
     return prod_cat
 
@@ -117,14 +70,14 @@ def get_brand_id(brands:List , item_brand : str):
     if item_brand == 'Apple':
         for x in brands:
             if x['name'] == 'Apple':
-                return str(x['id'])
+                return str(x['id']), 'Apple'
     for x in brands:
         if x['name'].title() in item_brand.title():
-            return str(x['id'])
+            return str(x['id']), item_brand.title()
     # print(f'NEW BRAND HAS BEEN DETECTED: {item_brand}')
     for x in brands:
         if x['name'] == 'UNKNOW':
-            return str(x['id'])
+            return str(x['id']), None
 
 
 

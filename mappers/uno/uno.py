@@ -1,14 +1,13 @@
 from mappers.Helpers.uno import *
-from mappers.Helpers.fetch_from_local import get_mapped_procuts
-from mappers.Helpers.generale_purposed_functions import get_product_name_from_product_title, organise_options_from_json
+from mappers.Helpers.generale_purposed_functions import organise_options_from_json
 from fetch_api import fetch_brands
 
 #VARS
-list_outlayers = ["anker","Silicon","power","Sandisk","LaCie","Beats",]
+list_outlayers = ["anker", "Silicon", "power", "Sandisk", "LaCie", "Beats",]
 options_url = "http://127.0.0.1:9999/options?website=uno"
 url_post = "http://127.0.0.1:9999/products?website=uno"
 login_url = "http://localhost:9999/login"
-mapper_credetials = {"username": "uno_mapper","password": "unoMapperSupero2022"}
+mapper_credetials = {"username": "uno_mapper", "password": "unoMapperSupero2022"}
 payload = json.dumps(mapper_credetials)
 
 #GETTING THE JWT TOKEN
@@ -25,8 +24,6 @@ organise_options_from_json(tmp)
 #Fetching brands
 supero_brand = fetch_brands(token,s)
 
-#Fetching Products
-list_of_mapped_product_names = get_mapped_procuts()
 
 #Fetching Items
 results = get_uno_products()
@@ -37,12 +34,15 @@ parsing_specification_json_field(results)
 for r in results:
     tmp_d = {}
     item_options = []
-    tmp_d["current_price"] = r["current_price"]
 
-    if r["category_in_store"] != 'accessoires iphone' and r["category_in_store"] != 'apple tv' and r["category_in_store"] != 'tablette graphique' and r["category_in_store"] != 'accessoires mac':
-        tmp_d["prod_name"] = get_product_name_from_product_title((r["name_in_store"] , r["prod_name"]), list_of_mapped_product_names)
+    tmp_d["current_price"] = r["current_price"]
+    tmp_d["prod_name"] = r["name_in_store"]
+    tmp_d["unique_id"] = r["unique_id"].strip()
+
+    if 'Apple'.title() not in r["name_in_store"].title():
+        tmp_d["prod_title"] = 'Apple ' + r["name_in_store"] + " - " + tmp_d["unique_id"]
     else:
-        tmp_d["prod_name"] = r["name_in_store"]
+        tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
 
     if tmp_d["prod_name"] not in list_outlayers:
         tmp_d["brand_id"] = get_item_brand_id(supero_brand, 'apple')
@@ -76,6 +76,9 @@ for r in results:
         tmp_d["category_in_store_to_id"] = 152
     if r["category_in_store"] == 'airpods':
         tmp_d["category_in_store_to_id"] = 143
+
+    if 'Télécommande' in tmp_d["prod_name"]:
+        tmp_d["category_in_store_to_id"] = 445
 
     if 'Cable USB' in tmp_d["prod_name"] or 'Cable Apple USB' in tmp_d["prod_name"]:
         tmp_d["category_in_store_to_id"] = 145

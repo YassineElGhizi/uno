@@ -8,7 +8,7 @@ from mappers.Helpers.electroplanet import extract_specification_json, get_brand_
 
 
 
-def tv(brands : List , list_of_mapped_product_names) -> List:
+def tv(brands : List) -> List:
     #Getting Electroplanet Products
     results = get_tv()
 
@@ -26,26 +26,31 @@ def tv(brands : List , list_of_mapped_product_names) -> List:
         tmp_d["current_price"] = r["current_price"]
         tmp_d["name_in_store"] = r["name_in_store"]
         tmp_d["details"] = r["details"]
+        tmp_d["unique_id"] = r["unique_id"]
 
-        id_brand = None
+        id_brand = 596
         id_color = None
         id_screen_size = None
 
         tmp_specification_json = json.loads(r["specification"])
         try:
             tmp_json = extract_specification_json(tmp_specification_json['specification_table'])
-        except Exception as e:
+        except:
             continue
-
-        if int(tmp_d["category_in_store_to_id"]) != 141 :
-            if 'reference_fournisseur' in tmp_json:
-                tmp_d["prod_name"] = get_product_name_id(tmp_json["reference_fournisseur"] , list_of_mapped_product_names)
-        else:
-            tmp_d["prod_name"] = r["name_in_store"]
 
 
         if 'marque' in tmp_json:
             id_brand = get_brand_id(brands, tmp_json['marque'])
+            if tmp_json['marque'].title() not in r["name_in_store"].title():
+                tmp_d["prod_title"] = tmp_json['marque'].title() + ' ' + r["name_in_store"] + " - " + tmp_d["unique_id"]
+            else:
+                tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
+        else:
+            tmp_d["prod_title"] = r["name_in_store"] + " - " + tmp_d["unique_id"]
+
+
+
+
         if 'couleur' in tmp_json:
             id_color = get_item_color_id(tmp_json["couleur"])
         if 'coloris' in tmp_json:

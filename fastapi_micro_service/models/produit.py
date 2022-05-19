@@ -1,8 +1,6 @@
 from sqlalchemy import Column, String, TIMESTAMP, Text, text, DECIMAL
 from sqlalchemy.dialects.mysql import BIGINT
 from sqlalchemy.ext.declarative import declarative_base
-import sqlalchemy as db
-from fastapi_micro_service.env.databaseConnexion import engine
 
 Base = declarative_base()
 metadata = Base.metadata
@@ -22,9 +20,10 @@ class Product(Base):
     images = Column(Text(collation='utf8mb4_unicode_ci'))
     id_parent = Column(BIGINT(20))
     options = Column(String(255, 'utf8mb4_unicode_ci'), nullable=False, server_default=text("'[]'"))
+    unique_id = Column(String(255, 'utf8mb4_unicode_ci'), nullable=False, server_default=text("''"))
     created_at = Column(TIMESTAMP)
 
-    def __init__(self, name, title, slug, brand, category, product_details, images, id_parent, options, created_at):
+    def __init__(self, name, title, slug, brand, category, product_details, images, id_parent, options,unique_id, created_at):
         self.name = name
         self.title = title
         self.slug = slug
@@ -34,11 +33,12 @@ class Product(Base):
         self.images = images
         self.id_parent = id_parent
         self.options = options
+        self.unique_id = unique_id
         self.created_at = created_at
 
     def __toString__(self):
         print(f"-->id = {self.id} ,slug = {self.slug} <--")
 
     def __str__(self):
-        return f'ID = {self.id} name = {self.name},title = {self.title},brand = {self.brand},category = {self.category},id_parent = {self.id_parent}'
+        return f'ID = {self.id} name = {self.name},title = {self.title},brand = {self.brand},category = {self.category},id_parent = {self.id_parent}, unique_id = {self.unique_id}'
 

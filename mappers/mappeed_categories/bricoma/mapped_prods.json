@@ -4,5 +4,20 @@
   {"Fontaines et Osmoseurs" :  "115"},
   {"Coffres forts" :  "323"},
   {"Luminaires decoratifs" :  "324"},
-  {"Poubelle Industrielle" :  "325"}
+  {"Poubelle Industrielle" :  "449"},
+  {"Jeux gonflables de piscine" :  "449"},
+  {"Petit électroménager PEM" :  "449"},
+  {"Chariots, desserte à roulettes" :  "449"},
+  {"Accessoires décoratifs, parfums d'ambiance & bougies" :  "449"},
+  {"Gel combustible" :  "449"},
+  {"Papier peint" :  "449"},
+  {"Luminaires décoratifs" :  "449"},
+  {"Piles de recharge" :  "449"},
+  {"Diluants" :  "449"},
+  {"Papier abrasifs" :  "449"},
+  {"Plateformes et Échafaudages" :  "449"},
+    {
+    "UNKNOWN" : "499"
+  }
+
 ]

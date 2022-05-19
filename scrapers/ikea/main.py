@@ -38,13 +38,7 @@ list_of_cats_and_thier_links.append({"name" : "Bébé et enfant" , "link" : "htt
 
 def scrape():
     try:
-        mydb = pymysql.connect(
-            host="127.0.0.1",
-            port=3306,
-            user="root",
-            password="",
-            database="supero_datalake2",
-        )
+        mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
         mycursor = mydb.cursor()
         s = requests.session()
 
