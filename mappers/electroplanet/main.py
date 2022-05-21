@@ -41,11 +41,11 @@ if __name__ == '__main__':
     get_options_from_api(token)
 
     print('\t=> Starting : smartphones_tablette()')
-    listof_products = smartphones_tablette(token,s,fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
+    listof_products = smartphones_tablette(token, s, fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
     post_list_of_product(listof_products, token)
 
     print('\t=> Starting : beaute_sante()')
-    listof_products = beaute_sante(fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
+    listof_products = beaute_sante(fetch_brands(token, 'electroplanet_smartphones_tablette', s))
     post_list_of_product(listof_products, token)
 
     print('\t=> Starting : small_electromenager()')

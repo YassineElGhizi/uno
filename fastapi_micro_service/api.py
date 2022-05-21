@@ -30,7 +30,7 @@ authorized_mappers = [
 ]
 
 @app.get("/options")
-async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper) ):
+async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper)):
     return await optionGetAll(website)
 
 @app.post("/products")

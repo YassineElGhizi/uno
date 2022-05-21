@@ -47,8 +47,8 @@ def bestPirceByIdParent():
             )
             grouped_list.append(prod_price)
 
-        d={}
-        prices_tmp =[i[0][1] for i in grouped_list]
+        d = {}
+        prices_tmp = [i[0][1] for i in grouped_list]
         d[grouped_list[0][0][0]] = min(prices_tmp)
         list_of_id_parent_with_best_price.append(d)
     return list_of_id_parent_with_best_price

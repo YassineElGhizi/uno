@@ -9,7 +9,6 @@ from mappers.electroplanet.fetch_api import fetch_brands
 from mappers.Helpers.generale_purposed_functions import get_jwt_token_or_fail
 from mappers.Helpers.electroplanet import get_item_color_id
 
-
 mapper_credetials = {"username": "electroplanet_mapper", "password": "electroplanetMapperSupero2022"}
 login_url = "http://localhost:9999/login"
 url_post = "http://127.0.0.1:9999/products?website=kitea"
@@ -22,7 +21,6 @@ def post_list_of_product(res_to_post_fastapi, token):
     response = requests.request("POST", url_post, headers=headers, data=payload)
     print(response.text)
     print(f"response.elapsed.total_seconds() = {response.elapsed.total_seconds()}")
-
 
 def dictfetchall(cursor):
     """Returns all rows from a cursor as a list of dicts"""
@@ -43,16 +41,15 @@ def get_category_id_kitea(cat_in_store):
     f.close()
 
     for c in data:
-        tmp =cat_in_store.replace('è' , 'e')
-        tmp =tmp.replace('é' , 'e')
-        tmp = tmp.replace('à' , 'a')
+        tmp =cat_in_store.replace('è', 'e')
+        tmp =tmp.replace('é', 'e')
+        tmp = tmp.replace('à', 'a')
         if tmp in c.keys():
             prod_cat = c[str(tmp)]
             break
     else:
-        prod_cat= '449'
+        prod_cat = '449'
     return prod_cat
-
 
 def extract_specification_json_kitea(html_table : str) -> dict:
     soup = BS(html_table , features="html.parser")

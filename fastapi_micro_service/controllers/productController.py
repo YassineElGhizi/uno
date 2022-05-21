@@ -1,5 +1,4 @@
 from typing import List
-
 import pymysql
 from slugify import slugify
 from sqlalchemy.orm import sessionmaker
@@ -9,7 +8,6 @@ from ..controllers.storeProductDetailsController import storeProductDetails
 from ..controllers.product__storeController import storeProduct__store
 from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
-
 
 default_not_mapped_category = 449
 def generate_slug(title:str) -> str:
@@ -42,6 +40,11 @@ def get_website_id(website_name:str)-> int:
         return 11
     if website_name == 'iris':
         return 10
+    if website_name == 'saligon':
+        return 12
+    if website_name == 'electrobousfiha':
+        return 13
+
 
 
 async def storeProduct(website: str,listProducts : List):
@@ -92,10 +95,8 @@ async def storeProduct(website: str,listProducts : List):
     return {"status": 200}
 
 
-
-
 def update_id_parent():
-    mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_api",)
+    mydb = pymysql.connect(host="127.0.0.1", port=3306, user="root", password="", database="supero_api",)
     mycursor = mydb.cursor()
     sql = "select unique_id from products group by unique_id having count(*) > 1;"
     mycursor.execute(sql,)
@@ -118,4 +119,4 @@ def update_id_parent():
             for item in myresult[1::]:
                 sql = f"update products set id_parent = {parent_id} where id = '{item[0]}';"
                 mycursor.execute(sql, )
-            mydb.commit()
+    mydb.commit()

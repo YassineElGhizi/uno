@@ -43,9 +43,9 @@ def get_category_id_bricoma(cat_in_store):
     f.close()
 
     for c in data:
-        tmp =cat_in_store.replace('è' , 'e')
-        tmp =tmp.replace('é' , 'e')
-        tmp = tmp.replace('à' , 'a')
+        tmp =cat_in_store.replace('è', 'e')
+        tmp =tmp.replace('é', 'e')
+        tmp = tmp.replace('à', 'a')
         if tmp in c.keys():
             prod_cat = c[str(tmp)]
             break

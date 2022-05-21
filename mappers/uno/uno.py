@@ -16,8 +16,8 @@ s = requests.session()
 token = getting_jwt_token(s, login_url, payload)
 
 #GETTING OPTIONS
-headers = {'Content-Type': 'application/json','Authorization': f'Bearer {token}'}
-response = requests.request("GET", options_url , headers=headers)
+headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
+response = requests.request("GET", options_url, headers=headers)
 tmp = json.loads(response.text)
 organise_options_from_json(tmp)
 
@@ -84,8 +84,6 @@ for r in results:
         tmp_d["category_in_store_to_id"] = 145
 
     tmp_d["category_in_store"] = r["category_in_store"]
-
-
 
     tmp_d["link"] = r["link"]
     tmp_d["image_url"] = r["image_url"]
