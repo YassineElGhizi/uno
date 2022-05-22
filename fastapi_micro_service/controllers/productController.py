@@ -56,34 +56,38 @@ async def storeProduct(website: str,listProducts : List):
 
     for item in listProducts:
         try:
-            name = item['name_in_store']
-            title = item['prod_title']
-            slug = generate_slug(title)
-            brand = item['brand_id']
-            unique_id = item['unique_id']
-            try:
-                category = item['category_in_store_to_id']
-            except:
-                category = default_not_mapped_category
-            product_details = storeProductDetails(item['details'], title)
-            imgs = item['image_url']
-            images = f"[\"{imgs}\"]"
-            id_parent = None
-            try:
-                options = str([i for i in item['options']])
-            except:
-                pass
+            if item['name_in_store'] and item['prod_title'] and item['unique_id'] and item['current_price'] and item['link']:
+                name = item['name_in_store']
+                title = item['prod_title']
+                slug = generate_slug(title)
+                brand = item['brand_id']
+                unique_id = item['unique_id']
+                try:
+                    category = item['category_in_store_to_id']
+                except:
+                    category = default_not_mapped_category
+                product_details = storeProductDetails(item['details'], title)
+                imgs = item['image_url']
+                images = f"[\"{imgs}\"]"
+                id_parent = None
+                try:
+                    options = str([i for i in item['options']])
+                except:
+                    pass
 
-            created_at = myTempStamp()
-            p = Product(name, title, slug, brand, category, product_details, images, id_parent, options, unique_id, created_at)
-            bulk_insert.append(p)
+                created_at = myTempStamp()
+                p = Product(name, title, slug, brand, category, product_details, images, id_parent, options, unique_id, created_at)
+                bulk_insert.append(p)
 
-            d = {}
-            d['slug'] = slug
-            d['current_price'] = item['current_price']
-            d['link'] = item['link']
+                d = {}
+                d['slug'] = slug
+                d['current_price'] = item['current_price']
+                d['link'] = item['link']
 
-            prices.append(d)
+                prices.append(d)
+            else:
+                print('IMPORTANT WARNING !! FIELDS ARE MISSING !!')
+                continue
         except Exception as e:
             raise e
             pass

@@ -22,12 +22,12 @@ def scrape(link , prod_name , id_store , id_subcat):
     res = s.get("{}".format(link), headers=headers)
 
     #DB Connexion
-    mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
+    mydb = pymysql.connect(host="127.0.0.1", port=3306, user="root", password="", database="supero_datalake2",)
 
     mycursor = mydb.cursor()
     items = BS(res.text, features="html.parser")
 
-    items_cards = items.findAll('li' , {'class' ,'item sale-product' }  )
+    items_cards = items.findAll('li', {'class', 'item sale-product'})
 
     for num, ic in enumerate(items_cards):
         item_title_tag = (ic.find('h2' , {'class' ,'product-name' })).find('a')
@@ -46,7 +46,7 @@ def scrape(link , prod_name , id_store , id_subcat):
         item_lenght = find_device_lenght(item_title)
         item_power = find_device_power(item_title)
 
-        res = s.get(item_link , headers=headers)
+        res = s.get(item_link, headers=headers)
         sleep(random.randint(1, 2))
         items = BS(res.text, features="html.parser")
         try:

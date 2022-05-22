@@ -51,9 +51,9 @@ main_categories = [
 
 
 def convertPrice(price):
-    tmp = price.replace(' DH' , '')
-    tmp = tmp.replace(',' , '.')
-    tmp = tmp.replace(' ' , '')
+    tmp = price.replace(' DH', '')
+    tmp = tmp.replace(',', '.')
+    tmp = tmp.replace(' ', '')
     return float("".join(tmp))
 
 def init():
@@ -76,7 +76,7 @@ def init():
 def scrape():
     try:
         init()
-        mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
+        mydb = pymysql.connect(host="127.0.0.1", port=3306, user="root", password="", database="supero_datalake2",)
         mycursor = mydb.cursor()
         print("         [+] Scraping Items")
         for item in list_of_subcats_and_thier_links:
@@ -105,7 +105,7 @@ def scrape():
                 try:
                     print(link)
                     scrapped_links.append(link)
-                    item_name_in_store = new_page.find('h1' , {'class' : 'page-title'}).get_text().strip()
+                    item_name_in_store = new_page.find('h1', {'class' : 'page-title'}).get_text().strip()
 
                     try:
                         item_description = new_page.find('div', {'class': 'product attribute overview'}).get_text().strip()
@@ -113,7 +113,7 @@ def scrape():
                         pass
                     item_link = link
                     image_item = None
-                    item_price = new_page.find('span' , {'class' : 'price'}).get_text().strip()
+                    item_price = new_page.find('span' , {'class': 'price'}).get_text().strip()
                     item_price = convertPrice(item_price)
                     item_short_name = ''
 

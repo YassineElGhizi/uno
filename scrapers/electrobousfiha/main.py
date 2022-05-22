@@ -8,6 +8,16 @@ import random
 big_parents = []
 scrapped_links = []
 
+def scrapped_ones():
+    # DB Connexion
+    mydb = pymysql.connect(host="127.0.0.1", port=3306, user="root", password="", database="supero_datalake2",)
+    mycursor = mydb.cursor()
+    sql = "select link from items where id_store = 13"
+    mycursor.execute(sql, )
+    scrapped_one = mycursor.fetchall()
+    scrapped_one = [i[0] for i in scrapped_one]
+    return scrapped_one
+
 def convertPrice(price):
     price = price.split(' TTC ')[0]
     tmp = price.replace('Dh  TTC', '')
@@ -34,7 +44,8 @@ def init():
 def scrape():
     try:
         init()
-        mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
+        scraped_links = scrapped_ones()
+        mydb = pymysql.connect(host="127.0.0.1", port=3306 ,user="root", password="", database="supero_datalake2",)
         mycursor = mydb.cursor()
         print("         [+] Scraping Items")
         for link in big_parents:
@@ -42,12 +53,47 @@ def scrape():
             res2 = s.get("{}".format(link))
             new_page2 = BS(res2.text, features="html.parser")
             sleep(random.randint(0, 1))
+
+            pagination_exists = False
+            try:
+                x = new_page2.select_one('#js-product-list-top > nav')
+                if x:
+                    pagination_exists = True
+            except:
+                pass
+
+
             cards = new_page2.findAll('a', {'class': 'thumbnail product-thumbnail'})
             links_onyl = []
             for c in cards:
                 links_onyl.append(c.get('href'))
+            print(f'pagination_exists = {pagination_exists}')
+            print(f'mylist len = {len(links_onyl)}')
+            if pagination_exists:
+                for i in range(13):
+                    if i == 0 or i == 1:
+                        continue
+                    print(f'Paginiting NO{i}')
+                    try:
+                        res2 = s.get("{}?page={}".format(link, i))
+                        sleep(random.randint(0, 1))
+                        new_page2 = BS(res2.text, features="html.parser")
+                        cards = new_page2.findAll('a', {'class': 'thumbnail product-thumbnail'})
+                        for card in cards:
+                            try:
+                                links_onyl.append(card.get('href'))
+                            except:
+                                pass
+                    except:
+                        continue
+                print(f'len AFTER = {len(links_onyl)}')
+
+
             print("             [+] Collecting data")
             for link in links_onyl:
+                if link in scraped_links:
+                    print('     [+] item already scraped')
+                    continue
                 res2 = s.get(link)
                 sleep(random.randint(0, 1))
                 new_page = BS(res2.text, features="html.parser")

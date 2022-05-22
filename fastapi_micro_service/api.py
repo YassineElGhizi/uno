@@ -35,7 +35,7 @@ async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper)
 
 @app.post("/products")
 async def insert_product(website : str, list_of_products : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
-    await storeProduct(website , list_of_products)
+    await storeProduct(website, list_of_products)
     update_id_parent()
     performeUpdateBestPrice(bestPirceByIdParent())
     price_history()

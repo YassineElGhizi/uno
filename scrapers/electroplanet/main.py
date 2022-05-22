@@ -8,7 +8,7 @@ import random
 
 def scrapped_ones():
     # DB Connexion
-    mydb = pymysql.connect(host="127.0.0.1",port=3306,user="root",password="",database="supero_datalake2",)
+    mydb = pymysql.connect(host="127.0.0.1", sport=3306, suser="root", spassword="", sdatabase="supero_datalake2",)
     mycursor = mydb.cursor()
     sql = "select link from items where id_store = 3"
     mycursor.execute(sql, )
