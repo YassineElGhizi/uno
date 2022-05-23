@@ -9,8 +9,8 @@ list_of_cats_and_thier_links = list()
 list_of_subcats_and_thier_links = list()
 
 def formatPrice(price):
-    tmp = price.replace('Dhs' , '')
-    tmp = tmp.replace(',' , ' ')
+    tmp = price.replace('Dhs', '')
+    tmp = tmp.replace(',', ' ')
     tmp =tmp.split()
     floatprice = "".join(tmp)
     return float(floatprice)
