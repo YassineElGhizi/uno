@@ -2,7 +2,6 @@ from typing import List
 import json
 import requests
 
-
 from mappers.Helpers.electroplanet import get_brand_id, get_options_from_api
 from mappers.electroplanet.fetch_api import fetch_brands
 from mappers.Helpers.generale_purposed_functions import get_jwt_token_or_fail
@@ -10,8 +9,6 @@ from mappers.Helpers.electroplanet import get_item_color_id
 
 #Helpers
 from bestmark_helpers import extract_specification_json_brestmark, get_category_id_bricoma, get_bestmark_products, get_item_stockage_id
-
-
 
 mapper_credetials = {"username": "electroplanet_mapper", "password": "electroplanetMapperSupero2022"}
 login_url = "http://localhost:9999/login"
@@ -87,8 +84,6 @@ def main(brands : List) -> List:
     # quit()
     print(f"len (res_to_post_fastapi) = {len(res_to_post_fastapi)}")
     return res_to_post_fastapi
-
-
 
 if __name__ == "__main__":
     print("[+] preparing to get token")

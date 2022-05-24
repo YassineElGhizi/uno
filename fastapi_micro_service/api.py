@@ -10,7 +10,6 @@ from fastapi_micro_service.middleware.authHandler import AuthHandler
 from fastapi_micro_service.services.bestPriceByIdParentGroup import performeUpdateBestPrice,bestPirceByIdParent
 from fastapi_micro_service.controllers.product_historyController import price_history
 
-
 auth_handler = AuthHandler()
 app = FastAPI()
 

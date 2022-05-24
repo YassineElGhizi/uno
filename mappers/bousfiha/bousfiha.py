@@ -32,7 +32,10 @@ def main(brands : List) -> List:
 
         tmp_d["current_price"] = r["current_price"]
         tmp_d["category_in_store"] = r["category_in_store"]
-        tmp_d["category_in_store_to_id"] = get_category_id_bousfiha(r["category_in_store"])
+        if 'MOULE IBILI' or 'MOULE CAKE IBILI 30CM' in r["category_in_store"]:
+            tmp_d["category_in_store_to_id"] = '449'
+        else:
+            tmp_d["category_in_store_to_id"] = get_category_id_bousfiha(r["category_in_store"])
         tmp_d["link"] = r["link"]
         tmp_d["image_url"] = r["image_url"]
         if r["current_price"]:
