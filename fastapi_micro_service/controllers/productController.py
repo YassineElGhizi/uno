@@ -114,14 +114,23 @@ def update_id_parent():
         mycursor.execute(sql, )
         myresult = mycursor.fetchall()
         found = False
+        id_parent = None
         for r in myresult:
             if r[1] != None:
                 found = True
+                id_parent = r[0]
 
         if not found:
-            print(f'myresult = {myresult}')
             parent_id = myresult[0][0]
             for item in myresult[1::]:
                 sql = f"update products set id_parent = {parent_id} where id = '{item[0]}';"
                 mycursor.execute(sql, )
+        else:
+            for item in myresult:
+                if item[0] != id_parent:
+                    sql = f"update products set id_parent = {id_parent} where id = '{item[0]}';"
+                    mycursor.execute(sql, )
+
+
+
     mydb.commit()
