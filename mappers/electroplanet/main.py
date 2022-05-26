@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     print("[+] getting options from API")
     get_options_from_api(token)
-
+    #
     print('\t=> Starting : smartphones_tablette()')
     listof_products = smartphones_tablette(token, s, fetch_brands(token, 'electroplanet_smartphones_tablette' , s))
     post_list_of_product(listof_products, token)

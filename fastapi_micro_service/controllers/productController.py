@@ -100,6 +100,7 @@ async def storeProduct(website: str,listProducts : List):
 
 
 def update_id_parent():
+    #PART 1:
     mydb = pymysql.connect(host="127.0.0.1", port=3306, user="root", password="", database="supero_api",)
     mycursor = mydb.cursor()
     sql = "select unique_id from products group by unique_id having count(*) > 1;"
@@ -108,7 +109,9 @@ def update_id_parent():
     l = []
     for t in myresult:
         l.append(t[0])
+    #l : Contains list of same prodcuts
 
+    #PART 2:
     for refrerance in l:
         sql = f"select id ,id_parent from products where unique_id = '{refrerance}';"
         mycursor.execute(sql, )
@@ -116,16 +119,16 @@ def update_id_parent():
         found = False
         id_parent = None
         for r in myresult:
-            if r[1] != None:
+            if r[1] == None:#ida kan id_parent null ==> parent found !
                 found = True
                 id_parent = r[0]
 
-        if not found:
+        if not found:#ida malqina ta xi ud_parent null ==> parent howa first produit
             parent_id = myresult[0][0]
             for item in myresult[1::]:
                 sql = f"update products set id_parent = {parent_id} where id = '{item[0]}';"
                 mycursor.execute(sql, )
-        else:
+        else:#ida deja kayn produit parent ==> for each prduit id dialo != id_parent , we will give it id_parent = id_parent
             for item in myresult:
                 if item[0] != id_parent:
                     sql = f"update products set id_parent = {id_parent} where id = '{item[0]}';"

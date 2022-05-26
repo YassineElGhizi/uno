@@ -69,8 +69,6 @@ async def store_price_hostory(prod_list : List[Product], prices :List):
 
     print("SUCCESS BULK INSERT #3 (price History)")
 
-
-
 def price_history():
     ss = sessionmaker(bind=engine)
     s = ss()
@@ -96,12 +94,12 @@ def price_history():
 
         d = {}
         prices_tmp = [i[0][1] for i in grouped_list]
-        d[grouped_list[0][0][0]] =prices_tmp
+        d[grouped_list[-1][0][0]] =prices_tmp
         list_of_id_parent_with_best_price.append(d)
 
     for x in list_of_id_parent_with_best_price:
         key = int(*x)
-        best_price =  min(x[key])
+        best_price = min(x[key])
         average = statistics.mean(x[key])
         ph = PriceHistory(key, average, best_price)
         list_price_history_models.append(ph)
