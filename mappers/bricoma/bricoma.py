@@ -9,7 +9,6 @@ from mappers.electroplanet.fetch_api import fetch_brands
 from mappers.Helpers.generale_purposed_functions import get_jwt_token_or_fail
 from mappers.Helpers.electroplanet import get_item_color_id
 
-
 mapper_credetials = {"username": "electroplanet_mapper", "password": "electroplanetMapperSupero2022"}
 login_url = "http://localhost:9999/login"
 url_post = "http://127.0.0.1:9999/products?website=bricoma"

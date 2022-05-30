@@ -8,6 +8,17 @@ import random
 big_parents = []
 scrapped_links = []
 
+headers = {
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36',
+    'accept': '*/*',
+    'sec-fetch-site': 'same-site',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-dest': 'empty',
+    'accept-language': 'en-US,en;q=0.9',
+    'DNT': '1',
+    'Referer': 'https://google.com'
+}
+
 def convertPrice(price):
     tmp = price.replace(' DH' , '')
     return float("".join(tmp))
@@ -15,7 +26,7 @@ def convertPrice(price):
 def init():
     print("[+] Initilialisation")
     s = requests.session()
-    res = s.get("https://saligon.com/")
+    res = s.get("https://saligon.com/", headers=headers)
     items = BS(res.text, features="html.parser")
     a_tags = items.findAll('a', {'class': 'vertical-nav__link'})
     for a in a_tags:
@@ -33,7 +44,7 @@ def scrape():
         print("         [+] Scraping Items")
         for link in big_parents:
             s = requests.session()
-            res2 = s.get("{}".format(link))
+            res2 = s.get("{}".format(link), headers=headers)
             new_page2 = BS(res2.text, features="html.parser")
             sleep(random.randint(0, 1))
             cards = new_page2.findAll('div', {'class': 'product-loop-title'})
@@ -43,7 +54,7 @@ def scrape():
 
             print("             [+] Collecting data")
             for link in links_onyl:
-                res2 = s.get(link)
+                res2 = s.get(link, headers=headers)
                 sleep(random.randint(0 , 1))
                 new_page = BS(res2.text, features="html.parser")
 
