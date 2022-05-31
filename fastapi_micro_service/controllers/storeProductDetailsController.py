@@ -1,7 +1,9 @@
+import sys
+sys.path.append("..") # Adds higher directory to python modules path.
 import datetime
 import sqlalchemy as db
 from sqlalchemy.orm import sessionmaker
-from ..models.productDetails import ProductDetail
+from models.productDetails import ProductDetail
 from fastapi_micro_service.env.databaseConnexion import engine
 
 

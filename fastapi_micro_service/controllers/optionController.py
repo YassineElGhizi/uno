@@ -1,5 +1,7 @@
+import sys
+sys.path.append("..") # Adds higher directory to python modules path.
 import sqlalchemy as db
-from fastapi_micro_service.env.databaseConnexion import engine, metadata, connection
+from env.databaseConnexion import engine, metadata, connection
 
 async def optionGetAll(website : str):
     options = db.Table('options', metadata, autoload=True, autoload_with=engine)

@@ -1,11 +1,13 @@
+import sys
+sys.path.append("..") # Adds higher directory to python modules path.
 from typing import List
 import pymysql
 from slugify import slugify
 from sqlalchemy.orm import sessionmaker
 import random
 
-from ..controllers.storeProductDetailsController import storeProductDetails
-from ..controllers.product__storeController import storeProduct__store
+from controllers.storeProductDetailsController import storeProductDetails
+from controllers.product__storeController import storeProduct__store
 from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
 

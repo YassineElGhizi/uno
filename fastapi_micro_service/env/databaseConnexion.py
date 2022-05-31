@@ -2,7 +2,7 @@ import sqlalchemy as db
 import datetime
 
 
-engine = db.create_engine('mysql://root@localhost/supero_api')
+engine = db.create_engine('mysql+pymysql://root@localhost/supero_api')
 connection = engine.connect()
 metadata = db.MetaData()
 

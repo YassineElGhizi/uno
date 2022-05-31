@@ -2,13 +2,13 @@ from fastapi import FastAPI, Body, HTTPException, Depends
 import uvicorn
 from typing import List
 
-from fastapi_micro_service.controllers.optionController import optionGetAll
-from fastapi_micro_service.controllers.productController import storeProduct, update_id_parent
-from fastapi_micro_service.controllers.brandController import brandGetAll
-from fastapi_micro_service.models.mapper import Mapper
-from fastapi_micro_service.middleware.authHandler import AuthHandler
-from fastapi_micro_service.services.bestPriceByIdParentGroup import performeUpdateBestPrice,bestPirceByIdParent
-from fastapi_micro_service.controllers.product_historyController import price_history
+from controllers.optionController import optionGetAll
+from controllers.productController import storeProduct, update_id_parent
+from controllers.brandController import brandGetAll
+from models.mapper import Mapper
+from middleware.authHandler import AuthHandler
+from services.bestPriceByIdParentGroup import performeUpdateBestPrice,bestPirceByIdParent
+from controllers.product_historyController import price_history
 
 auth_handler = AuthHandler()
 app = FastAPI()

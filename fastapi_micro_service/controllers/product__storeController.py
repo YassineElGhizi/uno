@@ -1,7 +1,9 @@
+import sys
+sys.path.append("..") # Adds higher directory to python modules path.
 from typing import List
 from sqlalchemy.orm import sessionmaker
 
-from ..models.product__store import ProductStore
+from models.product__store import ProductStore
 from fastapi_micro_service.env.databaseConnexion import engine, myTempStamp
 from fastapi_micro_service.models.produit import Product
 
