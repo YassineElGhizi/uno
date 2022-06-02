@@ -11,10 +11,10 @@ from fastapi_micro_service.models.produit import Product
 def retraive_price(l : list , keyword : str):
     for i in l:
         if keyword == i["slug"]:
-            return i["current_price"] , i['link']
+            return i["current_price"], i['link']
         else:
             continue
-    return 0.0 , None
+    return 0.0, None
 
 async def storeProduct__store(store_id : int, prod_list : List[Product], prices :List):
     bulk_insert = []

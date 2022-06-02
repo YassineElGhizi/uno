@@ -35,7 +35,6 @@ def init():
         except:
             pass
 
-
 def scrape():
     try:
         init()
@@ -53,7 +52,7 @@ def scrape():
                 links_onyl.append(c.find('a').get('href'))
 
             print("             [+] Collecting data")
-            for link in links_onyl:
+            for num, link in enumerate(links_onyl):
                 res2 = s.get(link, headers=headers)
                 sleep(random.randint(0 , 1))
                 new_page = BS(res2.text, features="html.parser")
@@ -71,7 +70,12 @@ def scrape():
                         item_description = None
                         pass
                     item_link = link
-                    image_item = None
+                    try:
+                        x = new_page.findAll('img')
+                        image_item = x[0].get('data-lazy-src')
+                    except:
+                        image_item = None
+
                     item_price = new_page.select_one('#main > div.pc-product-single__summary-wrapper > div.pc-product-single__summary > div > div.pc-product-summary__body > div > div.pc-product-purchase__header > div > span').text.strip()
                     item_price = convertPrice(item_price)
                     item_short_name = ''

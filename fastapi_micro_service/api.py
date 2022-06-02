@@ -15,12 +15,12 @@ app = FastAPI()
 
 authorized_mappers = [
     {
-        'username' : 'uno_mapper' ,
-        'password' : '$2b$12$j1Xs6HvX7iZ9D70vulcrx.J99lQBPPujXPk5F8VZKgt2qSERr4axm' #unoMapperSupero2022
+        'username': 'uno_mapper',
+        'password': '$2b$12$j1Xs6HvX7iZ9D70vulcrx.J99lQBPPujXPk5F8VZKgt2qSERr4axm' #unoMapperSupero2022
     },
     {
-        'username' : 'yassine',
-        'password' : '$2b$12$TNUBGgPruzd0yZ61VC8auOoxVN/uc0D65bGy5OQGHsUsQtikF2kWi' #dataengeneeradmin
+        'username': 'yassine',
+        'password': '$2b$12$TNUBGgPruzd0yZ61VC8auOoxVN/uc0D65bGy5OQGHsUsQtikF2kWi' #dataengeneeradmin
     },
     {
         'username': 'electroplanet_mapper',
@@ -29,11 +29,11 @@ authorized_mappers = [
 ]
 
 @app.get("/options")
-async def get_option(website : str ,user_name=Depends(auth_handler.auth_wrapper)):
+async def get_option(website: str, user_name=Depends(auth_handler.auth_wrapper)):
     return await optionGetAll(website)
 
 @app.post("/products")
-async def insert_product(website : str, list_of_products : List = Body(...) , user_name=Depends(auth_handler.auth_wrapper)):
+async def insert_product(website: str, list_of_products: List = Body(...), user_name=Depends(auth_handler.auth_wrapper)):
     await storeProduct(website, list_of_products)
     update_id_parent()
     performeUpdateBestPrice(bestPirceByIdParent())
@@ -62,7 +62,7 @@ def test():
 
 @app.get('/protected')
 def protected(user_name=Depends(auth_handler.auth_wrapper)):
-    return { 'server_response': f'user : {user_name} is Authorised' }
+    return {'server_response': f'user : {user_name} is Authorised' }
 
 if __name__ == "__main__":
     uvicorn.run("api:app", port=9999, reload=True, debug=True)

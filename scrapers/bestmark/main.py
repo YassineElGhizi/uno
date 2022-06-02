@@ -60,18 +60,16 @@ def init():
     print("[+] Initilialisation")
     res = requests.get("https://www.bestmark.ma/")
     items = BS(res.text, features="html.parser")
-    uls = items.findAll('div' , {'class' : 'sm_megamenu_title'})
+    uls = items.findAll('div', {'class': 'sm_megamenu_title'})
     for ul in uls:
         a_tags = ul.findAll('a')
         for a in a_tags:
-            d= {}
+            d = {}
             d["link"] = f"https://www.bestmark.ma{a.get('href')}"
             if d["link"] not in main_categories:
                 d["name_sub_cat"] = a.get_text().strip()
                 if d not in list_of_subcats_and_thier_links and d["name_sub_cat"] != '':
                     list_of_subcats_and_thier_links.append(d)
-
-
 
 def scrape():
     try:
@@ -98,21 +96,26 @@ def scrape():
                 sleep(random.randint(0 , 1))
                 new_page = BS(res2.text,features="html.parser")
 
+                metas = new_page.findAll('meta')
+                image_item = None
+                for m in metas:
+                    try:
+                        if '.jpg' in m.get('content'):
+                            image_item = m.get('content')
+                    except:
+                        pass
                 if link in scrapped_links:
                     print(link, 'already got scraped')
                     continue
 
                 try:
-                    print(link)
                     scrapped_links.append(link)
                     item_name_in_store = new_page.find('h1', {'class' : 'page-title'}).get_text().strip()
-
                     try:
                         item_description = new_page.find('div', {'class': 'product attribute overview'}).get_text().strip()
                     except:
                         pass
                     item_link = link
-                    image_item = None
                     item_price = new_page.find('span' , {'class': 'price'}).get_text().strip()
                     item_price = convertPrice(item_price)
                     item_short_name = ''
